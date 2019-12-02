@@ -9,7 +9,7 @@
 import XCTest
 @testable import AdventOfCode
 
-class Day1Tests: XCTestCase {
+class Tests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,5 +32,18 @@ class Day1Tests: XCTestCase {
         input[1] = 12
         input[2] = 2
         XCTAssertEqual(Day2.calculate(list: input)[0], 3058646)
+    }
+    
+    func test_day2_getPair() {
+        let input = Input.day2Input()
+        XCTAssertEqual(Day2.getPair(list: input, pair: (noun: 12, verb: 2))[0], 3058646)
+    }
+    
+    func test_day2_getPair_reversedEngineerAnswer() {
+        let input = Input.day2Input()
+        let answer = Day2.reverseEngineerIt(result: 19690720, initialInput: input)
+        XCTAssertNotNil(answer)
+        guard let result = answer else { return }
+        print(100 * result.noun + result.verb)
     }
 }

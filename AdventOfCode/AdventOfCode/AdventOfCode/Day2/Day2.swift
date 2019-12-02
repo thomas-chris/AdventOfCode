@@ -16,11 +16,16 @@ struct Day2 {
         for n in stride(from: 0, through: result.count, by: 4) {
             
             let operatorValue = result[n]
-            guard operatorValue != 99 else { break }
-            
             let first = result[n+1]
             let second = result[n+2]
             let resultAddress = result[n+3]
+
+            guard operatorValue != 99,
+                first <= result.count,
+                second <= result.count,
+                resultAddress <= result.count,
+                operatorValue <= result.count else { break }
+            
             
             
             switch operatorValue {
@@ -29,11 +34,41 @@ struct Day2 {
             case 2:
                 result[resultAddress] = result[first] * result[second]
             default:
-                fatalError("Avast, something doesn't sit well here")
+                break
             }
         }
         
         return result
     }
 
+    static func getPair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
+        let newList = changePair(list: list, pair: pair)
+        return calculate(list: newList)
+    }
+    
+    static func changePair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
+        var list = list
+        list[1] = pair.noun
+        list[2] = pair.verb
+        return list
+    }
+    
+    static func reverseEngineerIt(result: Int, initialInput: [Int]) -> (noun: Int, verb: Int)? {
+        
+        if result == calculate(list: initialInput)[0] {
+            return (noun: initialInput[1], verb: initialInput[2])
+        }
+        
+        for i in 0...99 {
+            for j in 0...99 {
+                let total = calculate(list: getPair(list: initialInput, pair: (noun: i, verb: j)))[0]
+                if total == result {
+                    return (noun: i, verb: j)
+                }
+            }
+        }
+        
+        return nil
+    }
 }
+
