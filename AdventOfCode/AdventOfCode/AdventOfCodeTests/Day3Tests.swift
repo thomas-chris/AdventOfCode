@@ -66,7 +66,7 @@ class Day3Tests: XCTestCase {
             let matchingPoints = Day3.getMatchingPoints(first: path1Points, second: path2Points)
         
         let distance = Day3.getShortestDistanceOfIntersection(points: matchingPoints)
-        XCTAssertEqual(distance, 159)
+        XCTAssertEqual(distance, 217)
         
     }
 

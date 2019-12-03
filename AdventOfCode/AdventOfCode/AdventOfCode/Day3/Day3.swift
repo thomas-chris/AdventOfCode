@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Point: Equatable {
+struct Point: Equatable, Hashable {
     let x: Double
     let y: Double
 }
@@ -57,9 +57,12 @@ struct Day3 {
     }
     
     static func getMatchingPoints(first: [Point], second: [Point]) -> [Point] {
-        return first.filter{
-            return second.contains($0)
-        }
+        
+        let firstSet = Set(first)
+        let secondSet = Set(second)	
+        let intersection = firstSet.intersection(secondSet)
+        let array: [Point] = intersection.map { $0 }
+        return array
     }
     
     static func getShortestDistanceOfIntersection(points: [Point]) -> Double {
