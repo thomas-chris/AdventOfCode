@@ -23,6 +23,7 @@
 		500DAFAD23964ADA0081CC21 /* Day3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DAFAC23964ADA0081CC21 /* Day3Tests.swift */; };
 		500DAFB023964C290081CC21 /* Day3Test1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 500DAFAF23964C290081CC21 /* Day3Test1.txt */; };
 		500DAFB223965C1B0081CC21 /* Day3Test2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 500DAFB123965C1B0081CC21 /* Day3Test2.txt */; };
+		500DAFB5239672C40081CC21 /* Day3Test3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 500DAFB4239672C40081CC21 /* Day3Test3.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		500DAFAC23964ADA0081CC21 /* Day3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3Tests.swift; sourceTree = "<group>"; };
 		500DAFAF23964C290081CC21 /* Day3Test1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day3Test1.txt; sourceTree = "<group>"; };
 		500DAFB123965C1B0081CC21 /* Day3Test2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day3Test2.txt; sourceTree = "<group>"; };
+		500DAFB4239672C40081CC21 /* Day3Test3.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day3Test3.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				500DAFA323963CE10081CC21 /* Day3.txt */,
 				500DAFB123965C1B0081CC21 /* Day3Test2.txt */,
 				500DAFAF23964C290081CC21 /* Day3Test1.txt */,
+				500DAFB4239672C40081CC21 /* Day3Test3.txt */,
 			);
 			path = Day3;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				500DAFA423963CE10081CC21 /* Day3.txt in Resources */,
 				500DAFB023964C290081CC21 /* Day3Test1.txt in Resources */,
 				500DAFB223965C1B0081CC21 /* Day3Test2.txt in Resources */,
+				500DAFB5239672C40081CC21 /* Day3Test3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
