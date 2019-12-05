@@ -10,12 +10,9 @@ import Foundation
 
 struct Day4 {
     static func part1(passwordRange: PasswordRange) -> String {
-        
-        var totalNumberValidPasswords: String = "000000"
-        
         var validPasswords: [String] = []
         let range = Array(Int(passwordRange.start)!...Int(passwordRange.end)!)
-        range.map { value in
+        range.forEach { value in
             let isValid = validatePassword(String(value))
             if isValid {
                 validPasswords.append(String(value))
@@ -23,6 +20,20 @@ struct Day4 {
         }
         
         return String(validPasswords.count)
+    }
+    
+    static func part2(passwordRange: PasswordRange) -> String {
+        var validPasswords: [String] = []
+        let range = Array(Int(passwordRange.start)!...Int(passwordRange.end)!)
+        range.forEach { value in
+            let isValid = validatePart2(String(value))
+            if isValid {
+                validPasswords.append(String(value))
+            }
+        }
+        
+        return String(validPasswords.count)
+        
     }
     
     static func validatePassword(_ option: String) -> Bool {
@@ -42,7 +53,32 @@ struct Day4 {
         return hasPair && neverDecreases
     }
     
-//    static func validatePart2(_ option: String) -> Bool {
-//        
-//    }
+    static func validatePart2(_ option: String) -> Bool {
+       var hasPair = false
+        let array = option.compactMap { $0.wholeNumberValue }
+        guard array == array.sorted() else { return false }
+        var ignoreCharacter: Int? = nil
+        array.enumerated()
+            .forEach { (index, value) in
+                if ignoreCharacter != value,
+                    index + 1 <= array.count - 1,
+                    value == array[index + 1] {
+                    if index + 2 <= array.count-1, value == array[index+2] {
+                        ignoreCharacter = value
+                    } else {
+                        hasPair = true
+                    }
+                   
+                }
+            }
+        
+        return hasPair
+        
+        
+    }
+    
+    struct Key: Hashable {
+        let x: Int
+        let y: Int
+    }
 }

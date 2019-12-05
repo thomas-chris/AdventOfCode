@@ -28,4 +28,25 @@ class Day4Tests: XCTestCase {
         let count = Day4.part1(passwordRange: input)
         XCTAssertEqual(count, "9")
     }
+    
+    func testScenario3() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let input = Input.day4(file: "Day4Test1")
+        let count = Day4.part2(passwordRange: input)
+        XCTAssertEqual(count, "288")
+        
+        //To low - 214
+        // to high 301
+    }
+    
+    func testScenario4() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let input = Input.day4(file: "Day4Test3")
+        let count = Day4.part2(passwordRange: input)
+        XCTAssertEqual(count, "1")
+        
+        //To low
+    }
 }

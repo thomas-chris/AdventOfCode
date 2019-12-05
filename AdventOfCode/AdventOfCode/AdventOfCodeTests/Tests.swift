@@ -44,6 +44,7 @@ class Tests: XCTestCase {
         let answer = Day2.reverseEngineerIt(result: 19690720, initialInput: input)
         XCTAssertNotNil(answer)
         guard let result = answer else { return }
+        XCTAssertEqual(100 * result.noun + result.verb, 8976)
         print(100 * result.noun + result.verb)
     }
 }
