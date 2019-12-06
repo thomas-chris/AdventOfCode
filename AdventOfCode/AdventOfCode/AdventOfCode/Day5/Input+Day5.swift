@@ -13,6 +13,6 @@ extension Input {
         let data = Input.getInput(name: "Day5")
         let string = String(decoding: data, as: UTF8.self)
         let array = string.components(separatedBy: ",")
-        return array.compactMap { Int($0) }
+        return array.compactMap { Int(String($0.replacingOccurrences(of: "\n", with: ""))) }
     }
 }

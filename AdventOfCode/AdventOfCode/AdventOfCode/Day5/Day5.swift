@@ -15,48 +15,71 @@ struct Day5 {
         var index = 0
     
         var value = input
-        while result[index] != 99 {
+        while (result[index] % 100) != 99 {
 
             let initialOperatorValue = result[index]
-            var operatorValue = initialOperatorValue
-            var modes = [0,0,0]
-            if initialOperatorValue > 99 {
-                operatorValue = initialOperatorValue % 100
-                let stringValue = String(initialOperatorValue)
-                let string = String(stringValue.reversed().dropFirst().dropFirst())
-                var temp: [Int] = []
-                string.forEach{ value in
-                    temp.append(Int(String(value))!)
-                }
-                while temp.count != 3 {
-                    temp.append(0)
-                }
-                modes = temp
-            }
 
-            switch operatorValue {
+            switch initialOperatorValue % 100 {
             case 1:
-                result[result[index+3]] = (modes[0] == 0 ? result[result[index+1]] : result[index+1]) + (modes[1] == 0 ? result[result[index+2]] : result[index+2])
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] =  values[0] + values[1]
                 index += 4
             case 2:
-                result[result[index+3]] = (modes[0] == 0 ? result[result[index+1]] : result[index+1]) * (modes[1] == 0 ? result[result[index+2]] : result[index+2])
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] =  values[0] * values[1]
                 index += 4
             case 3:
-                if modes.first == 0 {
-                    result[result[index + 1]] = value
-                } else {
-                    result[index+1] = value
-                }
+                result[result[index+1]] = value
                 index += 2
             case 4:
-                if modes.first == 0 { value = result[result[index+1]] } else { value = result[index+1] }
+                let values = parameters(result: result, count: 1, index: index + 1, opcode: initialOperatorValue)
+                value = values[0]
                 index += 2
+            case 5: // jump-if-true
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                if values[0] != 0 {
+                    index = values[1]
+                } else {
+                    index += 3
+                }
+            case 6:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                if values[0] == 0 {
+                    index = values[1]
+                } else {
+                    index += 3
+                }
+            case 7:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] = values[0] < values[1] ? 1 : 0
+                index += 4
+            case 8:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] = values[0] == values[1] ? 1 : 0
+                index += 4
+            case 99:
+                return value
             default:
                 break
             }
         }
 
         return value
+    }
+    
+    static func parameters(result: [Int], count: Int, index: Int, opcode: Int) -> [Int] {
+        
+        let array = Array(result[index..<(index+count)])
+        print(index)
+        let result = array.enumerated()
+            .map { tuple -> Int in
+                let (position, element) = tuple
+                let power = position + 2
+                let div = (pow(10, power) as NSDecimalNumber).intValue
+                return ((opcode / div) % 10 ) == 1 ? element : result[element]
+        }
+        
+        return result
     }
 
 }

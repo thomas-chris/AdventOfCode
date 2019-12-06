@@ -20,5 +20,15 @@ class Day5Tests: XCTestCase {
         XCTAssertEqual(output, 13210611)
         
     }
+    
+    func testExample2() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let input = Input.day5()
+        let output = Day5.calculate(list: input, input: 5)
+        XCTAssertEqual(output, 584126)
+        
+    }
 
 }
