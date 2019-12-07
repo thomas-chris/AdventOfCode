@@ -9,16 +9,18 @@
 import Foundation
 
 struct Day5 {
-    static func calculate(list: [Int], input: Int) -> Int {
-
+    static func calculate(list: [Int], inputs: [Int]) -> Int {
+        
         var result = list
+        
+        var output = 0
         var index = 0
-    
-        var value = input
+        var iteration = 0
+        
         while (result[index] % 100) != 99 {
-
+            
             let initialOperatorValue = result[index]
-
+            
             switch initialOperatorValue % 100 {
             case 1:
                 let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
@@ -29,11 +31,13 @@ struct Day5 {
                 result[result[index+3]] =  values[0] * values[1]
                 index += 4
             case 3:
-                result[result[index+1]] = value
+                result[result[index+1]] = inputs[iteration]
+                iteration += 1
+                
                 index += 2
             case 4:
                 let values = parameters(result: result, count: 1, index: index + 1, opcode: initialOperatorValue)
-                value = values[0]
+                output = values[0]
                 index += 2
             case 5: // jump-if-true
                 let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
@@ -58,19 +62,17 @@ struct Day5 {
                 result[result[index+3]] = values[0] == values[1] ? 1 : 0
                 index += 4
             case 99:
-                return value
+                return output
             default:
                 break
             }
         }
-
-        return value
+        return output
     }
     
     static func parameters(result: [Int], count: Int, index: Int, opcode: Int) -> [Int] {
         
         let array = Array(result[index..<(index+count)])
-        print(index)
         let result = array.enumerated()
             .map { tuple -> Int in
                 let (position, element) = tuple
@@ -81,6 +83,69 @@ struct Day5 {
         
         return result
     }
-
+    
 }
 
+extension Day5 {
+    static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
+        
+        var result = list
+        
+        var output = 0
+        var index = 0
+        var iteration = 0
+        
+        while (result[index] % 100) != 99 {
+            
+            let initialOperatorValue = result[index]
+            
+            switch initialOperatorValue % 100 {
+            case 1:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] =  values[0] + values[1]
+                index += 4
+            case 2:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] =  values[0] * values[1]
+                index += 4
+            case 3:
+                
+                result[result[index+1]] = iteration < inputs.count ? inputs[iteration] : inputs[inputs.count - 1]
+                iteration += 1
+                
+                index += 2
+            case 4:
+                let values = parameters(result: result, count: 1, index: index + 1, opcode: initialOperatorValue)
+                output = values[0]
+                index += 2
+            case 5: // jump-if-true
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                if values[0] != 0 {
+                    index = values[1]
+                } else {
+                    index += 3
+                }
+            case 6:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                if values[0] == 0 {
+                    index = values[1]
+                } else {
+                    index += 3
+                }
+            case 7:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] = values[0] < values[1] ? 1 : 0
+                index += 4
+            case 8:
+                let values = parameters(result: result, count: 2, index: index + 1, opcode: initialOperatorValue)
+                result[result[index+3]] = values[0] == values[1] ? 1 : 0
+                index += 4
+            case 99:
+                return (output, result)
+            default:
+                break
+            }
+        }
+        return (output, result)
+    }
+}

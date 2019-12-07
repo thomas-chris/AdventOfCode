@@ -95,9 +95,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "validatePart2(_:)"
-            landmarkType = "7">
+            endingLineNumber = "85">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -206,9 +204,9 @@
             filePath = "AdventOfCode/Day5/Day5.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "calculate(list:input:)"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "calculate(list:inputs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,25 +220,9 @@
             filePath = "AdventOfCode/Day5/Day5.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "calculate(list:input:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F726204-0431-47F7-9588-0E7A60E0A876"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/Day5/Day5.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "parameters(result:count:index:opcode:)"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "calculate(list:inputs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -257,6 +239,22 @@
             startingLineNumber = "15"
             endingLineNumber = "15"
             landmarkName = "day5()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C8A98FD-E73C-40B2-A438-19E3A7B926D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/Day5/Day5.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "calculate(list:inputs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
