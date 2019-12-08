@@ -66,13 +66,13 @@ class Day8 {
             if first0 == nil && first1 == nil {
                 return " "
             } else if first0 == nil {
-                return "◼️"
+                return "◻️"
             } else if first1 == nil {
-                return "◻️"
-            } else if first0! < first1! {
-                return "◻️"
-            } else {
                 return "◼️"
+            } else if first0! < first1! {
+                return "◼️"
+            } else {
+                return "◻️"
             }
             
         }
