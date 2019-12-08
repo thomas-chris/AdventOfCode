@@ -24,9 +24,8 @@ class Day8 {
         return twos * ones
     }
     
-    func part2(width: Int, height: Int) {
-        let layers = buildLayers2(width: width, height: height)
-        
+    func part2(width: Int, height: Int) -> [String] {
+        return buildLayers2(width: width, height: height)
     }
 
     func buildLayers(width: Int, height: Int) -> [Layer] {
@@ -46,7 +45,7 @@ class Day8 {
         return layers
     }
     
-    func buildLayers2(width: Int, height: Int) {
+    func buildLayers2(width: Int, height: Int) -> [String] {
         let lines = input.split(by: width * height)
         
         var newArray = lines.first!.map { String($0) }
@@ -60,7 +59,6 @@ class Day8 {
             count += 1
         }
         
-        var layers: [Layer] = []
         let reducedInput = newArray.map { value -> String in
             let first0 = value.firstIndex(of: "0")
             let first1 = value.firstIndex(of: "1")
@@ -79,24 +77,11 @@ class Day8 {
             
         }
         
-//        let nowSplitlines = reducedInput.split(by: width)
-//
-//        for i in stride(from: 0, to: nowSplitlines.count, by: height) {
-//            var newlines: [String] = []
-//
-//            for j in 0..<height {
-//                newlines.append(nowSplitlines[i + j])
-//            }
-//            let layer = Layer(lines: newlines)
-//            layers.append(layer)
-//        }
-//
-        
         let split = reducedInput.split(by: width)
         let rows = split.map { value in
             value.reduce("", +)
         }
-        print(rows)
+        return rows
     }
     
     

@@ -45,6 +45,5 @@ class Tests: XCTestCase {
         XCTAssertNotNil(answer)
         guard let result = answer else { return }
         XCTAssertEqual(100 * result.noun + result.verb, 8976)
-        print(100 * result.noun + result.verb)
     }
 }

@@ -33,11 +33,9 @@ class IntCode {
     
     func calculate(inputs: [Int]) {
         
-        print(inputs, index, (list[index] % 100))
         variableInputs = inputs
         
         while (list[index] % 100) != 99 {
-            print("made it to calculate again")
             let initialOperatorValue = list[index]
             
             switch initialOperatorValue % 100 {
