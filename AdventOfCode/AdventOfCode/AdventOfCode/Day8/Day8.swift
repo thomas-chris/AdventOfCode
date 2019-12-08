@@ -24,10 +24,10 @@ class Day8 {
         return twos * ones
     }
     
-//    func part2(width: Int, height: Int) {
-//        let layers = buildForPart2(width: width, height: height)
-//        
-//    }
+    func part2(width: Int, height: Int) {
+        let layers = buildLayers(width: width, height: height)
+        
+    }
 
     func buildLayers(width: Int, height: Int) -> [Layer] {
         
@@ -40,25 +40,6 @@ class Day8 {
                 newlines.append(lines[i + j])
             }
             let layer = Layer(lines: newlines)
-            layers.append(layer)
-        }
-        
-        return layers
-    }
-    
-    func buildForPart2(width: Int, height: Int) -> [Layer2]{
-        let lines = input.split(by: width)
-        let separatedStringLines = lines.map { line in
-            Array(line).map { String($0)}
-        }
-        var layers: [Layer2] = []
-        for i in stride(from: 0, to: separatedStringLines.count, by: height) {
-            var newlines: [[String]] = []
-            
-            for j in 0..<height {
-                newlines.append(separatedStringLines[i + j])
-            }
-            let layer = Layer2(charactersInLines: newlines)
             layers.append(layer)
         }
         
@@ -90,10 +71,6 @@ struct Layer {
     let lines: [String]
 }
 
-struct Layer2 {
-    let charactersInLines: [[String]]
-}
-
 extension String {
     func split(by length: Int) -> [String] {
         var startIndex = self.startIndex
@@ -108,9 +85,9 @@ extension String {
         return results
     }
     
-    func count(of needle: Character) -> Int {
+    func count(of character: Character) -> Int {
         return reduce(0) {
-            $1 == needle ? $0 + 1 : $0
+            $1 == character ? $0 + 1 : $0
         }
     }
 }
