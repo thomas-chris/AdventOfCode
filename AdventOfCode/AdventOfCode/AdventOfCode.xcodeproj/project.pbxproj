@@ -153,16 +153,7 @@
 		500DAF76239545A30081CC21 /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
-				500DAFA623963CFD0081CC21 /* Inputs */,
-				500DAF91239546010081CC21 /* Input.swift */,
-				500DAF90239545DD0081CC21 /* Day1 */,
-				500DAF9B239550F70081CC21 /* Day2 */,
-				500DAFA723963D150081CC21 /* Day3 */,
-				50936C9223978D9C001F58F3 /* Day4 */,
-				50936CA12398D066001F58F3 /* Day5 */,
-				50936CEA239A28E9001F58F3 /* Day6 */,
-				50978A4F239B826C0036AFA8 /* Day7 */,
-				50978A61239CCF820036AFA8 /* Day8 */,
+				50978A6D239D6BCB0036AFA8 /* 2019 */,
 				500DAF77239545A30081CC21 /* AdventOfCode.h */,
 				500DAF78239545A30081CC21 /* Info.plist */,
 			);
@@ -172,14 +163,8 @@
 		500DAF81239545A30081CC21 /* AdventOfCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				500DAF82239545A30081CC21 /* Tests.swift */,
+				50978A6E239D6BDD0036AFA8 /* 2019 */,
 				500DAF84239545A30081CC21 /* Info.plist */,
-				500DAFAC23964ADA0081CC21 /* Day3Tests.swift */,
-				50936C972397927C001F58F3 /* Day4Tests.swift */,
-				50936CA62398DFA7001F58F3 /* Day5Tests.swift */,
-				50936CEF239A2CBE001F58F3 /* Day6Tests.swift */,
-				50978A5B239B9B100036AFA8 /* Day7Tests.swift */,
-				50978A69239CD8C00036AFA8 /* Day8Tests.swift */,
 			);
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
@@ -319,6 +304,37 @@
 				50978A6B239CD8CD0036AFA8 /* Day8Test1.txt */,
 			);
 			path = Day8;
+			sourceTree = "<group>";
+		};
+		50978A6D239D6BCB0036AFA8 /* 2019 */ = {
+			isa = PBXGroup;
+			children = (
+				500DAFA623963CFD0081CC21 /* Inputs */,
+				500DAF91239546010081CC21 /* Input.swift */,
+				500DAF90239545DD0081CC21 /* Day1 */,
+				500DAF9B239550F70081CC21 /* Day2 */,
+				500DAFA723963D150081CC21 /* Day3 */,
+				50936C9223978D9C001F58F3 /* Day4 */,
+				50936CA12398D066001F58F3 /* Day5 */,
+				50936CEA239A28E9001F58F3 /* Day6 */,
+				50978A4F239B826C0036AFA8 /* Day7 */,
+				50978A61239CCF820036AFA8 /* Day8 */,
+			);
+			path = 2019;
+			sourceTree = "<group>";
+		};
+		50978A6E239D6BDD0036AFA8 /* 2019 */ = {
+			isa = PBXGroup;
+			children = (
+				500DAF82239545A30081CC21 /* Tests.swift */,
+				500DAFAC23964ADA0081CC21 /* Day3Tests.swift */,
+				50936C972397927C001F58F3 /* Day4Tests.swift */,
+				50936CA62398DFA7001F58F3 /* Day5Tests.swift */,
+				50936CEF239A2CBE001F58F3 /* Day6Tests.swift */,
+				50978A5B239B9B100036AFA8 /* Day7Tests.swift */,
+				50978A69239CD8C00036AFA8 /* Day8Tests.swift */,
+			);
+			path = 2019;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
