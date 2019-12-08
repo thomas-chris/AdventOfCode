@@ -89,6 +89,7 @@ struct Day5 {
 extension Day5 {
     static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
         
+        var inputs = inputs
         var result = list
         
         var output = 0
@@ -109,8 +110,11 @@ extension Day5 {
                 result[result[index+3]] =  values[0] * values[1]
                 index += 4
             case 3:
-                
-                result[result[index+1]] = iteration < inputs.count ? inputs[iteration] : inputs[inputs.count - 1]
+                if inputs.isEmpty {
+                    index -= 1
+                    return (output, result)
+                }
+                result[result[index+1]] = inputs.removeFirst()
                 iteration += 1
                 
                 index += 2

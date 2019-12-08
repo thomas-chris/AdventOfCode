@@ -23,7 +23,9 @@ struct Day7 {
         allCombinations.forEach { combination in
             var output = 0
             combination.forEach { value in
-                output = Day5.calculate(list: list, inputs: [value, output])
+                let intCode = IntCode(list: list)
+                intCode.calculate(inputs: [value, output])
+                output = intCode.output.last!
 
             }
             result = max(result, output)
@@ -35,22 +37,31 @@ struct Day7 {
         let allCombinations = generateSignalOptions(for: [5,6,7,8,9])
         var result = 0
         
-        [[9,8,7,6,5]].forEach { combination in
-            var output = (0, list)
-            var dictionary: [Int : [Int]] = [
-                0: list,
-                1: list,
-                2: list,
-                3: list,
-                4: list
-            ]
-            combination.enumerated().forEach { (index, value) in
-                output = Day5.calculateForFeedback(list: dictionary[index]!, inputs: [value, output.0], output: output.0)
-                dictionary[index] = output.1
-
+        allCombinations.forEach { combination in
+            
+            // have a program per thruster
+            let intCodeA = IntCode(list: list)
+            let intCodeB = IntCode(list: list)
+            let intCodeC = IntCode(list: list)
+            let intCodeD = IntCode(list: list)
+            let intCodeE = IntCode(list: list)
+            
+            var firstRun = true
+            
+            var count = 0
+            while !intCodeE.finished {
+                intCodeA.calculate(inputs: firstRun ? [combination[0], 0]: [intCodeE.output.last!])
+                intCodeB.calculate(inputs: firstRun ? [combination[1], intCodeA.output.last!]: [intCodeA.output.last!])
+                intCodeC.calculate(inputs: firstRun ? [combination[2], intCodeB.output.last!]: [intCodeB.output.last!])
+                intCodeD.calculate(inputs: firstRun ? [combination[3], intCodeC.output.last!]: [intCodeC.output.last!])
+                intCodeE.calculate(inputs: firstRun ? [combination[4], intCodeD.output.last!]: [intCodeD.output.last!])
+                count += 1
+                firstRun = false
             }
-            result = max(result, output.0)
+            
+            result = max(result, intCodeE.output.last ?? 0)
         }
+        
         return result
     }
     

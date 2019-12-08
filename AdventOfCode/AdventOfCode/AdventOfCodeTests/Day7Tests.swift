@@ -31,12 +31,23 @@ class Day7Tests: XCTestCase {
         XCTAssertEqual(output, 139629729)
     }
     
+    func testPart2() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let input = Input.day7(file: "Day7")
+        let day7 = Day7(list: input)
+        let output = day7.part2()
+        XCTAssertEqual(output, 36384144)
+    }
+    
     func testRefactorFor5() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let input = Input.day7(file: "Day5")
-        let output = Day5.calculate(list: input, inputs: [1])
-        XCTAssertEqual(output, 13210611)
+        let intCode = IntCode(list: input)
+        let output = intCode.calculate(inputs: [1])
+        XCTAssertEqual(intCode.output.last, 13210611)
     }
 }
