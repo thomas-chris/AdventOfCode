@@ -25,7 +25,7 @@ class Day8 {
     }
     
     func part2(width: Int, height: Int) {
-        let layers = buildLayers(width: width, height: height)
+        let layers = buildLayers2(width: width, height: height)
         
     }
 
@@ -45,6 +45,61 @@ class Day8 {
         
         return layers
     }
+    
+    func buildLayers2(width: Int, height: Int) {
+        let lines = input.split(by: width * height)
+        
+        var newArray = lines.first!.map { String($0) }
+        
+        var iterator = lines.dropFirst().makeIterator()
+        var count = 0
+        while let value = iterator.next() {
+            value.enumerated().forEach { (index, character) in
+                newArray[index] = String(newArray[index]) + String(character)
+            }
+            count += 1
+        }
+        
+        var layers: [Layer] = []
+        let reducedInput = newArray.map { value -> String in
+            let first0 = value.firstIndex(of: "0")
+            let first1 = value.firstIndex(of: "1")
+            
+            if first0 == nil && first1 == nil {
+                return " "
+            } else if first0 == nil {
+                return "◼️"
+            } else if first1 == nil {
+                return "◻️"
+            } else if first0! < first1! {
+                return "◻️"
+            } else {
+                return "◼️"
+            }
+            
+        }
+        
+//        let nowSplitlines = reducedInput.split(by: width)
+//
+//        for i in stride(from: 0, to: nowSplitlines.count, by: height) {
+//            var newlines: [String] = []
+//
+//            for j in 0..<height {
+//                newlines.append(nowSplitlines[i + j])
+//            }
+//            let layer = Layer(lines: newlines)
+//            layers.append(layer)
+//        }
+//
+        
+        let split = reducedInput.split(by: width)
+        let rows = split.map { value in
+            value.reduce("", +)
+        }
+        print(rows)
+    }
+    
+    
     
     func getLayerWithFewest0s(layers: [Layer]) -> Layer {
         var fewest0s: Int = Int.max
@@ -89,6 +144,21 @@ extension String {
         return reduce(0) {
             $1 == character ? $0 + 1 : $0
         }
+    }
+}
+
+extension Array where Element == String {
+    func split(by length: Int) -> [[String]] {
+        var startIndex = self.startIndex
+        var results = [[String]]()
+
+        while startIndex < self.endIndex {
+            let endIndex = self.index(startIndex, offsetBy: length, limitedBy: self.endIndex) ?? self.endIndex
+            results.append([String](self[startIndex..<endIndex]))
+            startIndex = endIndex
+        }
+
+        return results
     }
 }
 

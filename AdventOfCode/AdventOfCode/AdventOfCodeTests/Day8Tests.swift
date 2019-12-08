@@ -32,4 +32,14 @@ class Day8Tests: XCTestCase {
         let output = day8.part1(width: 25, height: 6)
         XCTAssertEqual(output, 2904)
     }
+    
+    func testPart2() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let input = Input.day8(file: "Day8")
+        let day8 = Day8(input: input)
+        day8.part2(width: 25, height: 6)
+//        XCTAssertEqual(output, 2904)
+    }
 }
