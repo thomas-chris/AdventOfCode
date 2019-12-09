@@ -168,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				50978A6D239D6BCB0036AFA8 /* 2019 */,
-				50978A5F239C1AD70036AFA8 /* IntCode.swift */,
 				500DAF77239545A30081CC21 /* AdventOfCode.h */,
 				500DAF78239545A30081CC21 /* Info.plist */,
 			);
@@ -324,6 +323,7 @@
 		50978A6D239D6BCB0036AFA8 /* 2019 */ = {
 			isa = PBXGroup;
 			children = (
+				50978A5F239C1AD70036AFA8 /* IntCode.swift */,
 				500DAFA623963CFD0081CC21 /* Inputs */,
 				500DAF91239546010081CC21 /* Input.swift */,
 				500DAF90239545DD0081CC21 /* Day1 */,
