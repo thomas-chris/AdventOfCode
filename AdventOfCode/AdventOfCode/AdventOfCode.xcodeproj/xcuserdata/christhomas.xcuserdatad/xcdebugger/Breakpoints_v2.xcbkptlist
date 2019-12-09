@@ -332,8 +332,8 @@
             filePath = "AdventOfCode/IntCode.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "calculate(inputs:)"
             landmarkType = "7">
          </BreakpointContent>

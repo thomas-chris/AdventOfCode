@@ -17,13 +17,21 @@ struct Day7 {
     }
     
     func part1() -> Int {
+        var count = 0
+        let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
+            var dict = dict
+            dict[count] = value
+            count += 1
+            return dict
+        }
+        
         let allCombinations = generateSignalOptions(for: [0,1,2,3,4])
         var result = 0
         
         allCombinations.forEach { combination in
             var output = 0
             combination.forEach { value in
-                let intCode = IntCode(list: list)
+                let intCode = IntCode(list: dictionary)
                 intCode.calculate(inputs: [value, output])
                 output = intCode.output.last!
 
@@ -37,14 +45,22 @@ struct Day7 {
         let allCombinations = generateSignalOptions(for: [5,6,7,8,9])
         var result = 0
         
+        var count = 0
+        let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
+            var dict = dict
+            dict[count] = value
+            count += 1
+            return dict
+        }
+        
         allCombinations.forEach { combination in
             
             // have a program per thruster
-            let intCodeA = IntCode(list: list)
-            let intCodeB = IntCode(list: list)
-            let intCodeC = IntCode(list: list)
-            let intCodeD = IntCode(list: list)
-            let intCodeE = IntCode(list: list)
+            let intCodeA = IntCode(list: dictionary)
+            let intCodeB = IntCode(list: dictionary)
+            let intCodeC = IntCode(list: dictionary)
+            let intCodeD = IntCode(list: dictionary)
+            let intCodeE = IntCode(list: dictionary)
             
             var firstRun = true
             

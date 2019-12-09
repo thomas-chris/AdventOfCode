@@ -23,7 +23,7 @@ struct Day9 {
             count += 1
             return dict
         }
-        let intCode = IntCode2(list: dictionary)
+        let intCode = IntCode(list: dictionary)
         intCode.calculate(inputs: inputs)
         let output = intCode.output
         
