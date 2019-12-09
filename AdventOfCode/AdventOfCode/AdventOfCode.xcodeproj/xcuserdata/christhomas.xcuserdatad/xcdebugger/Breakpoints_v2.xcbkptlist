@@ -112,38 +112,6 @@
             endingLineNumber = "18"
             landmarkName = "part1(input:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "75AECB22-59E5-4EC1-9388-3F9DF7FA298C - 7d6d70bc91247380"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static AdventOfCode.Day6.part1(input: Swift.Array&lt;AdventOfCode.OrbitPair&gt;) -&gt; Swift.Int"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Day6/Day6.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "273">
-               </Location>
-               <Location
-                  uuid = "75AECB22-59E5-4EC1-9388-3F9DF7FA298C - ed70addde34a5c0a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Int, (key: Swift.String, value: Swift.String)) -&gt; Swift.Int in static AdventOfCode.Day6.part1(input: Swift.Array&lt;AdventOfCode.OrbitPair&gt;) -&gt; Swift.Int"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Day6/Day6.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "155">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,38 +128,6 @@
             endingLineNumber = "30"
             landmarkName = "day6(file:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FC5F874A-2BD7-4CCA-8501-4892BA0DE553 - cab11f8e8aa1fe54"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static AdventOfCode.Input.day6(file: Swift.String) -&gt; Swift.Array&lt;AdventOfCode.OrbitPair&gt;"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Day6/Input+Day6.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "346">
-               </Location>
-               <Location
-                  uuid = "FC5F874A-2BD7-4CCA-8501-4892BA0DE553 - 154b504951595841"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; Swift.Optional&lt;AdventOfCode.OrbitPair&gt; in static AdventOfCode.Input.day6(file: Swift.String) -&gt; Swift.Array&lt;AdventOfCode.OrbitPair&gt;"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Day6/Input+Day6.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "70">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -383,6 +319,22 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "buildLayers2(width:height:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E71C04A-0EA7-4114-8CEA-A04B031E3BC1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/IntCode.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "calculate(inputs:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
