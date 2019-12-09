@@ -46,7 +46,16 @@ class Day7Tests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let input = Input.day7(file: "Day5")
-        let intCode = IntCode(list: input)
+        
+        var count = 0
+        let dictionary = input.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
+            var dict = dict
+            dict[count] = value
+            count += 1
+            return dict
+        }
+        
+        let intCode = IntCode2(list: dictionary)
         let output = intCode.calculate(inputs: [1])
         XCTAssertEqual(intCode.output.last, 13210611)
     }

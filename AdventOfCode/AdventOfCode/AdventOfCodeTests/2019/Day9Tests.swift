@@ -45,7 +45,14 @@ class Day9Tests: XCTestCase {
         let input = Input.day9(file: "Day9")
         let day9 = Day9(list: input)
         let output = day9.part1(inputs: [1])
-        XCTAssertEqual(output, [1125899906842624])
+        XCTAssertEqual(output, [4261108180])
+    }
+    
+    func test9Part2() {
+        let input = Input.day9(file: "Day9")
+        let day9 = Day9(list: input)
+        let output = day9.part1(inputs: [2])
+        XCTAssertEqual(output, [77944])
     }
     
 }
