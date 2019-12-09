@@ -40,15 +40,14 @@ class IntCode {
                 let initialOperatorValue = list[index]!
                 
                 var opCodeString = String(initialOperatorValue)
-                let e = opCodeString.count > 0 ? String(opCodeString.removeLast()) : ""
-                let d = opCodeString.count > 0 ? String(opCodeString.removeLast()) : ""
-                let c = opCodeString.count > 0 ? String(opCodeString.removeLast()) : ""
-                let b = opCodeString.count > 0 ? String(opCodeString.removeLast()) : ""
-                let a = opCodeString.count > 0 ? String(opCodeString.removeLast()) : ""
                 
-                let param0Mode = Mode(rawValue: Int(c) ?? 0)!
-                let param1Mode = Mode(rawValue: Int(b) ?? 0)!
-                let param2Mode = Mode(rawValue: Int(a) ?? 0)!
+                let c = initialOperatorValue % 10000 % 1000 / 100
+                let b = initialOperatorValue % 10000 / 1000
+                let a = initialOperatorValue / 10000
+                
+                let param0Mode = Mode(rawValue: Int(c))!
+                let param1Mode = Mode(rawValue: Int(b))!
+                let param2Mode = Mode(rawValue: Int(a))!
                 
                 switch initialOperatorValue % 100 {
                 case 1:
