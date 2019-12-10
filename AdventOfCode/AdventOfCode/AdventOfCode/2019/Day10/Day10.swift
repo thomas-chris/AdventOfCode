@@ -15,68 +15,66 @@ struct Day10 {
         self.input = input
     }
     
-    func part1() -> (Position, Int) {
+    func part1() -> (Position, Int, [Position]) {
         let viewableAsteroidsAtEachPosition = calculateUniqueGradients()
         
         var maxViewable: Position = Position(x: 0, y: 0)
         var maxViewableValue = 0
+        var closeOnes = [Position]()
         
         viewableAsteroidsAtEachPosition.forEach { (key, value) in
-            if value > maxViewableValue {
+            if value.0 > maxViewableValue {
                 maxViewable = key
-                maxViewableValue = value
+                maxViewableValue = value.0
+                closeOnes = value.1
             }
         }
         
-        return (maxViewable, maxViewableValue)
+        return (maxViewable, maxViewableValue, closeOnes)
         
     }
     
     func part2() -> Int {
-        let laserLocation = part1().0
-        let dictionary = getGradientAndAsteroidsOnItForEveryAsteroid()
-        
-        guard let intermidiate = dictionary[laserLocation] else { return 0 }
-        var count = 0
-        var positions = intermidiate.map { (key, value) in
-            return value
-        }
-        
-        var positionOf200 = Position(x: 0, y: 0)
-        while count < 200 {
-            positions.enumerated().forEach { (index,value) in
-                if let position = value.first {
-                    positionOf200 = position
-                    positions[index] = Array(value.dropFirst())
-                    count += 1
-                }
+        let part1Answer = part1()
+        let laserLocation = part1Answer.0
+        let asteroids = part1Answer.2
+
+        let sortedAsteroids = asteroids
+            .map { asteroid -> (Position, Double) in
+                let angle = Angle(start: laserLocation, end: asteroid)
+                return (asteroid, angle.value)
             }
-        }
-        
-        return (positionOf200.x * 100) + positionOf200.y
+            .sorted { $0.1 < $1.1 }
+
+        let asteroidPosition = sortedAsteroids[199].0
+        return asteroidPosition.x * 100 + asteroidPosition.y
     }
 }
 
 extension Day10 {
-    func calculateUniqueGradients() -> [Position: Int] {
+    func calculateUniqueGradients() -> [Position: (Int, [Position])] {
         let positionDictionaryWithDictionaryOfGradientsWithEachAsteroidOnGradient = getGradientAndAsteroidsOnItForEveryAsteroid()
         
-        var canViewDictionary = [Position: Int]()
+        var canViewDictionary = [Position: (Int, [Position])]()
         positionDictionaryWithDictionaryOfGradientsWithEachAsteroidOnGradient.forEach { (position, value) in
             var canView = 0
+            var closeOnes = [Position]()
             value.forEach { (gradient, otherPositions) in
                 if otherPositions.count == 1 {
                     canView += 1
+                    closeOnes.append(otherPositions.first!)
                 } else if otherPositions.count > 0 {
-                    canView += numberOfDirections(position: position, positions: otherPositions)
+                    let response = numberOfDirections(position: position, positions: otherPositions)
+                    canView += response.0
+                    closeOnes.append(contentsOf: response.1)
                 }
             }
-            canViewDictionary[position] = canView
+            canViewDictionary[position] = (canView, closeOnes)
         }
         return canViewDictionary
     }
     
-    func numberOfDirections(position: Position, positions: [Position]) -> Int {
+    func numberOfDirections(position: Position, positions: [Position]) -> (Int, [Position]) {
         var isLeftAndUp = false
         var isRightAndUp = false
         var isLeftAndDown = false
@@ -86,29 +84,54 @@ extension Day10 {
         var onXPlaneAndYSmall = false
         var onXPlaneAndYBig = false
         var count = 0
+        var closeOnes = [Position]()
         positions.forEach { value in
             if value.x < position.x && value.y < position.y {
+                if !isLeftAndDown {
+                    closeOnes.append(value)
+                }
                 isLeftAndDown = true
             }
             if value.x < position.x && value.y > position.y {
+                if !isLeftAndUp {
+                    closeOnes.append(value)
+                }
                 isLeftAndUp = true
             }
             if value.x > position.x && value.y < position.y {
+                if !isRightAndDown {
+                    closeOnes.append(value)
+                }
                 isRightAndDown = true
             }
             if value.x > position.x && value.y > position.y {
+                if !isRightAndUp {
+                    closeOnes.append(value)
+                }
                 isRightAndUp = true
             }
             if value.x == position.x && value.y < position.y{
+                if !onXPlaneAndYSmall {
+                    closeOnes.append(value)
+                }
                 onXPlaneAndYSmall = true
             }
             if value.x == position.x && value.y > position.y{
+                if !onXPlaneAndYBig {
+                    closeOnes.append(value)
+                }
                 onXPlaneAndYBig = true
             }
             if value.y == position.y && value.x > position.x {
+                if !onYPlaneXBig {
+                    closeOnes.append(value)
+                }
                 onYPlaneXBig = true
             }
             if value.y == position.y && value.x < position.x {
+                if !onYPlaneXSmall {
+                    closeOnes.append(value)
+                }
                 onYPlaneXSmall = true
             }
         }
@@ -138,7 +161,9 @@ extension Day10 {
             count += 1
         }
         
-        return count
+
+        
+        return (count, closeOnes)
     }
     
     func getGradientAndAsteroidsOnItForEveryAsteroid() -> [Position : [Float: [Position]]]{
@@ -157,5 +182,19 @@ extension Day10 {
             dictionary[position] = dictionary2
         }
         return dictionary
+    }
+}
+
+struct Angle {
+    let start: Position
+    let end: Position
+
+    var value: Double {
+        let opposite = Double(end.x - start.x)
+        let adjacent = Double(end.y - start.y)
+        let angle = atan2(adjacent, opposite)
+        // Angles start from y = 0 so this bumps 90° and makes all values
+        // between 0 and 2π.
+        return (angle + 2.5 * .pi).truncatingRemainder(dividingBy: 2 * .pi)
     }
 }

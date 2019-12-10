@@ -51,4 +51,12 @@ class Day10Tests: XCTestCase {
         XCTAssertEqual(result, 802)
     }
     
+    
+      func testPart2() {
+          let input = Input.day10(file: "Day10")
+          let day10 = Day10(input: input)
+          let result = day10.part2()
+          XCTAssertEqual(result, 608)
+      }
+    
 }
