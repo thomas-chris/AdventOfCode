@@ -8,11 +8,6 @@
 
 import Foundation
 
-struct Position: Equatable, Hashable {
-    let x: Int
-    let y: Int
-}
-
 extension Input {
     static func day10(file: String) -> [Position] {
         let data = Input.getInput(name: file)

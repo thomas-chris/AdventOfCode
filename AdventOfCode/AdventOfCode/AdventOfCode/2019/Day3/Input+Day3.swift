@@ -10,13 +10,6 @@ import Foundation
 
 typealias Day3Input = [Double: (direction: Direction, distance: Double)]
 
-enum Direction: String {
-    case up = "U"
-    case down = "D"
-    case left = "L"
-    case right = "R"
-}
-
 extension Input {
     static func day3Input(file: String) -> (path1: [Double: (direction: Direction, distance: Double)], path2: [Double: (direction: Direction, distance: Double)]) {
         let data = Input.getInput(name: file)
