@@ -15,7 +15,7 @@ struct Day11 {
     init(list: [Int]) {
         self.list = list
     }
-    func    part1(inputs: [Int]) -> Int {
+    func part1(inputs: [Int]) -> Int {
         var count = 0
         let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
             var dict = dict
@@ -24,8 +24,24 @@ struct Day11 {
             return dict
         }
     
-        let panels = paint(list: dictionary, initialInputs: [0])
+        let panels = paint(list: dictionary, initialInputs: inputs)
         return panels.count
+    }
+    
+    func part2(inputs: [Int]) {
+        var count = 0
+        let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
+            var dict = dict
+            dict[count] = value
+            count += 1
+            return dict
+        }
+    
+        let panels = paint(list: dictionary, initialInputs: inputs)
+        
+        let registration = printRegistration(panels)
+        
+        print(registration)
     }
     
     func rotate(for rotation: Int, currentDirection: Direction) -> Direction {
@@ -77,6 +93,28 @@ struct Day11 {
         }
         
         return paintingDictionary
+    }
+    
+    func printRegistration(_ output: [Position:Int]) -> String {
+        let minimumX = output.reduce(0) { min($0,$1.key.x) }
+        let minimumY = output.reduce(0) { min($0,$1.key.y) }
+        let maximumX = output.reduce(0) { max($0,$1.key.x) }
+        let maximumY = output.reduce(0) { max($0,$1.key.y) }
+        var registration = ""
+        for y in (0...maximumY-minimumY).reversed() {
+            var row = ""
+            for x in 0...maximumX - minimumX {
+                let value = output[Position(x: x + minimumX, y: y + minimumY)] ?? 0
+                if value == 1 {
+                    row += "◻️"
+                } else {
+                    row += "◼️"
+                }
+            }
+            registration += row + "\n"
+        }
+        // GARPKZUL
+        return registration
     }
 }
 

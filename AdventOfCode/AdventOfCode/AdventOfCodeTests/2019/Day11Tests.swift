@@ -22,5 +22,6 @@ class Day11Tests: XCTestCase {
         let day11 = Day11(list: input)
         let output = day11.part1(inputs: [0])
         XCTAssertEqual(output, 1686)
+        day11.part2(inputs: [1])
     }
 }
