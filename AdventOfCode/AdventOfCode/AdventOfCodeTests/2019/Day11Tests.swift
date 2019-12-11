@@ -21,6 +21,6 @@ class Day11Tests: XCTestCase {
         let input = Input.day11(file: "Day11")
         let day11 = Day11(list: input)
         let output = day11.part1(inputs: [0])
-        XCTAssertEqual(output, 6904)
+        XCTAssertEqual(output, 1686)
     }
 }
