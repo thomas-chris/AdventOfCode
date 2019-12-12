@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension Input {
-    static func day2Input() -> [Int] {
+public extension Input {
+    public static func day2Input() -> [Int] {
         let data = Input.getInput(name: "Day2")
         let string = String(decoding: data, as: UTF8.self)
         let array = string.components(separatedBy: ",")

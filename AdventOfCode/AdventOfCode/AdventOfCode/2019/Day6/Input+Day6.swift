@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct OrbitPair {
+public struct OrbitPair {
     let orbiter: String
     let center: String
     
@@ -22,7 +22,7 @@ struct OrbitPair {
     }
 }
 
-extension Input {
+public extension Input {
     static func day6(file: String) -> [OrbitPair] {
         let data = Input.getInput(name: file)
         let string = String(decoding: data, as: UTF8.self)

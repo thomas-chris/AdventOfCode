@@ -10,11 +10,15 @@ import Foundation
 
 class InputBundle { }
 
-struct Input {
-    let line: String
+public  struct Input {
+    public let line: String
+    
+    public init(line: String) {
+        self.line = line
+    }
 }
 
-extension Input {
+public extension Input {
     static func getInput(name: String) -> Data {
         let bundle = Bundle(for: InputBundle.self)
 

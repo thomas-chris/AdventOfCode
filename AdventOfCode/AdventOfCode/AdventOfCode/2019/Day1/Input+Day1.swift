@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Input {
+public extension Input {
     static func day1Input() -> [Double] {
         let data = Input.getInput(name: "Day1")
         let string = String(decoding: data, as: UTF8.self)

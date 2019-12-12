@@ -8,8 +8,8 @@
 //
 import Foundation
 
-struct Day5 {
-    static func calculate(list: [Int], inputs: [Int]) -> Int {
+public struct Day5 {
+    public static func calculate(list: [Int], inputs: [Int]) -> Int {
         
         var result = list
         
@@ -70,7 +70,7 @@ struct Day5 {
         return output
     }
     
-    static func parameters(result: [Int], count: Int, index: Int, opcode: Int) -> [Int] {
+    public static func parameters(result: [Int], count: Int, index: Int, opcode: Int) -> [Int] {
         
         let array = Array(result[index..<(index+count)])
         let result = array.enumerated()
@@ -86,8 +86,8 @@ struct Day5 {
     
 }
 
-extension Day5 {
-    static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
+public extension Day5 {
+    public static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
         
         var inputs = inputs
         var result = list

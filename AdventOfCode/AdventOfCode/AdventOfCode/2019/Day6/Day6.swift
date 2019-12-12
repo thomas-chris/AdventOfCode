@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Day6 {
-    static func part1(input: [OrbitPair]) -> Int {
+public struct Day6 {
+    public static func part1(input: [OrbitPair]) -> Int {
         var orbitsDictionary : [String: String] = [:]
         input.forEach { value in
             orbitsDictionary[value.orbiter] = value.center
@@ -17,7 +17,7 @@ struct Day6 {
         
         return orbitsDictionary.reduce(0) { $0 + count(key: $1.key, dictionary: orbitsDictionary)}
     }
-    static func part2(input: [OrbitPair]) -> Int {
+    public static func part2(input: [OrbitPair]) -> Int {
         var orbitsDictionary : [String: String] = [:]
         input.forEach { value in
             orbitsDictionary[value.orbiter] = value.center
@@ -35,7 +35,7 @@ struct Day6 {
         return 0
     }
     
-    static func chain(key: String, dictionary: [String: String]) -> [String] {
+    public static func chain(key: String, dictionary: [String: String]) -> [String] {
         if key == "COM" {
            return [key]
         }
@@ -47,7 +47,7 @@ struct Day6 {
         return [key]
     }
     
-    static func count(key: String, dictionary: [String:String]) -> Int {
+    public static func count(key: String, dictionary: [String:String]) -> Int {
         if key == "COM" {
             return 0
         }

@@ -8,20 +8,20 @@
 
 import Foundation
 
-class IntCode {
-    var list: [Int: Int]
-        var output = [Int]()
+public class IntCode {
+        public var list: [Int: Int]
+        public var output = [Int]()
         var index = 0
         var finished = false
         var wait = false
         var variableInputs: [Int] = []
         var relativeBase = 0
         
-        init(list: [Int: Int]) {
+        public init(list: [Int: Int]) {
             self.list = list
         }
         
-        func append(input: Int) {
+        public func append(input: Int) {
             variableInputs.append(input)
             wait = false
             
@@ -32,7 +32,7 @@ class IntCode {
             return
         }
         
-        func calculate(inputs: [Int]) {
+        public func calculate(inputs: [Int]) {
             
             variableInputs = inputs
             
@@ -127,7 +127,7 @@ class IntCode {
             return
         }
         
-        func parameters(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
+        public func parameters(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
             switch mode {
             case .immediate:
                 return list[index] ?? 0
@@ -139,7 +139,7 @@ class IntCode {
             
         }
         
-        func writeIndex(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
+        public func writeIndex(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
             switch mode {
             case .immediate:
                 return index
@@ -151,7 +151,7 @@ class IntCode {
         }
     }
 
-    enum Mode: Int {
+    public enum Mode: Int {
         case position = 0
         case immediate = 1
         case relative = 2

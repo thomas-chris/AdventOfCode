@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Day4 {
-    static func part1(passwordRange: PasswordRange) -> String {
+public struct Day4 {
+    public static func part1(passwordRange: PasswordRange) -> String {
         var validPasswords: [String] = []
         let range = Array(Int(passwordRange.start)!...Int(passwordRange.end)!)
         range.forEach { value in
@@ -22,7 +22,7 @@ struct Day4 {
         return String(validPasswords.count)
     }
     
-    static func part2(passwordRange: PasswordRange) -> String {
+    public static func part2(passwordRange: PasswordRange) -> String {
         var validPasswords: [String] = []
         let range = Array(Int(passwordRange.start)!...Int(passwordRange.end)!)
         range.forEach { value in
@@ -36,7 +36,7 @@ struct Day4 {
         
     }
     
-    static func validatePassword(_ option: String) -> Bool {
+    public static func validatePassword(_ option: String) -> Bool {
         var hasPair = false
         var neverDecreases = true
         let array = option.compactMap { $0.wholeNumberValue }
@@ -53,7 +53,7 @@ struct Day4 {
         return hasPair && neverDecreases
     }
     
-    static func validatePart2(_ option: String) -> Bool {
+    public static func validatePart2(_ option: String) -> Bool {
        var hasPair = false
         let array = option.compactMap { $0.wholeNumberValue }
         guard array == array.sorted() else { return false }
@@ -77,7 +77,7 @@ struct Day4 {
         
     }
     
-    struct Key: Hashable {
+    public struct Key: Hashable {
         let x: Int
         let y: Int
     }

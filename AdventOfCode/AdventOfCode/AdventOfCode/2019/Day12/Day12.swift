@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Planet: Int {
+public enum Planet: Int {
     case Io = 0
     case Europa = 1
     case Ganymede = 2
@@ -16,14 +16,14 @@ enum Planet: Int {
 }
 
 
-class Day12 {
+public class Day12 {
     let input: [XYZ]
     
-    init(input: [XYZ]) {
+    public init(input: [XYZ]) {
         self.input = input
     }
     
-    func part1(loops: Int) -> Int {
+    public func part1(loops: Int) -> Int {
         var state = [Planet: (position: XYZ, velocity: XYZ)]()
             input.enumerated().forEach { (index, position) in
             state[Planet(rawValue: index)!] = (position: position, velocity: XYZ.zero)
@@ -50,7 +50,7 @@ class Day12 {
         return energy
     }
     
-    func part2() -> Int {
+    public func part2() -> Int {
         var state = [Planet: (position: XYZ, velocity: XYZ)]()
             input.enumerated().forEach { (index, position) in
             state[Planet(rawValue: index)!] = (position: position, velocity: XYZ.zero)
@@ -122,7 +122,7 @@ class Day12 {
         return result
     }
     
-    func move(initialState: (position: XYZ, velocity: XYZ), otherBodyPostions: [XYZ]) -> (position: XYZ, velocity: XYZ) {
+    public func move(initialState: (position: XYZ, velocity: XYZ), otherBodyPostions: [XYZ]) -> (position: XYZ, velocity: XYZ) {
         var xChange = 0
         var yChange = 0
         var zChange = 0
@@ -154,7 +154,7 @@ class Day12 {
         return (position: newPostion, velocity: velocity)
     }
     
-    func greatestCommonDivisor(_ value1: Int, _ value2: Int) -> Int {
+    public func greatestCommonDivisor(_ value1: Int, _ value2: Int) -> Int {
         var i: Int = 0
         var j: Int = max(value1, value2)
         var result: Int = min(value1, value2)
@@ -167,7 +167,7 @@ class Day12 {
         return j
     }
 
-    func lowestCommonMultiple(_ value1: Int, _ value2: Int) -> Int {
+    public func lowestCommonMultiple(_ value1: Int, _ value2: Int) -> Int {
         return (value1 * value2) / greatestCommonDivisor(value1, value2)
     }
 }

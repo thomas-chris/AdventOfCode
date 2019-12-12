@@ -8,7 +8,7 @@
 
 import Foundation
 
-@testable import AdventOfCode
+import AdventOfCode
 import XCTest
 
 class Day8Tests: XCTestCase {

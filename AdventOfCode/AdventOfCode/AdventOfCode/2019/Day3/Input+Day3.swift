@@ -8,10 +8,10 @@
 
 import Foundation
 
-typealias Day3Input = [Double: (direction: Direction, distance: Double)]
+public typealias Day3Input = [Double: (direction: Direction, distance: Double)]
 
-extension Input {
-    static func day3Input(file: String) -> (path1: [Double: (direction: Direction, distance: Double)], path2: [Double: (direction: Direction, distance: Double)]) {
+public extension Input {
+    public static func day3Input(file: String) -> (path1: [Double: (direction: Direction, distance: Double)], path2: [Double: (direction: Direction, distance: Double)]) {
         let data = Input.getInput(name: file)
         let string = String(decoding: data, as: UTF8.self)
         let array = string.components(separatedBy: "\n")
@@ -23,8 +23,8 @@ extension Input {
     }
 }
 
-extension Array where Element == String {
-    func getDay3Data() -> [Double: (direction: Direction, distance: Double)] {
+public extension Array where Element == String {
+    public func getDay3Data() -> [Double: (direction: Direction, distance: Double)] {
         var index = 0
         return self.reduce(into: [Double: (direction: Direction, distance: Double)]()) {
             let directionString = String($1.prefix(1))

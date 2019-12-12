@@ -8,15 +8,15 @@
 
 import Foundation
 
-struct Day7 {
+public struct Day7 {
     
     let list: [Int]
     
-    init(list: [Int]) {
+    public init(list: [Int]) {
         self.list = list
     }
     
-    func part1() -> Int {
+    public func part1() -> Int {
         var count = 0
         let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
             var dict = dict
@@ -41,7 +41,7 @@ struct Day7 {
         return result
     }
     
-    func part2() -> Int {
+    public func part2() -> Int {
         let allCombinations = generateSignalOptions(for: [5,6,7,8,9])
         var result = 0
         

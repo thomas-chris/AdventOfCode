@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Day2 {
-    static func calculate(list: [Int]) -> [Int] {
+public struct Day2 {
+    public static func calculate(list: [Int]) -> [Int] {
         
         var result = list
         
@@ -41,19 +41,19 @@ struct Day2 {
         return result
     }
 
-    static func getPair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
+   public static func getPair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
         let newList = changePair(list: list, pair: pair)
         return calculate(list: newList)
     }
     
-    static func changePair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
+    public static func changePair(list: [Int], pair: (noun: Int, verb: Int)) -> ([Int]) {
         var list = list
         list[1] = pair.noun
         list[2] = pair.verb
         return list
     }
     
-    static func reverseEngineerIt(result: Int, initialInput: [Int]) -> (noun: Int, verb: Int)? {
+    public static func reverseEngineerIt(result: Int, initialInput: [Int]) -> (noun: Int, verb: Int)? {
         
         if result == calculate(list: initialInput)[0] {
             return (noun: initialInput[1], verb: initialInput[2])

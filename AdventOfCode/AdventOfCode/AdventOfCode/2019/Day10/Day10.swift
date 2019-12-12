@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Day10 {
+public struct Day10 {
     let input: [Position]
     
-    init(input: [Position]) {
+    public init(input: [Position]) {
         self.input = input
     }
     
-    func part1() -> (Position, Int, [Position]) {
+    public func part1() -> (Position, Int, [Position]) {
         let viewableAsteroidsAtEachPosition = calculateUniqueGradients()
         
         var maxViewable: Position = Position(x: 0, y: 0)
@@ -34,7 +34,7 @@ struct Day10 {
         
     }
     
-    func part2() -> Int {
+    public func part2() -> Int {
         let part1Answer = part1()
         let laserLocation = part1Answer.0
         let asteroids = part1Answer.2
@@ -51,7 +51,7 @@ struct Day10 {
     }
 }
 
-extension Day10 {
+public extension Day10 {
     func calculateUniqueGradients() -> [Position: (Int, [Position])] {
         let positionDictionaryWithDictionaryOfGradientsWithEachAsteroidOnGradient = getGradientAndAsteroidsOnItForEveryAsteroid()
         

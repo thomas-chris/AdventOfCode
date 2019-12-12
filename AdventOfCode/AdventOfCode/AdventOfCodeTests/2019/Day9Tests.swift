@@ -6,7 +6,7 @@
 //  Copyright © 2019 Chris Thomas. All rights reserved.
 //
 
-@testable import AdventOfCode
+import AdventOfCode
 import XCTest
 
 class Day9Tests: XCTestCase {

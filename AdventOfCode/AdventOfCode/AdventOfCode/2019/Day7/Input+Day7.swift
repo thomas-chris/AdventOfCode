@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Input {
+public extension Input {
     static func day7(file: String) -> [Int] {
         let data = Input.getInput(name: file)
         let string = String(decoding: data, as: UTF8.self)

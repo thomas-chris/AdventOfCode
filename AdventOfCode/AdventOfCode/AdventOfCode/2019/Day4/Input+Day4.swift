@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct PasswordRange {
+public struct PasswordRange {
     let start: String
     let end: String
 }
 
-extension Input {
-    static func day4(file: String) -> PasswordRange {
+public extension Input {
+    public static func day4(file: String) -> PasswordRange {
         let data = Input.getInput(name: file)
         var string = String(decoding: data, as: UTF8.self)
         let trimmed = string.trimmingCharacters(in: CharacterSet(charactersIn: "\n"))

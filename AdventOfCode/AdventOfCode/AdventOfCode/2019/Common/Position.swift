@@ -8,19 +8,30 @@
 
 import Foundation
 
-struct Position: Equatable, Hashable {
+public struct Position: Equatable, Hashable {
     let x: Int
     let y: Int
+    
+    public init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
 }
 
-struct XYZ: Equatable, Hashable {
+public struct XYZ: Equatable, Hashable {
     let x: Int
     let y: Int
     let z: Int
     
-    static let zero = XYZ(x: 0, y: 0, z: 0)
+    public init(x: Int, y: Int, z: Int) {
+        self.x = x
+        self.y = y
+        self.z = z
+    }
     
-    var energy: Int {
+    public static let zero = XYZ(x: 0, y: 0, z: 0)
+    
+    public var energy: Int {
         abs(x) + abs(y) + abs(z)
     }
 }

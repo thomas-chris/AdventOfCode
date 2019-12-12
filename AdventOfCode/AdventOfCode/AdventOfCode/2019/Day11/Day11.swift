@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct Day11 {
+public struct Day11 {
     
     let list: [Int]
     
-    init(list: [Int]) {
+    public init(list: [Int]) {
         self.list = list
     }
-    func part1(inputs: [Int]) -> Int {
+    public func part1(inputs: [Int]) -> Int {
         var count = 0
         let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
             var dict = dict
@@ -28,7 +28,7 @@ struct Day11 {
         return panels.count
     }
     
-    func part2(inputs: [Int]) {
+    public func part2(inputs: [Int]) {
         var count = 0
         let dictionary = list.reduce([Int: Int]()) { (dict, value) -> [Int: Int] in
             var dict = dict

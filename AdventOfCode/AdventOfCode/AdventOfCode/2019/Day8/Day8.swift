@@ -8,15 +8,15 @@
 
 import Foundation
 
-class Day8 {
+public class Day8 {
     
     let input: String
     
-    init(input: String) {
+    public init(input: String) {
         self.input = input
     }
     
-    func part1(width: Int, height: Int) -> Int {
+    public func part1(width: Int, height: Int) -> Int {
         let layers = buildLayers(width: width, height: height)
         let layer = getLayerWithFewest0s(layers: layers)
         let ones = layer.lines.map { $0.count(of: "1") }.reduce(0, +)
@@ -24,7 +24,7 @@ class Day8 {
         return twos * ones
     }
     
-    func part2(width: Int, height: Int) -> [String] {
+    public func part2(width: Int, height: Int) -> [String] {
         return buildLayers2(width: width, height: height)
     }
 

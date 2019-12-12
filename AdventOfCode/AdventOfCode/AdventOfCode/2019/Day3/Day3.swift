@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct Point: Equatable, Hashable {
+public struct Point: Equatable, Hashable {
     let x: Double
     let y: Double
 }
 
-struct Day3 {
-    static func calculateManhattanDistanceOfTwoPoints(from: Point, to: Point) -> Double {
+public struct Day3 {
+    public static func calculateManhattanDistanceOfTwoPoints(from: Point, to: Point) -> Double {
         return (abs(from.x - to.x) + abs(from.y - to.y))
     }
     
-    static func createListOfPoints(directions: Day3Input) -> [(Point, Int)] {
+    public static func createListOfPoints(directions: Day3Input) -> [(Point, Int)] {
         let start = (Point(x: 0, y: 0), 0)
         var lastPoint = start
         var points: [(Point, Int)] = []
@@ -32,7 +32,7 @@ struct Day3 {
         return points
     }
     
-    static func getNewCoordinate(from: (direction: Direction, distance: Double), startingAt: (Point, Int), points: [(Point, Int)]) -> [(Point, Int)] {
+    public static func getNewCoordinate(from: (direction: Direction, distance: Double), startingAt: (Point, Int), points: [(Point, Int)]) -> [(Point, Int)] {
         var points = points
         let time = points.last?.1 ?? 0
         switch from.direction {
@@ -57,7 +57,7 @@ struct Day3 {
         return points
     }
     
-    static func getMatchingPoints(first: [(Point, Int)], second: [(Point, Int)]) -> [Point] {
+    public static func getMatchingPoints(first: [(Point, Int)], second: [(Point, Int)]) -> [Point] {
         
         let firstSet = Set(first.map { $0.0 })
         let secondSet = Set(second.map { $0.0 })
@@ -66,7 +66,7 @@ struct Day3 {
         return array
     }
     
-    static func getShortestDistanceOfIntersection(points: [Point]) -> Double {
+    public static func getShortestDistanceOfIntersection(points: [Point]) -> Double {
         let origin = Point(x: 0, y: 0)
         let distancesFromOrigin = points.map {
             abs($0.x) + abs($0.y)
@@ -82,7 +82,7 @@ struct Day3 {
         return Double(filteredDistances.min { a, b in a < b } ?? 0)
     }
     
-    static func getStepsForTimeOfIntersection(first: [(Point, Int)], second: [(Point, Int)], matching: [Point]) -> Int {
+    public static func getStepsForTimeOfIntersection(first: [(Point, Int)], second: [(Point, Int)], matching: [Point]) -> Int {
         
         let matchedPoint1s = first.filter { (value) -> Bool in
             matching.contains(value.0)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Direction: String {
+public enum Direction: String {
     case up = "U"
     case down = "D"
     case left = "L"
