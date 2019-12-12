@@ -37,11 +37,35 @@ class Day12Tests: XCTestCase {
         XCTAssertEqual(result2.velocity, XYZ(x: 3, y: -2, z: -2))
     }
     
-    func testDay12Example1() {
+    func testDay12Example1Part1() {
         let input = Input.day12(file: "Day12Example1")
         let day12 = Day12(input: input)
         let result = day12.part1(loops: 10)
         
         XCTAssertEqual(result, 179)
+    }
+    
+    func testDay12Example1Part2() {
+        let input = Input.day12(file: "Day12Example1")
+        let day12 = Day12(input: input)
+        let result = day12.part2()
+        
+        XCTAssertEqual(result, 2772)
+    }
+    
+    func testDay12Example2Part2() {
+        let input = Input.day12(file: "Day12Example2")
+        let day12 = Day12(input: input)
+        let result = day12.part2()
+        
+        XCTAssertEqual(result, 4686774924)
+    }
+    
+    func testDay12Part2() {
+        let input = Input.day12(file: "Day12")
+        let day12 = Day12(input: input)
+        let result = day12.part2()
+        
+        XCTAssertEqual(result, 281691380235984)
     }
 }

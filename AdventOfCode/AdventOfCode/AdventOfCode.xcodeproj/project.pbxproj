@@ -12,6 +12,7 @@
 		50086CAB23A21449002613B7 /* Day12.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CAA23A21449002613B7 /* Day12.txt */; };
 		50086CAD23A21461002613B7 /* Day12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CAC23A21461002613B7 /* Day12Tests.swift */; };
 		50086CAF23A229C3002613B7 /* Day12Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CAE23A229C3002613B7 /* Day12Example1.txt */; };
+		50086CB223A244E4002613B7 /* Day12Example2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CB123A244E4002613B7 /* Day12Example2.txt */; };
 		500DAF7E239545A30081CC21 /* AdventOfCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DAF74239545A30081CC21 /* AdventOfCode.framework */; };
 		500DAF83239545A30081CC21 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DAF82239545A30081CC21 /* Tests.swift */; };
 		500DAF85239545A30081CC21 /* AdventOfCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 500DAF77239545A30081CC21 /* AdventOfCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +96,7 @@
 		50086CAA23A21449002613B7 /* Day12.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day12.txt; sourceTree = "<group>"; };
 		50086CAC23A21461002613B7 /* Day12Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12Tests.swift; sourceTree = "<group>"; };
 		50086CAE23A229C3002613B7 /* Day12Example1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day12Example1.txt; sourceTree = "<group>"; };
+		50086CB123A244E4002613B7 /* Day12Example2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day12Example2.txt; sourceTree = "<group>"; };
 		500DAF74239545A30081CC21 /* AdventOfCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdventOfCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500DAF77239545A30081CC21 /* AdventOfCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdventOfCode.h; sourceTree = "<group>"; };
 		500DAF78239545A30081CC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				50086CAA23A21449002613B7 /* Day12.txt */,
 				50086CAE23A229C3002613B7 /* Day12Example1.txt */,
+				50086CB123A244E4002613B7 /* Day12Example2.txt */,
 			);
 			path = Day12;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				50936C9B23979310001F58F3 /* Day4Test1.txt in Resources */,
 				50936C9D23979638001F58F3 /* Day4Test2.txt in Resources */,
 				50978A78239E11D20036AFA8 /* Day9Test1.txt in Resources */,
+				50086CB223A244E4002613B7 /* Day12Example2.txt in Resources */,
 				50978AFE239F75660036AFA8 /* Day10Test2.txt in Resources */,
 				50936CF3239A34C1001F58F3 /* Day6Test1.txt in Resources */,
 				50978A66239CCFD30036AFA8 /* Day8.txt in Resources */,

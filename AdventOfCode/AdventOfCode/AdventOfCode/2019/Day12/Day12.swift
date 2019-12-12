@@ -50,6 +50,78 @@ class Day12 {
         return energy
     }
     
+    func part2() -> Int {
+        var state = [Planet: (position: XYZ, velocity: XYZ)]()
+            input.enumerated().forEach { (index, position) in
+            state[Planet(rawValue: index)!] = (position: position, velocity: XYZ.zero)
+        }
+        
+        var xSet = Set<([Planet: SetData])>()
+        var ySet = Set<([Planet: SetData])>()
+        var zSet = Set<([Planet: SetData])>()
+
+        var setDictionaryX = [Planet: SetData]()
+        var setDictionaryY = [Planet: SetData]()
+        var setDictionaryZ = [Planet: SetData]()
+        state.forEach { (key, value) in
+            setDictionaryX[key] = SetData(position: value.position.x, velocity: value.velocity.x)
+            setDictionaryY[key] = SetData(position: value.position.y, velocity: value.velocity.y)
+            setDictionaryZ[key] = SetData(position: value.position.z, velocity: value.velocity.z)
+        }
+        
+        xSet.insert(setDictionaryX)
+        ySet.insert(setDictionaryY)
+        zSet.insert(setDictionaryZ)
+        
+        var xSetCount: Int?
+        var ySetCount: Int?
+        var zSetCount: Int?
+        
+        while xSetCount == nil || ySetCount == nil || zSetCount == nil {
+            
+            let countX = xSet.count
+            let countY = ySet.count
+            let countZ = zSet.count
+            
+            var newState = [Planet: (position: XYZ, velocity: XYZ)]()
+            state.forEach { (key, value) in
+                let otherBodys = state.remove(for: key)
+                                        .map { (key, value) in
+                                            return value.position
+                                        }
+                let moved = move(initialState: value, otherBodyPostions: otherBodys)
+                newState[key] = moved
+            }
+            state = newState
+            
+            var setDictionaryX = [Planet: SetData]()
+            var setDictionaryY = [Planet: SetData]()
+            var setDictionaryZ = [Planet: SetData]()
+            state.forEach { (key, value) in
+                setDictionaryX[key] = SetData(position: value.position.x, velocity: value.velocity.x)
+                setDictionaryY[key] = SetData(position: value.position.y, velocity: value.velocity.y)
+                setDictionaryZ[key] = SetData(position: value.position.z, velocity: value.velocity.z)
+            }
+            
+            xSet.insert(setDictionaryX)
+            ySet.insert(setDictionaryY)
+            zSet.insert(setDictionaryZ)
+            
+            if countX == xSet.count {
+                xSetCount = countX
+            }
+            if countY == ySet.count {
+                ySetCount = countY
+            }
+            if countZ == zSet.count {
+                zSetCount = countZ
+            }
+        }
+        
+        let result = lowestCommonMultiple(xSetCount!, lowestCommonMultiple(ySetCount!, zSetCount!))
+        return result
+    }
+    
     func move(initialState: (position: XYZ, velocity: XYZ), otherBodyPostions: [XYZ]) -> (position: XYZ, velocity: XYZ) {
         var xChange = 0
         var yChange = 0
@@ -81,6 +153,23 @@ class Day12 {
     
         return (position: newPostion, velocity: velocity)
     }
+    
+    func greatestCommonDivisor(_ value1: Int, _ value2: Int) -> Int {
+        var i: Int = 0
+        var j: Int = max(value1, value2)
+        var result: Int = min(value1, value2)
+
+        while result != 0 {
+            i = j
+            j = result
+            result = i % j
+        }
+        return j
+    }
+
+    func lowestCommonMultiple(_ value1: Int, _ value2: Int) -> Int {
+        return (value1 * value2) / greatestCommonDivisor(value1, value2)
+    }
 }
 
 extension Dictionary where Key: Equatable {
@@ -93,4 +182,19 @@ extension Dictionary where Key: Equatable {
         }
         return newDictionary
     }
+}
+
+struct PlanetInfo: Hashable, Equatable {
+    let planet: Planet
+    let x: Int
+    let y: Int
+    let z: Int
+    let vx: Int
+    let vy: Int
+    let vz: Int
+}
+
+struct SetData: Hashable, Equatable {
+    let position: Int
+    let velocity: Int
 }
