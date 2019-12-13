@@ -13,6 +13,11 @@
 		50086CAD23A21461002613B7 /* Day12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CAC23A21461002613B7 /* Day12Tests.swift */; };
 		50086CAF23A229C3002613B7 /* Day12Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CAE23A229C3002613B7 /* Day12Example1.txt */; };
 		50086CB223A244E4002613B7 /* Day12Example2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CB123A244E4002613B7 /* Day12Example2.txt */; };
+		50086CCF23A36B69002613B7 /* Input+Day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CCE23A36B69002613B7 /* Input+Day13.swift */; };
+		50086CD123A36B83002613B7 /* Day13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CD023A36B83002613B7 /* Day13.swift */; };
+		50086CD323A36BE1002613B7 /* Day13Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CD223A36BE1002613B7 /* Day13Tests.swift */; };
+		50086CD623A36C1B002613B7 /* Day13.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50086CD523A36C1B002613B7 /* Day13.txt */; };
+		50086CD823A36CC3002613B7 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50086CD723A36CC3002613B7 /* Tile.swift */; };
 		500DAF7E239545A30081CC21 /* AdventOfCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500DAF74239545A30081CC21 /* AdventOfCode.framework */; };
 		500DAF83239545A30081CC21 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DAF82239545A30081CC21 /* Tests.swift */; };
 		500DAF85239545A30081CC21 /* AdventOfCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 500DAF77239545A30081CC21 /* AdventOfCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -97,6 +102,11 @@
 		50086CAC23A21461002613B7 /* Day12Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day12Tests.swift; sourceTree = "<group>"; };
 		50086CAE23A229C3002613B7 /* Day12Example1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day12Example1.txt; sourceTree = "<group>"; };
 		50086CB123A244E4002613B7 /* Day12Example2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day12Example2.txt; sourceTree = "<group>"; };
+		50086CCE23A36B69002613B7 /* Input+Day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input+Day13.swift"; sourceTree = "<group>"; };
+		50086CD023A36B83002613B7 /* Day13.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13.swift; sourceTree = "<group>"; };
+		50086CD223A36BE1002613B7 /* Day13Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13Tests.swift; sourceTree = "<group>"; };
+		50086CD523A36C1B002613B7 /* Day13.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day13.txt; sourceTree = "<group>"; };
+		50086CD723A36CC3002613B7 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		500DAF74239545A30081CC21 /* AdventOfCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AdventOfCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500DAF77239545A30081CC21 /* AdventOfCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdventOfCode.h; sourceTree = "<group>"; };
 		500DAF78239545A30081CC21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +215,23 @@
 			path = Day12;
 			sourceTree = "<group>";
 		};
+		50086CCD23A36B4F002613B7 /* Day13 */ = {
+			isa = PBXGroup;
+			children = (
+				50086CCE23A36B69002613B7 /* Input+Day13.swift */,
+				50086CD023A36B83002613B7 /* Day13.swift */,
+			);
+			path = Day13;
+			sourceTree = "<group>";
+		};
+		50086CD423A36BFA002613B7 /* Day13 */ = {
+			isa = PBXGroup;
+			children = (
+				50086CD523A36C1B002613B7 /* Day13.txt */,
+			);
+			path = Day13;
+			sourceTree = "<group>";
+		};
 		500DAF6A239545A30081CC21 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +290,7 @@
 		500DAFA623963CFD0081CC21 /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				50086CD423A36BFA002613B7 /* Day13 */,
 				50086CA923A212EC002613B7 /* Day12 */,
 				50978B6023A0B13A0036AFA8 /* Day11 */,
 				50978AFA239F70230036AFA8 /* Day10 */,
@@ -401,6 +429,7 @@
 				50978AF3239F6DA20036AFA8 /* Day10 */,
 				50978B5B23A0B06D0036AFA8 /* Day11 */,
 				50086CA423A2106E002613B7 /* Day12 */,
+				50086CCD23A36B4F002613B7 /* Day13 */,
 			);
 			path = 2019;
 			sourceTree = "<group>";
@@ -419,6 +448,7 @@
 				50978AF8239F6FF90036AFA8 /* Day10Tests.swift */,
 				50978B6323A0B15C0036AFA8 /* Day11Tests.swift */,
 				50086CAC23A21461002613B7 /* Day12Tests.swift */,
+				50086CD223A36BE1002613B7 /* Day13Tests.swift */,
 			);
 			path = 2019;
 			sourceTree = "<group>";
@@ -486,6 +516,7 @@
 			children = (
 				50978B6623A0B3270036AFA8 /* Position.swift */,
 				50978B6823A0B44E0036AFA8 /* Direction.swift */,
+				50086CD723A36CC3002613B7 /* Tile.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -593,6 +624,7 @@
 				50978A5E239BDD630036AFA8 /* Day7Test2.txt in Resources */,
 				500DAFA423963CE10081CC21 /* Day3.txt in Resources */,
 				500DAFB023964C290081CC21 /* Day3Test1.txt in Resources */,
+				50086CD623A36C1B002613B7 /* Day13.txt in Resources */,
 				50978A52239B82B60036AFA8 /* Day7.txt in Resources */,
 				50978AFC239F70340036AFA8 /* Day10Test1.txt in Resources */,
 				50936CA52398DF87001F58F3 /* Day5.txt in Resources */,
@@ -635,14 +667,17 @@
 				50978B5D23A0B0910036AFA8 /* Input+Day11.swift in Sources */,
 				500DAF94239548920081CC21 /* Input+Day1.swift in Sources */,
 				50978AF5239F6DCB0036AFA8 /* Input+Day10.swift in Sources */,
+				50086CCF23A36B69002613B7 /* Input+Day13.swift in Sources */,
 				500DAF9D2395510C0081CC21 /* Day2.swift in Sources */,
 				50936C9623978E3A001F58F3 /* Input+Day4.swift in Sources */,
+				50086CD123A36B83002613B7 /* Day13.swift in Sources */,
 				500DAF9F239551180081CC21 /* Input+Day2.swift in Sources */,
 				50978AF7239F6DD80036AFA8 /* Day10.swift in Sources */,
 				500DAFA923963D320081CC21 /* Input+Day3.swift in Sources */,
 				50978A68239CD0670036AFA8 /* Day8.swift in Sources */,
 				50086CA823A2109E002613B7 /* Day12.swift in Sources */,
 				50936CEC239A2913001F58F3 /* Input+Day6.swift in Sources */,
+				50086CD823A36CC3002613B7 /* Tile.swift in Sources */,
 				50936CA32398D1BF001F58F3 /* Day5.swift in Sources */,
 				500DAF92239546010081CC21 /* Input.swift in Sources */,
 				50978B5F23A0B0A70036AFA8 /* Day11.swift in Sources */,
@@ -673,6 +708,7 @@
 				500DAFAD23964ADA0081CC21 /* Day3Tests.swift in Sources */,
 				50978A6A239CD8C00036AFA8 /* Day8Tests.swift in Sources */,
 				50978A75239E11830036AFA8 /* Day9Tests.swift in Sources */,
+				50086CD323A36BE1002613B7 /* Day13Tests.swift in Sources */,
 				500DAF83239545A30081CC21 /* Tests.swift in Sources */,
 				50936C982397927C001F58F3 /* Day4Tests.swift in Sources */,
 				50936CF0239A2CBE001F58F3 /* Day6Tests.swift in Sources */,
