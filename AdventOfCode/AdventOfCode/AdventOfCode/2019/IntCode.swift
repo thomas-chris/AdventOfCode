@@ -10,16 +10,15 @@ import Foundation
 
 public class IntCode {
     public var list: [Int: Int]
-    public var output = [Int]()
-    var index = 0
-    var finished = false
-    var wait = false
-    var variableInputs: [Int] = []
-    var relativeBase = 0
-    
-    public init(list: [Int: Int]) {
-        self.list = list
-    }
+    public var output: [Int]
+    var index: Int
+    var finished: Bool
+    var variableInputs: [Int]
+    var relativeBase: Int
+//
+//    public init(list: [Int: Int]) {
+//        self.list = list
+//    }
     
     public func calculate(inputs: [Int]) {
         
@@ -53,7 +52,6 @@ public class IntCode {
                 index += 4
             case 3:
                 if variableInputs.isEmpty {
-                    wait = true
                     return
                 } else {
                     switch param0Mode {
@@ -137,6 +135,19 @@ public class IntCode {
         case .relative:
             return relativeBase + (list[index] ?? 0)
         }
+    }
+    
+    public func copy() -> IntCode {
+        IntCode(list: list, output: output, index: index, finished: finished, variableInputs: variableInputs, relativeBase: relativeBase)
+    }
+    
+    public init(list: [Int: Int], output: [Int] = [], index: Int = 0, finished: Bool = false, variableInputs: [Int] = [], relativeBase: Int = 0) {
+        self.list = list
+        self.output = output
+        self.index = index
+        self.finished = finished
+        self.variableInputs = variableInputs
+        self.relativeBase = relativeBase
     }
 }
 
