@@ -8,29 +8,71 @@
 
 import Foundation
 
-public enum Day15Block {
-    case wall
-    case empty
-    case oxygen
+public enum Day15Block: Int {
+    case wall = 0
+    case empty = 1
+    case oxygen = 2
 }
 
 public class Day15 {
     
     let input: [Int: Int]
     var map = [Position: Day15Block]()
-    var toDraw:[Int: [Int: Day15Block]] = [0:[0: .empty]]
     
     public init(input: [Int: Int]) {
         self.input = input
     }
     
-    public func part1() {
-//        let intCode = IntCode(list: input)
-//        var notFound = true
-//        while notFound {
-//            intCode.calculate(inputs: <#T##[Int]#>)
-//        }
-//        
+    public func part1() -> Int {
+        
+        let droid = Droid(computer: IntCode(list: input))
+        return Direction.allCases
+            .compactMap { findOxygen(droid: droid, direction: $0) }
+            .min() ?? Int.max
+    }
+    
+    private func findOxygen(droid: Droid, direction: Direction) -> Int? {
+        var droid = Droid(computer: droid.computer.copy(), position: droid.position, tile: droid.tile, map: droid.map)
+        droid.move(direction: direction)
+        switch droid.tile {
+        case .wall: return nil
+        case .oxygen: return 1
+        case .empty:
+            return Direction.allCases
+                .filter { $0 != direction.opposite }
+                .compactMap { findOxygen(droid: droid, direction: $0) }
+                .min()
+                .flatMap { $0 + 1 }
+        }
+    }
+    
+    struct Droid {
+        var computer: IntCode
+        var position = Position.origin
+        var tile = Day15Block.empty
+        var map = [Position(x: 0, y: 0): Day15Block.empty]
+        
+        mutating func move(direction: Direction) {
+            let newPosition = position.move(vector: direction)
+            computer.calculate(inputs: [direction.code])
+            tile = Day15Block(rawValue: computer.output.last!)!
+            map[newPosition] = tile
+            if tile != .wall { position = newPosition }
+        }
+        
+        
+    }
+    
+}
+
+extension Direction {
+    fileprivate var code: Int {
+        switch self {
+        case .up: return 1
+        case .down: return 2
+        case .left: return 3
+        case .right: return 4
+        }
     }
     
 }

@@ -17,15 +17,19 @@ public struct Position: Equatable, Hashable {
         self.y = y
     }
     
-    func move(vector: CardinalDirection) -> Position {
+    public static var origin: Position {
+        return Position(x: 0, y: 0)
+    }
+    
+    func move(vector: Direction) -> Position {
         switch vector {
-        case .north:
+        case .up:
             return Position(x: self.x, y: self.y + 1)
-        case .east:
+        case .right:
             return Position(x: self.x + 1, y: self.y)
-        case .south:
+        case .down:
             return Position(x: self.x, y: self.y - 1)
-        case .west:
+        case .left:
             return Position(x: self.x - 1, y: self.y)
         }
     }

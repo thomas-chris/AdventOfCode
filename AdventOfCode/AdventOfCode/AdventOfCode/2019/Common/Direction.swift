@@ -8,16 +8,30 @@
 
 import Foundation
 
-public enum Direction: String {
+public enum Direction: String, CaseIterable {
     case up = "U"
     case down = "D"
     case left = "L"
     case right = "R"
+    
+    public var opposite: Direction {
+        switch self {
+        case .up:
+            return .down
+        case .down:
+            return .up
+        case .left:
+            return .right
+        case .right:
+            return .left
+            
+        }
+    }
 }
 
-public enum CardinalDirection: Int, CaseIterable {
-    case north = 1
-    case east = 2
-    case south = 3
-    case west = 4
+public enum CardinalDirection: CaseIterable {
+    case north
+    case east
+    case south
+    case west
 }

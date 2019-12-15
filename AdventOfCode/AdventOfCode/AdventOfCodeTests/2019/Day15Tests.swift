@@ -16,6 +16,7 @@ class Day15Tests: XCTestCase {
         
         let input = Input.day15(file: "Day15")
         let day15 = Day15(input: input)
-        day15.part1()
+        let path = day15.part1()
+        XCTAssertEqual(path, 266)
     }
 }

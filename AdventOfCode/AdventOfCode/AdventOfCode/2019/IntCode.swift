@@ -15,11 +15,7 @@ public class IntCode {
     var finished: Bool
     var variableInputs: [Int]
     var relativeBase: Int
-//
-//    public init(list: [Int: Int]) {
-//        self.list = list
-//    }
-    
+
     public func calculate(inputs: [Int]) {
         
         variableInputs = inputs
