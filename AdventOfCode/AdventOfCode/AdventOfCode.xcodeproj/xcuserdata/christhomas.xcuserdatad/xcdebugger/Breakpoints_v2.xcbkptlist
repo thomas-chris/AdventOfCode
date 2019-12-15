@@ -754,5 +754,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2019/Day14/Input+Day14.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "day14(file:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - ea82374228bb11a2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static AdventOfCode.Input.day14(file: Swift.String) -&gt; Swift.Array&lt;AdventOfCode.Recipe&gt;"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day14/Input+Day14.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "510">
+               </Location>
+               <Location
+                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - 89b6f54410cfb6cd"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; Swift.Optional&lt;AdventOfCode.Recipe&gt; in static AdventOfCode.Input.day14(file: Swift.String) -&gt; Swift.Array&lt;AdventOfCode.Recipe&gt;"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day14/Input+Day14.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "89">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24F0749B-421D-4712-B293-90848C744789"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2019/Day14/Day14.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "part2(ore:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
