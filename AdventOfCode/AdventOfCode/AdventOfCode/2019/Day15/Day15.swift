@@ -12,9 +12,9 @@ public enum Day15Block: Int, CustomStringConvertible {
     public var description: String {
         switch self {
         case .empty:
-            return "◼️"
-        case .wall:
             return "◻️"
+        case .wall:
+            return "◼️"
         case .oxygen:
             return "🤿"
         case .start:
@@ -43,13 +43,23 @@ public class Day15 {
         
         let droid = Droid(computer: IntCode(list: input))
         let result = Direction.allCases
-            .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
+            .compactMap { findOxygen(droid: droid, direction: $0) }
             .min() ?? Int.max
         print(printMap(map))
         return result
     }
     
-    private func findOxygen(droid: Droid, direction: Direction, map: inout [Position: Day15Block]) -> Int? {
+    public func part2() -> Int {
+        part1()
+        let oxygenOrigin = map.first { (key, value) -> Bool in
+            value == .oxygen
+        }
+        return Direction.allCases
+            .compactMap { spreadOxygen(position: oxygenOrigin!.key, direction: $0) }
+            .max() ?? Int.min
+    }
+    
+    private func findOxygen(droid: Droid, direction: Direction) -> Int? {
         var droid = Droid(computer: droid.computer.copy(), position: droid.position, tile: droid.tile, map: droid.map)
         droid.move(direction: direction)
         map.merge(droid.map) { (value, value2) -> Day15Block in
@@ -61,10 +71,27 @@ public class Day15 {
         case .empty:
             return Direction.allCases
                 .filter { $0 != direction.opposite }
-                .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
+                .compactMap { findOxygen(droid: droid, direction: $0) }
                 .min()
                 .flatMap { $0 + 1 }
         case .start: return nil
+        }
+    }
+    
+    private func spreadOxygen(position: Position, direction: Direction) -> Int? {
+        let newPosition = position.move(vector: direction)
+        let square = map[newPosition]!
+        
+        switch square {
+        case .wall, .oxygen:
+            return 0
+        case .empty, .start:
+            map[newPosition] = .oxygen
+            return Direction.allCases
+                .filter { $0 != direction.opposite }
+                .compactMap { spreadOxygen(position: newPosition, direction: $0) }
+                .max()
+                .flatMap { $0 + 1 }
         }
     }
     
@@ -81,8 +108,6 @@ public class Day15 {
             map[newPosition] = tile
             if tile != .wall { position = newPosition }
         }
-        
-        
     }
     
     private func printMap(_ output: [Position:Day15Block]) -> String {
