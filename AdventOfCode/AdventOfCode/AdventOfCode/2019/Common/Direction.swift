@@ -14,3 +14,10 @@ public enum Direction: String {
     case left = "L"
     case right = "R"
 }
+
+public enum CardinalDirection: Int, CaseIterable {
+    case north = 1
+    case east = 2
+    case south = 3
+    case west = 4
+}

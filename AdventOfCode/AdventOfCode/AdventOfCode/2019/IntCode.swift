@@ -9,150 +9,139 @@
 import Foundation
 
 public class IntCode {
-        public var list: [Int: Int]
-        public var output = [Int]()
-        var index = 0
-        var finished = false
-        var wait = false
-        var variableInputs: [Int] = []
-        var relativeBase = 0
+    public var list: [Int: Int]
+    public var output = [Int]()
+    var index = 0
+    var finished = false
+    var wait = false
+    var variableInputs: [Int] = []
+    var relativeBase = 0
+    
+    public init(list: [Int: Int]) {
+        self.list = list
+    }
+    
+    public func calculate(inputs: [Int]) {
         
-        public init(list: [Int: Int]) {
-            self.list = list
-        }
+        variableInputs = inputs
         
-        public func append(input: Int) {
-            variableInputs.append(input)
-            wait = false
+        while (list[index]! % 100) != 99 {
+            let initialOperatorValue = list[index]!
             
-            while !wait {
-                
-            }
+            var opCodeString = String(initialOperatorValue)
             
-            return
-        }
-        
-        public func calculate(inputs: [Int]) {
+            let c = initialOperatorValue % 10000 % 1000 / 100
+            let b = initialOperatorValue % 10000 / 1000
+            let a = initialOperatorValue / 10000
             
-            variableInputs = inputs
+            let param0Mode = Mode(rawValue: Int(c))!
+            let param1Mode = Mode(rawValue: Int(b))!
+            let param2Mode = Mode(rawValue: Int(a))!
             
-            while (list[index]! % 100) != 99 {
-                let initialOperatorValue = list[index]!
-                
-                var opCodeString = String(initialOperatorValue)
-                
-                let c = initialOperatorValue % 10000 % 1000 / 100
-                let b = initialOperatorValue % 10000 / 1000
-                let a = initialOperatorValue / 10000
-                
-                let param0Mode = Mode(rawValue: Int(c))!
-                let param1Mode = Mode(rawValue: Int(b))!
-                let param2Mode = Mode(rawValue: Int(a))!
-                
-                switch initialOperatorValue % 100 {
-                case 1:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
-                    list[toWrite] =  value0 + value1
-                    index += 4
-                case 2:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
-                    list[toWrite] =  value0 * value1
-                    index += 4
-                case 3:
-                    if variableInputs.isEmpty {
-                        wait = true
-                        return
-                    } else {
-                        switch param0Mode {
-                        case .relative:
-                            list[relativeBase + list[index+1]!] = variableInputs.removeFirst()
-                        case .position:
-                            list[list[index+1]!] = variableInputs.removeFirst()
-                        case .immediate:
-                            list[index+1] = variableInputs.removeFirst()
-                        }
-                        
-                        index += 2
-                    }
-                case 4:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    
-                    output.append(value0)
-                    index += 2
-                case 5: // jump-if-true
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    
-                    if value0 != 0 {
-                        index = value1
-                    } else {
-                        index += 3
-                    }
-                case 6:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    if value0 == 0 {
-                        index = value1
-                    } else {
-                        index += 3
-                    }
-                case 7:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
-                    list[toWrite] = value0 < value1 ? 1 : 0
-                    index += 4
-                case 8:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
-                    let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
-                    list[toWrite] = value0 == value1 ? 1 : 0
-                    index += 4
-                case 9:
-                    let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
-                    relativeBase += value0
-                    index += 2
-                case 99:
-                    finished = true
+            switch initialOperatorValue % 100 {
+            case 1:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
+                list[toWrite] =  value0 + value1
+                index += 4
+            case 2:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
+                list[toWrite] =  value0 * value1
+                index += 4
+            case 3:
+                if variableInputs.isEmpty {
+                    wait = true
                     return
-                default:
-                    break
+                } else {
+                    switch param0Mode {
+                    case .relative:
+                        list[relativeBase + list[index+1]!] = variableInputs.removeFirst()
+                    case .position:
+                        list[list[index+1]!] = variableInputs.removeFirst()
+                    case .immediate:
+                        list[index+1] = variableInputs.removeFirst()
+                    }
+                    
+                    index += 2
                 }
+            case 4:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                
+                output.append(value0)
+                index += 2
+            case 5: // jump-if-true
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                
+                if value0 != 0 {
+                    index = value1
+                } else {
+                    index += 3
+                }
+            case 6:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                if value0 == 0 {
+                    index = value1
+                } else {
+                    index += 3
+                }
+            case 7:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
+                list[toWrite] = value0 < value1 ? 1 : 0
+                index += 4
+            case 8:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                let value1 = parameters(list: list, index: index + 2, mode: param1Mode, relativeBase: relativeBase)
+                let toWrite = writeIndex(list: list, index: index + 3, mode: param2Mode, relativeBase: relativeBase)
+                list[toWrite] = value0 == value1 ? 1 : 0
+                index += 4
+            case 9:
+                let value0 = parameters(list: list, index: index + 1, mode: param0Mode, relativeBase: relativeBase)
+                relativeBase += value0
+                index += 2
+            case 99:
+                finished = true
+                return
+            default:
+                break
             }
-            finished = true
-            return
+        }
+        finished = true
+        return
+    }
+    
+    public func parameters(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
+        switch mode {
+        case .immediate:
+            return list[index] ?? 0
+        case .position:
+            return list[list[index] ?? 0] ?? 0
+        case .relative:
+            return list[relativeBase + (list[index] ?? 0)] ?? 0
         }
         
-        public func parameters(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
-            switch mode {
-            case .immediate:
-                return list[index] ?? 0
-            case .position:
-                return list[list[index] ?? 0] ?? 0
-            case .relative:
-                return list[relativeBase + (list[index] ?? 0)] ?? 0
-            }
-            
-        }
-        
-        public func writeIndex(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
-            switch mode {
-            case .immediate:
-                return index
-            case .position:
-                return list[index] ?? 0
-            case .relative:
-                return relativeBase + (list[index] ?? 0)
-            }
+    }
+    
+    public func writeIndex(list: [Int: Int], index: Int, mode: Mode, relativeBase: Int) -> Int {
+        switch mode {
+        case .immediate:
+            return index
+        case .position:
+            return list[index] ?? 0
+        case .relative:
+            return relativeBase + (list[index] ?? 0)
         }
     }
+}
 
-    public enum Mode: Int {
-        case position = 0
-        case immediate = 1
-        case relative = 2
-    }
+public enum Mode: Int {
+    case position = 0
+    case immediate = 1
+    case relative = 2
+}
