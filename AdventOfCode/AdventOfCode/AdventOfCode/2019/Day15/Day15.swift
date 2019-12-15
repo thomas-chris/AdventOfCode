@@ -27,20 +27,23 @@ public class Day15 {
         
         let droid = Droid(computer: IntCode(list: input))
         return Direction.allCases
-            .compactMap { findOxygen(droid: droid, direction: $0) }
+            .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
             .min() ?? Int.max
     }
     
-    private func findOxygen(droid: Droid, direction: Direction) -> Int? {
+    private func findOxygen(droid: Droid, direction: Direction, map: inout [Position: Day15Block]) -> Int? {
         var droid = Droid(computer: droid.computer.copy(), position: droid.position, tile: droid.tile, map: droid.map)
         droid.move(direction: direction)
+        map.merge(droid.map) { (value, value2) -> Day15Block in
+            return value
+        }
         switch droid.tile {
         case .wall: return nil
         case .oxygen: return 1
         case .empty:
             return Direction.allCases
                 .filter { $0 != direction.opposite }
-                .compactMap { findOxygen(droid: droid, direction: $0) }
+                .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
                 .min()
                 .flatMap { $0 + 1 }
         }
