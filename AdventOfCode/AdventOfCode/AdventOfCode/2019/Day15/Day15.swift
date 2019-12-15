@@ -8,10 +8,26 @@
 
 import Foundation
 
-public enum Day15Block: Int {
+public enum Day15Block: Int, CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .empty:
+            return "◼️"
+        case .wall:
+            return "◻️"
+        case .oxygen:
+            return "🤿"
+        case .start:
+            return "🤖"
+        }
+    }
+    
     case wall = 0
     case empty = 1
     case oxygen = 2
+    case start = 3
+    
+    
 }
 
 public class Day15 {
@@ -26,9 +42,11 @@ public class Day15 {
     public func part1() -> Int {
         
         let droid = Droid(computer: IntCode(list: input))
-        return Direction.allCases
+        let result = Direction.allCases
             .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
             .min() ?? Int.max
+        print(printMap(map))
+        return result
     }
     
     private func findOxygen(droid: Droid, direction: Direction, map: inout [Position: Day15Block]) -> Int? {
@@ -46,6 +64,7 @@ public class Day15 {
                 .compactMap { findOxygen(droid: droid, direction: $0, map: &map) }
                 .min()
                 .flatMap { $0 + 1 }
+        case .start: return nil
         }
     }
     
@@ -53,7 +72,7 @@ public class Day15 {
         var computer: IntCode
         var position = Position.origin
         var tile = Day15Block.empty
-        var map = [Position(x: 0, y: 0): Day15Block.empty]
+        var map = [Position(x: 0, y: 0): Day15Block.start]
         
         mutating func move(direction: Direction) {
             let newPosition = position.move(vector: direction)
@@ -64,6 +83,24 @@ public class Day15 {
         }
         
         
+    }
+    
+    private func printMap(_ output: [Position:Day15Block]) -> String {
+        let minimumX = output.reduce(0) { min($0,$1.key.x) }
+        let minimumY = output.reduce(0) { min($0,$1.key.y) }
+        let maximumX = output.reduce(0) { max($0,$1.key.x) }
+        let maximumY = output.reduce(0) { max($0,$1.key.y) }
+        var registration = ""
+        for y in (0...maximumY-minimumY).reversed() {
+            var row = ""
+            for x in 0...maximumX - minimumX {
+                let value = output[Position(x: x + minimumX, y: y + minimumY)] ?? .wall
+                row += value.description
+            }
+            registration += row + "\n"
+        }
+        // GARPKZUL
+        return registration
     }
     
 }
