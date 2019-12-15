@@ -33,7 +33,11 @@ public enum Day15Block: Int, CustomStringConvertible {
 public class Day15 {
     
     let input: [Int: Int]
-    var map = [Position: Day15Block]()
+    var map = [Position: Day15Block]() {
+        didSet {
+            print(printMap(map))
+        }
+    }
     
     public init(input: [Int: Int]) {
         self.input = input
@@ -45,18 +49,18 @@ public class Day15 {
         let result = Direction.allCases
             .compactMap { findOxygen(droid: droid, direction: $0) }
             .min() ?? Int.max
-        print(printMap(map))
         return result
     }
     
     public func part2() -> Int {
-        part1()
+        _ = part1()
         let oxygenOrigin = map.first { (key, value) -> Bool in
             value == .oxygen
         }
-        return Direction.allCases
+        let result = Direction.allCases
             .compactMap { spreadOxygen(position: oxygenOrigin!.key, direction: $0) }
             .max() ?? Int.min
+        return result
     }
     
     private func findOxygen(droid: Droid, direction: Direction) -> Int? {
