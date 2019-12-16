@@ -61,11 +61,11 @@ class Day3Tests: XCTestCase {
         
         let matchingPoints = Day3.getMatchingPoints(first: path1Points, second: path2Points)
         
-        let matchedPoint1s = path1Points.filter { (value) -> Bool in
+        _ = path1Points.filter { (value) -> Bool in
             matchingPoints.contains(value.0)
         }
         
-        let matchedPoint2s = path2Points.filter { (value) -> Bool in
+        _ = path2Points.filter { (value) -> Bool in
             matchingPoints.contains(value.0)
         }
         

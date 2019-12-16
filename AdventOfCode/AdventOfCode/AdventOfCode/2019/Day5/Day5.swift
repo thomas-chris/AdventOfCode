@@ -87,7 +87,7 @@ public struct Day5 {
 }
 
 public extension Day5 {
-    public static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
+    static func calculateForFeedback(list: [Int], inputs: [Int], output: Int = 0) -> (Int, [Int]) {
         
         var inputs = inputs
         var result = list

@@ -56,7 +56,7 @@ class Day7Tests: XCTestCase {
         }
         
         let intCode = IntCode(list: dictionary)
-        let output = intCode.calculate(inputs: [1])
+        _ = intCode.calculate(inputs: [1])
         XCTAssertEqual(intCode.output.last, 13210611)
     }
 }

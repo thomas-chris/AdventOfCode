@@ -55,8 +55,8 @@ public class Day16 {
                     
         var values = Array(list.dropFirst(drop))
         
-        for i in 0..<100 {
-            var base = values.reduce(0, +)
+        for _ in 0..<100 {
+            let base = values.reduce(0, +)
             var subtracting = 0
 //            var newArray = [Int]()
 //            newArray.reserveCapacity(values.count)
