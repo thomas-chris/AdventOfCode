@@ -21,8 +21,6 @@ public class Day14 {
         var consumedOre = 0
         var chemicalsToProcess: [(id: String, quantity: Int)] = [("FUEL", fuel)]
         
-        var finished = false
-        
         repeat {
             let chemicalToProcess = chemicalsToProcess.removeFirst()
             if chemicalToProcess.id == "ORE" {
@@ -65,8 +63,5 @@ public class Day14 {
         
         return totalFuel
     }
-    
-    
-    
 }
 
