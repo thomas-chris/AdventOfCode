@@ -17,26 +17,25 @@ public class Day16 {
         self.baseInput = input
     }
     
+    
     public func part1(loops: Int) -> String {
         
         var list = baseInput
         
-        
-        for j in 0..<loops {
-            var newList = [Int]()
-            for i in 1...list.count {
-                var pattern = generatePattern(for: basePattern.repeatValues(by: i), input: list)
+        for _ in 0..<loops {
+            let newList = list.enumerated().map { (index, value) -> Int in
+                var pattern = generatePattern(for: basePattern.repeatValues(by: index + 1), input: list)
                     .dropFirst()
                 
                 let bitsToDrop = pattern.count - list.count
                 
                 pattern = pattern.dropLast(bitsToDrop)
                 
-                var total  = 0
-                pattern.enumerated().forEach { (index, value) in
-                    total += value * list[index]
-                }
-                newList.append(abs(total) % 10)
+                let total = pattern.enumerated().map { (index, value) in
+                    value * list[index]
+                }.reduce(0, +)
+                
+                return (abs(total) % 10)
             }
             list = newList
         }
@@ -51,36 +50,34 @@ public class Day16 {
     
     public func part2(loops: Int) -> String {
         
-        var list = baseInput.repeated(count: 10000)
+        let list = baseInput.repeated(count: 10000)
+        let drop = Int(baseInput.map { String($0) }.repeated(count: 10000).reduce("", +).prefix(7))!
+//        let drop = Int(list.map { String($0) }.reduce("", +).prefix(7))!
+                    
+        var values = Array(list.dropFirst(drop))
         
-        
-        for j in 0..<loops {
-            var newList = [Int]()
-            for i in 1...list.count {
-                var pattern = generatePattern(for: basePattern.repeatValues(by: i), input: list)
-                    .dropFirst()
-                
-                let bitsToDrop = pattern.count - list.count
-                
-                pattern = pattern.dropLast(bitsToDrop)
-                
-                var total  = 0
-                pattern.enumerated().forEach { (index, value) in
-                    total += value * list[index]
-                }
-                newList.append(abs(total) % 10)
+        for i in 0..<100 {
+            print(i)
+            var base = values.reduce(0, +)
+            var newArray = [Int]()
+            while values.count > 0 {
+                newArray.append(abs(base) % 10)
+                let number = values.first!
+                base -= number
+                values = Array(values.dropFirst())
             }
-            list = newList
-            print(j)
+            
+            values = newArray
         }
         
         var string = ""
-        list.forEach {
+        values.forEach {
             string += String($0)
         }
         
         return string
     }
+    
     
     
     func generatePattern(for pattern: [Int], input: [Int]) -> [Int] {
@@ -91,13 +88,7 @@ public class Day16 {
 
 extension Array {
     func repeatValues(by: Int) -> Array {
-        var newArray = [Element]()
-        self.forEach { value in
-            for i in 0..<by {
-                newArray.append(value)
-            }
-        }
-        return newArray
+        self.flatMap { Array(repeating: $0, count: by) }
     }
     
     init(repeating: [Element], count: Int) {

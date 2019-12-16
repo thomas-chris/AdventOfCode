@@ -19,8 +19,8 @@ class Day16Tests: XCTestCase {
         let day16 = Day16(input: input)
         
         let result = day16.part1(loops: 100)
-        
-        XCTAssertTrue(result.hasPrefix("24176176"))
+        let prefix = result.prefix(8)
+        XCTAssertEqual(prefix, "24176176")
     }
     
     func testPart1Example2() {
@@ -31,8 +31,9 @@ class Day16Tests: XCTestCase {
         let day16 = Day16(input: input)
         
         let result = day16.part1(loops: 100)
-        
-        XCTAssertTrue(result.hasPrefix("73745418"))
+        let prefix = result.prefix(8)
+        XCTAssertEqual(prefix, "73745418")
+
     }
     
     func testPart1() {
@@ -41,10 +42,23 @@ class Day16Tests: XCTestCase {
         
         let input = Input.day16(file: "Day16")
         let day16 = Day16(input: input)
-        
+
         let result = day16.part1(loops: 100)
+        let prefix = result.prefix(8)
+        XCTAssertEqual(prefix, "42945143")
         
-        XCTAssertTrue(result.hasPrefix("42945143"))
+    }
+    
+    func testPart2Example1() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let input = Input.day16(file: "Day16Part2Example1")
+        let day16 = Day16(input: input)
+        
+        let result = day16.part2(loops: 100).prefix(8)
+        XCTAssertEqual(result, "84462026")
+
     }
     
     func testPart2() {
@@ -54,14 +68,26 @@ class Day16Tests: XCTestCase {
         let input = Input.day16(file: "Day16")
         let day16 = Day16(input: input)
         
-        let result = day16.part2(loops: 100)
-        
-        let prefix = Int(String(result.prefix(7)))!
-        
-        let realResult = result.dropFirst(prefix)
-        
-        let answer = realResult.prefix(8)
-        print(answer)
-        XCTAssertTrue(result.hasPrefix("42945143"))
+        let result = day16.part2(loops: 100).prefix(8)
+        XCTAssertEqual(result, "84462026")
+
     }
+    
+//    func testPart2() {
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//
+//        let input = Input.day16(file: "Day16")
+//        let day16 = Day16(input: input)
+//
+//        let result = day16.part2(loops: 100)
+//
+//        let prefix = Int(String(result.prefix(7)))!
+//
+//        let realResult = result.dropFirst(prefix)
+//
+//        let answer = realResult.prefix(8)
+//        print(answer)
+//        XCTAssertTrue(result.hasPrefix("42945143"))
+//    }
 }

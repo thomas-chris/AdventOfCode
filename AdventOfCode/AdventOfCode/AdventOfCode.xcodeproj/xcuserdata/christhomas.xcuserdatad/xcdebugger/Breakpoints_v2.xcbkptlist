@@ -821,15 +821,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "60EE2B9B-12A5-4264-8742-BCBDEA80C3D1"
+            uuid = "D17072CC-83BF-4949-9162-4F83B27AC3F9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdventOfCode/2019/Day16/Day16.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "part1(loops:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC98EDDC-C0F0-46FB-88D2-5B548E8E23CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2019/Day16/Day16.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "part2(loops:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -837,95 +853,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "818D5307-6700-452C-B82A-524BCA75D484"
+            uuid = "5FC29BF5-364C-4568-A680-4B6221EA4705"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdventOfCode/2019/Day16/Day16.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "part2(loops:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "818D5307-6700-452C-B82A-524BCA75D484 - f8c1755f86c7d6d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AdventOfCode.Day16.part2(loops: Swift.Int) -&gt; Swift.String"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day16/Day16.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "2641">
-               </Location>
-               <Location
-                  uuid = "818D5307-6700-452C-B82A-524BCA75D484 - f8c1755f86c7d6d1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AdventOfCode.Day16.part2(loops: Swift.Int) -&gt; Swift.String"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day16/Day16.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "2744">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B03912EE-7707-42DC-98E4-FF26B67A457D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2019/Day16/Day16.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "repeatValues(by:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "758EFFF1-45E8-4B45-B7AD-D88B0FFD2B31"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2019/Day16/Day16.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "part2(loops:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "32C53717-1A19-4DEE-A133-3133EBA836BE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2019/Day16/Day16.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "part2(loops:)"
             landmarkType = "7">
          </BreakpointContent>
