@@ -51,23 +51,38 @@ public class Day16 {
     public func part2(loops: Int) -> String {
         
         let list = baseInput.repeated(count: 10000)
-        let drop = Int(baseInput.map { String($0) }.repeated(count: 10000).reduce("", +).prefix(7))!
-//        let drop = Int(list.map { String($0) }.reduce("", +).prefix(7))!
+        let drop = Int(baseInput.prefix(7).map { String($0) }.reduce("", +))!
                     
         var values = Array(list.dropFirst(drop))
         
         for i in 0..<100 {
-            print(i)
             var base = values.reduce(0, +)
-            var newArray = [Int]()
-            while values.count > 0 {
-                newArray.append(abs(base) % 10)
-                let number = values.first!
-                base -= number
-                values = Array(values.dropFirst())
-            }
+            var subtracting = 0
+//            var newArray = [Int]()
+//            newArray.reserveCapacity(values.count)
             
-            values = newArray
+            values = values.enumerated().map { index, value in
+                let result = abs(base - subtracting) % 10
+                subtracting += value
+                return result
+            }
+             
+            // THIS IS SUPER SLOW BECAUSE....
+            
+            /// dropFirst works by creating a list as output. You then needed to iterate over the sequence returned by the drop, and then creates an array - its this array creation that is the slow thing, as you loop over every return from dropFirst, to create a new array
+            
+            
+            
+//            while values.count > 0 {
+//                newArray.append(abs(base) % 10)
+//                let number = values.first!
+//                base -= number
+//                values = Array(values.dropFirst())
+//            }
+//
+//
+//
+//            values = newArray
         }
         
         var string = ""

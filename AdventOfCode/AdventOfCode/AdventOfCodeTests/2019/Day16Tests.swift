@@ -49,23 +49,23 @@ class Day16Tests: XCTestCase {
         
     }
     
-    func testPart2Example1() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        let input = Input.day16(file: "Day16Part2Example1")
-        let day16 = Day16(input: input)
-        
-        let result = day16.part2(loops: 100).prefix(8)
-        XCTAssertEqual(result, "84462026")
-
-    }
-    
     func testPart2() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let input = Input.day16(file: "Day16")
+        let day16 = Day16(input: input)
+        
+        let result = day16.part2(loops: 100).prefix(8)
+        XCTAssertEqual(result, "99974970")
+
+    }
+    
+    func testPart2Example1() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let input = Input.day16(file: "Day16Part2Example1")
         let day16 = Day16(input: input)
         
         let result = day16.part2(loops: 100).prefix(8)
