@@ -802,5 +802,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2019/Day 17/Day17.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "part2()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16A0CE93-222D-4D59-8637-09CD061572AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2019/Day 17/Day17.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "part2()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "16A0CE93-222D-4D59-8637-09CD061572AF - 7409aa53dd9efeec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day17.part2() -&gt; Swift.Int"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day%2017/Day17.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "222">
+               </Location>
+               <Location
+                  uuid = "16A0CE93-222D-4D59-8637-09CD061572AF - 7409aa53dd9efeec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day17.part2() -&gt; Swift.Int"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day%2017/Day17.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "389">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
