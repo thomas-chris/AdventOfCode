@@ -15,34 +15,72 @@ public class Day19 {
         self.input = input
     }
     
-    enum Drone: Int {
+    enum Robot: Int {
         case stationary = 0
         case pulled = 1
     }
 
     public func part1() -> Int {
-        var dronePositions = [Position: Drone]()
+        var robotPositions = [Position: Robot]()
         
         for y in 0..<50 {
             for x in 0..<50 {
-                dronePositions[Position(x: x, y: y)] = drone(input: input, position: Position(x: x, y: y))
+                robotPositions[Position(x: x, y: y)] = getRobotStatus(input: input, position: Position(x: x, y: y))
             }
         }
         
-        return dronePositions.compactMap { (key, value) -> Position? in
+        let positions = robotPositions.compactMap { (key, value) -> Position? in
             if value == .pulled {
                 return key
             }
             return nil
-        }.count
+        }
+        
+        return positions.count
         
     }
     
-    private func drone(input: [Int: Int], position: Position) -> Drone {
+    public func part2() -> Int {
+        
+        let start = Position(x: 0, y: 0)
+        
+        var searchedX = Set<Int>()
+        var positions = [start]
+        
+        while let position = positions.first {
+            positions.removeFirst()
+            let droneValue = getRobotStatus(input: input, position: position)
+            let searched = searchedX.contains(position.x)
+            
+            switch (droneValue, searched) {
+            case (.pulled, true):
+                positions.append(position.move(vector: .right))
+            case (.pulled, false):
+                searchedX.insert(position.x)
+                positions.append(position.move(vector: .right))
+            case (.stationary, true):
+                positions.append(position.move(vector: .right))
+            case (.stationary, false):
+                searchedX.insert(position.x)
+                positions.append(position.move(vector: .up))
+            }
+            
+            if getRobotStatus(input: input, position: Position(x: position.x - 99 , y: position.y + 99)) == .pulled &&
+                getRobotStatus(input: input, position: Position(x: position.x - 99, y: position.y)) == .pulled &&
+                getRobotStatus(input: input, position: Position(x: position.x, y: position.y)) == .pulled {
+                
+                return (position.x - 99) * 10000 + position.y
+            }
+
+
+        }
+        
+        return Int.min
+    }
+    
+    private func getRobotStatus(input: [Int: Int], position: Position) -> Robot {
         let intCode = IntCode(list: input)
         intCode.calculate(inputs: [position.x, position.y])
-        return Drone(rawValue: intCode.output.last!)!
+        return Robot(rawValue: intCode.output.last!)!
     }
-
-
 }
