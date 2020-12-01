@@ -6,9 +6,9 @@ public struct Day1_2020 {
 		
 		let combinations = input.combinations(ofCount: 2)
 		
-		let pairThatSumsTo2020 = combinations.first(where: { $0.reduce(0, +) == 2020 })
+		let values = combinations.first(where: { $0.reduce(0, +) == 2020 })
 		
-		return (pairThatSumsTo2020?[0] ?? 0) * (pairThatSumsTo2020?[1] ?? 0)
+		return values?.reduce(1, *)
 	}
 	
 	public static func getAnswerPart2() -> Double? {
