@@ -434,7 +434,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "BC342352-67AF-47D5-B052-6FE82FC056ED - 5b6a71577f786cb1"
+                  uuid = "BC342352-67AF-47D5-B052-6FE82FC056ED - 7e5eb257f5953a9"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -449,7 +449,7 @@
                   offsetFromSymbolStart = "416">
                </Location>
                <Location
-                  uuid = "BC342352-67AF-47D5-B052-6FE82FC056ED - 8fe5b9eecfd092b9"
+                  uuid = "BC342352-67AF-47D5-B052-6FE82FC056ED - d36a239ccff1adc0"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -626,7 +626,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AE36BE5B-F6B6-48F3-A797-9E62B96428B3 - a209556a4b84e078"
+                  uuid = "AE36BE5B-F6B6-48F3-A797-9E62B96428B3 - 5bfa9596a8efcfa6"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -641,7 +641,7 @@
                   offsetFromSymbolStart = "543">
                </Location>
                <Location
-                  uuid = "AE36BE5B-F6B6-48F3-A797-9E62B96428B3 - 737bf659ec41981f"
+                  uuid = "AE36BE5B-F6B6-48F3-A797-9E62B96428B3 - 8a8836a50f2ab420"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -738,7 +738,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - ea82374228bb11a2"
+                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - c5e5233de2c04d57"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -753,7 +753,7 @@
                   offsetFromSymbolStart = "510">
                </Location>
                <Location
-                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - 89b6f54410cfb6cd"
+                  uuid = "C0248BC5-AA14-4669-A6F1-8E377782675C - a6d1e13bdab4ebfa"
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -818,7 +818,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D - 7409aa53dd9efeec"
+                  uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D - b1e5b0626e89be5e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -833,7 +833,7 @@
                   offsetFromSymbolStart = "222">
                </Location>
                <Location
-                  uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D - 7409aa53dd9efeec"
+                  uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D - b1e5b0626e89be5e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -845,7 +845,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "389">
+                  offsetFromSymbolStart = "334">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -882,7 +882,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - bd3421637bc17a88"
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -894,10 +894,100 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "1799">
+                  offsetFromSymbolStart = "408">
                </Location>
                <Location
-                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ac88318639b71dde"
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "1691">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "2943">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "5855">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "8795">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "9904">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ee836fe3698e4c20"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AdventOfCode.Day18.part1() -&gt; ()"
+                  moduleName = "AdventOfCode"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2019/Day18/Day18.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "13129">
+               </Location>
+               <Location
+                  uuid = "EBE82B58-43DF-4B8E-A41A-7AA29F0AEACB - ff3f7f062bf82b76"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -909,7 +999,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "40"
                   endingLineNumber = "40"
-                  offsetFromSymbolStart = "59">
+                  offsetFromSymbolStart = "58">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -927,6 +1017,38 @@
             startingLineNumber = "29"
             endingLineNumber = "29"
             landmarkName = "testPart2()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B73C37B-719B-4C72-8ABF-2F18BC523264"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2020/Day1/Day1_2020.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "getAnsweraPart1()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D531E230-A143-4F50-8E04-A5457E5289F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2020/Day1/Day1_2020.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "7"
+            endingLineNumber = "7"
+            landmarkName = "getAnsweraPart1()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
