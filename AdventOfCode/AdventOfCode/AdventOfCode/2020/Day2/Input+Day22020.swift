@@ -9,7 +9,6 @@ public extension Input {
         array.forEach { line in
             
             guard line.count > 0 else {
-                print(line, "why")
                 return
             }
             
