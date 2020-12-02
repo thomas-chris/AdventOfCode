@@ -1019,8 +1019,8 @@
             filePath = "AdventOfCode/2020/Day2/Day2_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "validPasswords(_:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -1035,8 +1035,8 @@
             filePath = "AdventOfCode/2020/Day2/Day2_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "validPasswords(_:)"
             landmarkType = "9">
          </BreakpointContent>
