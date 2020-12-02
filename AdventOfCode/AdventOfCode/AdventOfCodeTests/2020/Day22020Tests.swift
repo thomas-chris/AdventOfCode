@@ -20,6 +20,6 @@ class Advent2020TestsDay2: XCTestCase {
     
     func test_day2_part2() {
         let input = Input.day2Input_2020(name: "Day2_2020")
-        XCTAssertEqual(validPasswords(input), 443   )
+        XCTAssertEqual(validPasswords(input), 443)
     }
 }
