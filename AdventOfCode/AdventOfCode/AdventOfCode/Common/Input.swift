@@ -40,4 +40,15 @@ public extension Input {
         
         return string
     }
+    
+    static func getInputStringNoTrim(name: String) -> String {
+        let bundle = Bundle(for: InputBundle.self)
+
+        guard let url = bundle.url(forResource: name, withExtension: "txt"),
+              let string = try? String(contentsOf: url) else {
+                fatalError("Couldn't get the data")
+        }
+        
+        return string
+    }
 }

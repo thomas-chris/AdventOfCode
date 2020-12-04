@@ -56,7 +56,6 @@ extension TwentyTwenty.Day3 {
             }
             
             let position = Position(x: x, y: y)
-            print(position)
             if forest[position] == .tree {
                 numberOfTrees += 1
             }
