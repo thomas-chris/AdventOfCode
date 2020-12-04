@@ -7,14 +7,14 @@ class Advent2020TestsDay4: XCTestCase {
         let input = Input.getInputStringNoTrim(name: "Day42020_Example1")
         let passportValidator = TwentyTwenty.Day4()
         let passports = passportValidator.createPassports(input)
-        XCTAssertEqual(passports.count, 2)
+        XCTAssertEqual(passports.0.count, 2)
     }
 
     func test_day4_part1() {
         let input = Input.getInputStringNoTrim(name: "Day42020")
         let passportValidator = TwentyTwenty.Day4()
         let passports = passportValidator.createPassports(input)
-        XCTAssertEqual(passports.count, 250)
+        XCTAssertEqual(passports.0.count, 250)
         
     }
 
@@ -22,8 +22,7 @@ class Advent2020TestsDay4: XCTestCase {
         let input = Input.getInputStringNoTrim(name: "Day42020_Example2")
         let passportValidator = TwentyTwenty.Day4()
         let passports = passportValidator.createPassports(input)
-        let count = passportValidator.validatePassports(passports)
-        XCTAssertEqual(count, 4)
+        XCTAssertEqual(passports.1, 4)
         
     }
 
@@ -31,7 +30,6 @@ class Advent2020TestsDay4: XCTestCase {
         let input = Input.getInputString(name: "Day42020")
         let passportValidator = TwentyTwenty.Day4()
         let passports = passportValidator.createPassports(input)
-        let count = passportValidator.validatePassports(passports)
-        XCTAssertEqual(count, 158)
+        XCTAssertEqual(passports.1, 158)
     }
 }

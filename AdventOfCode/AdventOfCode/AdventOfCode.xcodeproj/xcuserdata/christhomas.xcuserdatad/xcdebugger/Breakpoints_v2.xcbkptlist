@@ -1044,22 +1044,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "99DA8EEC-24B6-4733-81A3-C3C80DE0AA99"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCodeTests/2020/Day4Tests2020.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "test_day4_example2()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "42E8927D-3F9F-4CE4-B863-29B9505F8550"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1067,8 +1051,8 @@
             filePath = "AdventOfCode/2020/Day4/Day4_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "validatePassports(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1083,8 +1067,8 @@
             filePath = "AdventOfCode/2020/Day4/Day4_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "verifyHGT(_:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -1099,8 +1083,8 @@
             filePath = "AdventOfCode/2020/Day4/Day4_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "verifyHCL(_:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -1115,8 +1099,8 @@
             filePath = "AdventOfCode/2020/Day4/Day4_2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "verifyPID(_:)"
             landmarkType = "9">
          </BreakpointContent>
