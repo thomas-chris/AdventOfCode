@@ -30,7 +30,7 @@ extension TwentyTwenty {
             self.cid = cid
         }
         
-        public func validate() -> Passport? {
+        `public func validate() -> Passport? {
             func verifyHGT(_ hgt: String) -> String? {
                 let range = NSRange(location: 0, length: hgt.utf16.count)
                 let regex = try! NSRegularExpression(pattern: "(1[5-8][0-9]|19[0-3])[c][m]|(59|6[0-9]|7[0-6])[i][n]")
@@ -72,7 +72,7 @@ extension TwentyTwenty {
             }
             
             return Passport(byr: String(byr1), iyr: String(iyr1), eyr: String(eyr1), hgt: hgt1, hcl: hcl1, ecl: ecl1.rawValue, pid: pid1, cid: self.cid)
-        }
+        }`
     }
     
     public enum PassportKey: String {
