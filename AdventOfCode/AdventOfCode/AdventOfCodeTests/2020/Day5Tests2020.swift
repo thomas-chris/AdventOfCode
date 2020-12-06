@@ -48,6 +48,7 @@ class Advent2020TestsDay5: XCTestCase {
     }
     
     func test_day5_part2_v2() {
+        measure {
         let input = Input.getInputString(name: "Day52020")
         let array = input.components(separatedBy: "\n")
         
@@ -55,6 +56,6 @@ class Advent2020TestsDay5: XCTestCase {
         let results = boardingPassFilter.boardingPassFilterV2(input: array)
         let myPass = boardingPassFilter.findYourPass(input: results)
         XCTAssertEqual(myPass, 636)
-
+        }
     }
 }
