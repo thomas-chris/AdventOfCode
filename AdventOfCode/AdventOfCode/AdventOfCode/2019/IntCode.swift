@@ -23,7 +23,7 @@ public class IntCode {
         while (list[index]! % 100) != 99 {
             let initialOperatorValue = list[index]!
             
-            var opCodeString = String(initialOperatorValue)
+//            var opCodeString = String(initialOperatorValue)
             
             let c = initialOperatorValue % 10000 % 1000 / 100
             let b = initialOperatorValue % 10000 / 1000

@@ -67,7 +67,6 @@ public struct Day3 {
     }
     
     public static func getShortestDistanceOfIntersection(points: [Point]) -> Double {
-        let origin = Point(x: 0, y: 0)
         let distancesFromOrigin = points.map {
             abs($0.x) + abs($0.y)
         }
