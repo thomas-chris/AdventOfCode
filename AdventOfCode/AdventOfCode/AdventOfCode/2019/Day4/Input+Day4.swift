@@ -14,9 +14,9 @@ public struct PasswordRange {
 }
 
 public extension Input {
-    public static func day4(file: String) -> PasswordRange {
+    static func day4(file: String) -> PasswordRange {
         let data = Input.getInput(name: file)
-        var string = String(decoding: data, as: UTF8.self)
+        let string = String(decoding: data, as: UTF8.self)
         let trimmed = string.trimmingCharacters(in: CharacterSet(charactersIn: "\n"))
         let array = trimmed.components(separatedBy: "-")
         guard

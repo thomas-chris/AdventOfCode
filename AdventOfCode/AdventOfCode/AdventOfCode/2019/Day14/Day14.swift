@@ -42,7 +42,7 @@ public class Day14 {
     
     public func part2(ore: Int) -> Int {
         let anAmount = 1672135
-        let oneFuel = part1(fuel: 1)
+        let _ = part1(fuel: 1)
         var unusedChemicals2 = [String: Int]()
         unusedChemicals.forEach { (key, value) in
             let newValue = value * anAmount
