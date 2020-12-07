@@ -862,7 +862,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
                   endingLineNumber = "82"
-                  offsetFromSymbolStart = "1263">
+                  offsetFromSymbolStart = "530">
                </Location>
                <Location
                   uuid = "02FDB30E-D2AB-49EB-A6EF-6DD536C5955D - 15dded1ba5d1c558"
@@ -1054,22 +1054,6 @@
             startingLineNumber = "153"
             endingLineNumber = "153"
             landmarkName = "validatePassports(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "993E73D6-AE57-410B-9C93-CF6C48A20083"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2020/Day6/Day6_2020.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "solve2(input:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

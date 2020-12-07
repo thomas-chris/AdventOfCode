@@ -77,6 +77,9 @@
 		50254021257CAC2100208CC2 /* Day6Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50254020257CAC2100208CC2 /* Day6Tests2020.swift */; };
 		5032D735257DFC9E00A0191D /* Day7_2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D734257DFC9500A0191D /* Day7_2020.swift */; };
 		5032D73E257DFD9300A0191D /* Day7Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5032D73D257DFD9300A0191D /* Day7Tests2020.swift */; };
+		5032D749257E039C00A0191D /* Day72020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5032D73B257DFCB600A0191D /* Day72020_Example1.txt */; };
+		5032D74C257E039F00A0191D /* Day72020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5032D73C257DFCB600A0191D /* Day72020.txt */; };
+		5032D750257E0FFB00A0191D /* Day72020_Example2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5032D74F257E0FFB00A0191D /* Day72020_Example2.txt */; };
 		50424EDA25761FC300D77F8F /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 50424ED925761FC300D77F8F /* Algorithms */; };
 		50424EE42576200C00D77F8F /* Day1_2020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50424EE32576200C00D77F8F /* Day1_2020.txt */; };
 		50424EEB2576203000D77F8F /* Day1_2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50424EEA2576203000D77F8F /* Day1_2020.swift */; };
@@ -241,6 +244,7 @@
 		5032D73B257DFCB600A0191D /* Day72020_Example1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day72020_Example1.txt; sourceTree = "<group>"; };
 		5032D73C257DFCB600A0191D /* Day72020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day72020.txt; sourceTree = "<group>"; };
 		5032D73D257DFD9300A0191D /* Day7Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day7Tests2020.swift; sourceTree = "<group>"; };
+		5032D74F257E0FFB00A0191D /* Day72020_Example2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day72020_Example2.txt; sourceTree = "<group>"; };
 		50424EE32576200C00D77F8F /* Day1_2020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day1_2020.txt; sourceTree = "<group>"; };
 		50424EEA2576203000D77F8F /* Day1_2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1_2020.swift; sourceTree = "<group>"; };
 		50424EF02576207700D77F8F /* Input+NewLineExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Input+NewLineExtension.swift"; sourceTree = "<group>"; };
@@ -637,6 +641,7 @@
 			children = (
 				5032D73C257DFCB600A0191D /* Day72020.txt */,
 				5032D73B257DFCB600A0191D /* Day72020_Example1.txt */,
+				5032D74F257E0FFB00A0191D /* Day72020_Example2.txt */,
 			);
 			path = Day7;
 			sourceTree = "<group>";
@@ -1087,6 +1092,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5032D749257E039C00A0191D /* Day72020_Example1.txt in Resources */,
 				50978B02239F858F0036AFA8 /* Day10.txt in Resources */,
 				50086D4323A762D0002613B7 /* Day16Example1.txt in Resources */,
 				504CA7C9257AC6F300F088B2 /* Day52020_Example2.txt in Resources */,
@@ -1115,6 +1121,7 @@
 				500DAFB023964C290081CC21 /* Day3Test1.txt in Resources */,
 				50086CD623A36C1B002613B7 /* Day13.txt in Resources */,
 				50978A52239B82B60036AFA8 /* Day7.txt in Resources */,
+				5032D750257E0FFB00A0191D /* Day72020_Example2.txt in Resources */,
 				506FF7D8257A1FDF0006055D /* Day42020_Example2.txt in Resources */,
 				50086D3623A60A48002613B7 /* Day15.txt in Resources */,
 				50978AFC239F70340036AFA8 /* Day10Test1.txt in Resources */,
@@ -1129,6 +1136,7 @@
 				50936CF3239A34C1001F58F3 /* Day6Test1.txt in Resources */,
 				50978A66239CCFD30036AFA8 /* Day8.txt in Resources */,
 				50978B6B23A0B73B0036AFA8 /* Day11Test1.txt in Resources */,
+				5032D74C257E039F00A0191D /* Day72020.txt in Resources */,
 				506FF74E2578C5BF0006055D /* Day32020.txt in Resources */,
 				50978B6223A0B1480036AFA8 /* Day11.txt in Resources */,
 				504CA7AE257AC68300F088B2 /* Day52020.txt in Resources */,
