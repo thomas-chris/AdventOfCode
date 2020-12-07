@@ -8,8 +8,8 @@ class Advent2020TestsDay7: XCTestCase {
         let array = input.components(separatedBy: "\n")
         
         let bagSolver = TwentyTwenty.Day7()
-        let count = bagSolver.solve(input: array)
-        XCTAssertEqual(count.0, 4)
+        let count = bagSolver.solve1(input: array)
+        XCTAssertEqual(count, 4)
     }
     
     
@@ -20,8 +20,8 @@ class Advent2020TestsDay7: XCTestCase {
             let array = input.components(separatedBy: "\n")
             
             let bagSolver = TwentyTwenty.Day7()
-            let count = bagSolver.solve(input: array)
-            XCTAssertEqual(count.0, 370)
+            let count = bagSolver.solve1(input: array)
+            XCTAssertEqual(count, 370)
         }
     }
     
@@ -30,16 +30,18 @@ class Advent2020TestsDay7: XCTestCase {
         let array = input.components(separatedBy: "\n")
         
         let bagSolver = TwentyTwenty.Day7()
-        let count = bagSolver.solve(input: array)
-        XCTAssertEqual(count.1, 126)
+        let count = bagSolver.solve2(input: array)
+        XCTAssertEqual(count, 126)
     }
     
     func test_day7_part2() {
+        measure {
         let input = Input.getInputString(name: "Day72020")
         let array = input.components(separatedBy: "\n")
         
         let bagSolver = TwentyTwenty.Day7()
-        let count = bagSolver.solve(input: array)
-        XCTAssertEqual(count.1, 29547)
+        let count = bagSolver.solve2(input: array)
+        XCTAssertEqual(count, 29547)
+        }
     }
 }

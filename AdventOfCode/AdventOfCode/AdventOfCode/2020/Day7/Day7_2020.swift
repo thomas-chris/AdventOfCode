@@ -14,17 +14,21 @@ extension TwentyTwenty {
 
 extension TwentyTwenty.Day7  {
     
-    public func solve(input: [String]) -> (Int, Int) {
+    public func solve1(input: [String]) -> Int {
         let bags = getBags(input: input)
-        return (countOfBagsThatCanHoldShinyWhite(bagsAndRules: bags), getTotalBagNumbers(bagsAndRules: bags))
+        return countOfBagsThatCanHoldShinyWhite(bagsAndRules: bags)
+    }
+    
+    public func solve2(input: [String]) -> Int {
+        let bags = getBags(input: input)
+        return getTotalBagNumbers(bagsAndRules: bags)
     }
     
     func getBags(input: [String]) -> [String: [TwentyTwenty.BagRule]] {
         var bagsAndRules: [String: [TwentyTwenty.BagRule]] = [:]
         
         input.forEach { line in
-            let charactersToTrim = CharacterSet(["."])
-            let words = line.trimmingCharacters(in: charactersToTrim).components(separatedBy: " ")
+            let words = line.components(separatedBy: " ")
             
             let bag = words.prefix(2).joined()
             var rules: [TwentyTwenty.BagRule] = []
