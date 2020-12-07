@@ -14,9 +14,9 @@ extension TwentyTwenty {
 
 extension TwentyTwenty.Day7  {
     
-    public func solve1(input: [String]) -> Int {
+    public func solve(input: [String]) -> (Int, Int) {
         let bags = getBags(input: input)
-        return countOfBagsThatCanHoldShinyWhite(bagsAndRules: bags)
+        return (countOfBagsThatCanHoldShinyWhite(bagsAndRules: bags), getTotalBagNumbers(bagsAndRules: bags))
     }
     
     func getBags(input: [String]) -> [String: [TwentyTwenty.BagRule]] {
@@ -76,4 +76,20 @@ extension TwentyTwenty.Day7  {
         return seen.count
     }
     
+    func getTotalBagNumbers(bagsAndRules: [String: [TwentyTwenty.BagRule]]) -> Int {
+    
+        let startingBag = TwentyTwenty.BagRule(bag: "shinygold", amount: 1)
+        var stack = [startingBag]
+        var totalBags = 0
+        
+        while let bag = stack.popLast() {
+            for rules in bagsAndRules[bag.bag] ?? [] {
+                let newAmount = bag.amount * rules.amount
+                stack.append(TwentyTwenty.BagRule(bag: rules.bag, amount: newAmount))
+                totalBags += newAmount
+            }
+        }
+        
+        return totalBags
+    }
 }
