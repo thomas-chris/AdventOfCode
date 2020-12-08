@@ -36,19 +36,19 @@ extension TwentyTwenty.Day8  {
         var result = 0
         
         for indexToChange in 0..<instructions.count {
-                let newInstructions = instructions.enumerated().map { index, instruction -> TwentyTwenty.Instruction in
-                    if indexToChange == index {
-                        switch instruction.type {
-                        case .nop: return TwentyTwenty.Instruction(type: .jmp, value: instruction.value)
-                        case .acc: return instruction
-                        case .jmp: return TwentyTwenty.Instruction(type: .nop, value: instruction.value)
-                        }
-                    }
-                    return instruction
-                }
+            
+            var newInstructions = instructions
+            let instruction = instructions[indexToChange]
+            if instruction.type != .acc {
                 
-                var accumalator = 0
-                let completed = runGame(with: newInstructions, accumalator: &accumalator)
+                switch instruction.type {
+                case .nop: newInstructions[indexToChange] = TwentyTwenty.Instruction(type: .jmp, value: instruction.value)
+                case .jmp: newInstructions[indexToChange] = TwentyTwenty.Instruction(type: .nop, value: instruction.value)
+                default: continue
+                }
+            }
+            var accumalator = 0
+            let completed = runGame(with: newInstructions, accumalator: &accumalator)
             
             if completed {
                 result = accumalator
