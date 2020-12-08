@@ -24,23 +24,14 @@ class Advent2020TestsDay8: XCTestCase {
         }
     }
     
-    func test_day8_example2() {
-        let input = Input.getInputString(name: "Day82020_Example2")
-        let array = input.components(separatedBy: "\n")
-        
-        let bagSolver = TwentyTwenty.Day7()
-        let count = bagSolver.solve2(input: array)
-        XCTAssertEqual(count, 126)
-    }
-    
     func test_day8_part2() {
         measure {
-        let input = Input.getInputString(name: "Day8    2020")
+        let input = Input.getInputString(name: "Day82020")
         let array = input.components(separatedBy: "\n")
         
-        let bagSolver = TwentyTwenty.Day7()
+        let bagSolver = TwentyTwenty.Day8()
         let count = bagSolver.solve2(input: array)
-        XCTAssertEqual(count, 29547)
+            XCTAssertEqual(count, 2304)
         }
     }
 }
