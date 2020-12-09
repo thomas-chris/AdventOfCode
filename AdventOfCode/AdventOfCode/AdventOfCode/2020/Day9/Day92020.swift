@@ -17,7 +17,6 @@ extension TwentyTwenty.Day9 {
                 return input[index]
             }
         }
-        
         return -1
     }
     
@@ -29,18 +28,14 @@ extension TwentyTwenty.Day9 {
             for value in input[index ..< input.count] {
                 sum += value
                 allValues.append(value)
-                if sum == invalidNumber || sum > invalidNumber{
+                guard sum <= invalidNumber else { break }
+                if sum == invalidNumber || sum > invalidNumber {
+                    let sorted = allValues.sorted()
+                    return sorted.first! + sorted.last!
                     break
                 }
             }
-            
-            if sum == invalidNumber {
-                let sorted = allValues.sorted()
-                return sorted.first! + sorted.last!
-            } 
         }
-        
         return -1
     }
-    
 }
