@@ -29,15 +29,14 @@ extension TwentyTwenty.Day9 {
             for value in input[index ..< input.count] {
                 sum += value
                 allValues.append(value)
-                if sum == invalidNumber {
+                if sum == invalidNumber || sum > invalidNumber{
                     break
                 }
             }
             
             if sum == invalidNumber {
-                let minVal = allValues.min() ?? 0
-                let maxVal = allValues.max() ?? 0
-                return minVal + maxVal
+                let sorted = allValues.sorted()
+                return sorted.first! + sorted.last!
             } 
         }
         
