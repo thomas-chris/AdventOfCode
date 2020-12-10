@@ -29,10 +29,9 @@ extension TwentyTwenty.Day9 {
                 sum += value
                 allValues.append(value)
                 guard sum <= invalidNumber else { break }
-                if sum == invalidNumber || sum > invalidNumber {
+                if sum == invalidNumber {
                     let sorted = allValues.sorted()
                     return sorted.first! + sorted.last!
-                    break
                 }
             }
         }
