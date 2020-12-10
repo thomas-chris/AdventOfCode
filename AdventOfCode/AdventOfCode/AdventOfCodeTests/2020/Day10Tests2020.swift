@@ -35,7 +35,7 @@ class Advent2020TestsDay10: XCTestCase {
         
         let game = TwentyTwenty.Day10()
         let count = game.solve2(input: input)
-        XCTAssertEqual(count, 0)
+        XCTAssertEqual(count, 8)
     }
     
     func test_day10_part2_example2() {
@@ -43,18 +43,16 @@ class Advent2020TestsDay10: XCTestCase {
         
         let game = TwentyTwenty.Day10()
         let count = game.solve2(input: input)
-        XCTAssertEqual(count, 0)
+        XCTAssertEqual(count, 19208)
     }
-    
-    
-//
-//    func test_day10_part2() {
-//        measure {
-//            let input = Input.array(seperator: "\n", file: "Day102020")
-//
-//            let game = TwentyTwenty.Day9()
-//            let count = game.solve2(input: input, invalidNumber: 1398413738)
-//            XCTAssertEqual(count, 169521051)
-//        }
-//    }
+
+    func test_day10_part2() {
+        measure{
+            let input = Input.array(seperator: "\n", file: "Day102020")
+
+            let game = TwentyTwenty.Day10()
+            let count = game.solve2(input: input)
+            XCTAssertEqual(count, 198428693313536)
+        }
+    }
 }
