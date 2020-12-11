@@ -19,8 +19,8 @@ extension TwentyTwenty.Day11 {
         
         var ferry: [Position: TwentyTwenty.Seat] = [:]
         
-        input.enumerated().forEach { x, row in
-            row.enumerated().forEach { y, seat in
+        input.enumerated().forEach { y, row in
+            row.enumerated().forEach { x, seat in
                 let position = Position(x: x, y: y)
                 ferry[position] = TwentyTwenty.Seat(rawValue: String(seat))!
             }
@@ -55,19 +55,111 @@ extension TwentyTwenty.Day11 {
             seat == .full ? .full : nil
         }.count
     }
+    
+    public func solve2(input: [String]) -> Int {
+        
+        var ferry: [Position: TwentyTwenty.Seat] = [:]
+        
+        input.enumerated().forEach { x, row in
+            row.enumerated().forEach { y, seat in
+                let position = Position(x: x, y: y)
+                ferry[position] = TwentyTwenty.Seat(rawValue: String(seat))!
+            }
+        }
+        
+        
+        let maxY = input.count
+        let maxX = input[0].count
+        
+        return part2(ferry: ferry, maxX: maxX, maxY: maxY)
+    }
+    func part2(ferry: [Position: TwentyTwenty.Seat], maxX: Int, maxY: Int) -> Int {
+        
+        var ferry = ferry
+        
+        //list of functions to traverse the directions of travel
+        let vectors: [(Position, Int) -> Position] = [
+            { position, value in Position(x: position.x - value, y: position.y - value)},
+            { position, value in Position(x: position.x - value, y: position.y)},
+            { position, value in Position(x: position.x - value, y: position.y + value)},
+            { position, value in Position(x: position.x , y: position.y - value)},
+            { position, value in Position(x: position.x , y: position.y + value)},
+            { position, value in Position(x: position.x + value, y: position.y - value)},
+            { position, value in Position(x: position.x + value, y: position.y)},
+            { position, value in Position(x: position.x + value, y: position.y + value)},
+        ]
+        var changes = -1
+        var newChanges = 0
+        
+        while newChanges != changes {
+            changes = newChanges
+            var newFerry = ferry
+            for key in ferry.keys {
+                var count = 0
+                for vector in vectors {
+                    var exit = false
+                    var step = 1
+                    while !exit {
+                        let newPostion = vector(key, step)
+                        step += 1
+
+                        if let value = ferry[newPostion] {
+                            if value != .floor {
+                                count += value == .full ? 1 : 0
+                                exit = true
+                            }
+                            
+                        } else { exit = true }
+                            
+                        
+                    }
+                }
+                
+                if ferry[key] == .empty && count == 0 {
+                    newFerry[key] = .full
+                    newChanges += 1
+                } else if ferry[key] == .full && count > 4 {
+                    newFerry[key] = .empty
+                    newChanges += 1
+                }
+            }
+            
+            ferry = newFerry
+//            printDic(input: ferry, maxX: maxX, maxY: maxY)
+        }
+    
+        
+        return ferry.compactMapValues { (seat) -> TwentyTwenty.Seat? in
+            seat == .full ? .full : nil
+        }.count
+    }
+    
+    func printDic(input: [Position: TwentyTwenty.Seat], maxX: Int, maxY: Int) {
+    
+        for y in 0 ..< maxY {
+            var line = ""
+            for x in 0 ..< maxX {
+                let char = input[Position(x: x, y: y)]!.rawValue
+                line.append(char)
+            }
+            print(line)
+        }
+        print("")
+        
+    }
 }
 
 extension Position {
     var matrix: [Position] {
         
         [(Position(x: self.x - 1, y: self.y - 1)),
-        (Position(x: self.x - 1, y: self.y)),
-        (Position(x: self.x - 1, y: self.y + 1)),
-        (Position(x: self.x, y: self.y - 1)),
-        (Position(x: self.x, y: self.y + 1)),
-        (Position(x: self.x + 1, y: self.y - 1)),
-        (Position(x: self.x + 1, y: self.y)),
-        (Position(x: self.x + 1, y: self.y + 1)),
+         (Position(x: self.x - 1, y: self.y)),
+         (Position(x: self.x - 1, y: self.y + 1)),
+         (Position(x: self.x, y: self.y - 1)),
+         (Position(x: self.x, y: self.y + 1)),
+         (Position(x: self.x + 1, y: self.y - 1)),
+         (Position(x: self.x + 1, y: self.y)),
+         (Position(x: self.x + 1, y: self.y + 1)),
         ]
-        }
+    }
 }

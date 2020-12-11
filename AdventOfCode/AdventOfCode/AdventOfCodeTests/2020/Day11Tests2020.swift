@@ -14,6 +14,20 @@ class Advent2020TestsDay11: XCTestCase {
         let input = Input.getInputString(name: "Day112020").components(separatedBy: "\n")
         let day11 = TwentyTwenty.Day11()
         let count = day11.solve1(input: input)
-        XCTAssertEqual(count, 37)
+        XCTAssertEqual(count, 2265)
+    }
+    
+    func test_day11_example2() {
+        let input = Input.getInputString(name: "Day112020_Example1").components(separatedBy: "\n")
+        let day11 = TwentyTwenty.Day11()
+        let count = day11.solve2(input: input)
+        XCTAssertEqual(count, 26)
+    }
+    
+    func test_day11_part2() {
+        let input = Input.getInputString(name: "Day112020").components(separatedBy: "\n")
+        let day11 = TwentyTwenty.Day11()
+        let count = day11.solve2(input: input)
+        XCTAssertEqual(count, 2045)
     }
 }
