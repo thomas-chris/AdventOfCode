@@ -159,18 +159,3 @@ extension TwentyTwenty.Day11 {
         
     }
 }
-
-extension Position {
-    var matrix: [Position] {
-        
-        [(Position(x: self.x - 1, y: self.y - 1)),
-         (Position(x: self.x - 1, y: self.y)),
-         (Position(x: self.x - 1, y: self.y + 1)),
-         (Position(x: self.x, y: self.y - 1)),
-         (Position(x: self.x, y: self.y + 1)),
-         (Position(x: self.x + 1, y: self.y - 1)),
-         (Position(x: self.x + 1, y: self.y)),
-         (Position(x: self.x + 1, y: self.y + 1)),
-        ]
-    }
-}
