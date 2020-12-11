@@ -61,7 +61,7 @@ extension TwentyTwenty.Day11 {
             ferry = newFerry
             loops += 1
         }
-        
+
         return ferry.compactMapValues { (seat) -> Seat? in
             seat == .full ? .full : nil
         }.count
@@ -92,7 +92,7 @@ extension TwentyTwenty.Day11 {
         
         var changes = -1
         var newChanges = 0
-        
+        var count = 0
         while newChanges != changes {
             changes = newChanges
             var newFerry = ferry
@@ -109,12 +109,11 @@ extension TwentyTwenty.Day11 {
                     newChanges += 1
                 }
             }
-            
+            count += 1
             ferry = newFerry
 //            printDic(input: ferry, maxX: maxX, maxY: maxY)
         }
-    
-        
+ 
         return ferry.compactMapValues { (seat) -> Seat? in
             seat == .full ? .full : nil
         }.count
