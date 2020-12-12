@@ -6,7 +6,8 @@ class Advent2020TestsDay12: XCTestCase {
     func test_day12_example1() {
         let input = Input.getInputString(name: "Day122020_Example1").components(separatedBy: "\n")
         let day12 = TwentyTwenty.Day12()
-        let count = day12.solve1(input: input)
+        let instructions = day12.getInstructions(input: input)
+        let count = day12.solve1(instructions: instructions)
         XCTAssertEqual(count, 25)
     }
     
@@ -14,7 +15,8 @@ class Advent2020TestsDay12: XCTestCase {
         measure {
             let input = Input.getInputString(name: "Day122020").components(separatedBy: "\n")
             let day12 = TwentyTwenty.Day12()
-            let count = day12.solve1(input: input)
+            let instructions = day12.getInstructions(input: input)
+            let count = day12.solve1(instructions: instructions)
             XCTAssertEqual(count, 415)
         }
     }
@@ -22,7 +24,8 @@ class Advent2020TestsDay12: XCTestCase {
     func test_day12_example2() {
         let input = Input.getInputString(name: "Day122020_Example1").components(separatedBy: "\n")
         let day12 = TwentyTwenty.Day12()
-        let count = day12.solve2(input: input)
+        let instructions = day12.getInstructions(input: input)
+        let count = day12.solve2(instructions: instructions)
         XCTAssertEqual(count, 286)
     }
     
@@ -30,8 +33,9 @@ class Advent2020TestsDay12: XCTestCase {
         measure {
             let input = Input.getInputString(name: "Day122020").components(separatedBy: "\n")
             let day12 = TwentyTwenty.Day12()
-            let count = day12.solve2(input: input)
-            XCTAssertEqual(count, 415)
+            let instructions = day12.getInstructions(input: input)
+            let count = day12.solve2(instructions: instructions)
+            XCTAssertEqual(count, 29401)
         }
     }
 }

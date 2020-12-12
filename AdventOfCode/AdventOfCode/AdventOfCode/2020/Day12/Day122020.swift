@@ -5,13 +5,13 @@ extension TwentyTwenty {
     public class Day12 {
         public init() {}
 
-        enum Instruction {
+        public enum Instruction {
             case forward(Int)
             case move(Heading, Int)
             case turn(Bool, Int)
         }
         
-        enum Heading: Int {
+        public enum Heading: Int {
             case north = 0
             case east = 90
             case south = 180
@@ -22,8 +22,9 @@ extension TwentyTwenty {
 }
 
 extension TwentyTwenty.Day12 {
-    public func solve1(input: [String]) -> Int {
-        let instructions = input.map { line -> Instruction in
+    
+    public func getInstructions(input: [String]) -> [Instruction] {
+        return input.map { line -> Instruction in
             let first = line.first!
             let theRest = Int(line.dropFirst())!
             
@@ -38,6 +39,9 @@ extension TwentyTwenty.Day12 {
             default: fatalError("Invalid input")
             }
         }
+    }
+    
+    public func solve1(instructions: [Instruction]) -> Int {
         
         var position = Position(x: 0, y: 0)
         var currentHeading: Heading = .east
@@ -48,30 +52,13 @@ extension TwentyTwenty.Day12 {
             case .move(let heading, let distance): position = position.move(heading: heading, distance: distance)
             case .turn(let left, let angle): currentHeading = currentHeading.turn(left: left, angle: angle)
             }
-            
-            print(position)
         }
 
         return (abs(position.x) + abs(position.y))
         
     }
     
-    public func solve2(input: [String]) -> Int {
-        let instructions = input.map { line -> Instruction in
-            let first = line.first!
-            let theRest = Int(line.dropFirst())!
-            
-            switch first {
-            case "N": return .move(.north, theRest)
-            case "E": return .move(.east, theRest)
-            case "S": return .move(.south, theRest)
-            case "W": return .move(.west, theRest)
-            case "L": return .turn(true, theRest)
-            case "R": return .turn(false, theRest)
-            case "F": return .forward(theRest)
-            default: fatalError("Invalid input")
-            }
-        }
+    public func solve2(instructions: [Instruction]) -> Int {
         
         var position = Position(x: 0, y: 0)
         var waypoint = Position(x: 10, y: 1)
