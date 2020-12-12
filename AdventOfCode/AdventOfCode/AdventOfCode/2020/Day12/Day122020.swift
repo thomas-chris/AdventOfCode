@@ -52,6 +52,8 @@ extension TwentyTwenty.Day12 {
             case .move(let heading, let distance): position = position.move(heading: heading, distance: distance)
             case .turn(let left, let angle): currentHeading = currentHeading.turn(left: left, angle: angle)
             }
+            
+            print(position)
         }
 
         return (abs(position.x) + abs(position.y))
@@ -85,6 +87,68 @@ extension TwentyTwenty.Day12 {
         }
         
         return (abs(position.x) + abs(position.y))
+    }
+    
+    public func createMapForPart1(instructions: [Instruction]) {
+        var position = Position(x: 0, y: 0)
+        var currentHeading: Heading = .east
+        
+        var furthestNorth = 0
+        var furthestEast = 0
+        var furthestSouth = 0
+        var furthestWest = 0
+        
+        for instruction in instructions {
+            switch instruction {
+            case .forward(let distance) : position = position.move(heading: currentHeading, distance: distance)
+            case .move(let heading, let distance): position = position.move(heading: heading, distance: distance)
+            case .turn(let left, let angle): currentHeading = currentHeading.turn(left: left, angle: angle)
+            }
+            
+            if position.x < furthestWest { furthestWest = position.x }
+            if position.x > furthestEast { furthestEast = position.x }
+            if position.y < furthestSouth { furthestSouth = position.y }
+            if position.y > furthestNorth { furthestNorth = position.y }
+        }
+        
+        var map: [Position: String] = [:]
+        for i in furthestWest...furthestEast {
+            for j in furthestSouth...furthestNorth {
+                map[Position(x: i, y: j)] = " "
+            }
+        }
+        
+        position = Position(x: 0, y: 0)
+        currentHeading = .east
+        map[position] = "#"
+        
+//        printDic(input: map, minX: furthestWest, minY: furthestSouth, maxX: furthestEast, maxY: furthestNorth)
+        
+        for instruction in instructions {
+            map[position] = " "
+            switch instruction {
+            case .forward(let distance) : position = position.move(heading: currentHeading, distance: distance)
+            case .move(let heading, let distance): position = position.move(heading: heading, distance: distance)
+            case .turn(let left, let angle): currentHeading = currentHeading.turn(left: left, angle: angle)
+            }
+            map[position] = "#"
+//            printDic(input: map, minX: furthestWest, minY: furthestSouth, maxX: furthestEast, maxY: furthestNorth)
+        }
+
+    }
+    
+    func printDic(input: [Position: String], minX: Int, minY: Int, maxX: Int, maxY: Int) {
+    
+        for y in minY ..< maxY {
+            var line = ""
+            for x in minX ..< maxX {
+                let char = input[Position(x: x, y: y)]!
+                line.append(char)
+            }
+            print(line)
+        }
+        print("")
+        
     }
 }
 

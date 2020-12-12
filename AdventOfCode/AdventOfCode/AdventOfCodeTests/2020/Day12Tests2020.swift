@@ -21,6 +21,15 @@ class Advent2020TestsDay12: XCTestCase {
         }
     }
     
+    func test_day12_drawPart1() {
+        measure {
+            let input = Input.getInputString(name: "Day122020").components(separatedBy: "\n")
+            let day12 = TwentyTwenty.Day12()
+            let instructions = day12.getInstructions(input: input)
+            day12.createMapForPart1(instructions: instructions)
+        }
+    }
+    
     func test_day12_example2() {
         let input = Input.getInputString(name: "Day122020_Example1").components(separatedBy: "\n")
         let day12 = TwentyTwenty.Day12()
