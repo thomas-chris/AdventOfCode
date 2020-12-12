@@ -175,6 +175,7 @@
 		50BE7B23258407BE008CD46C /* Day11Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE7B22258407BE008CD46C /* Day11Tests2020.swift */; };
 		50BE7B32258408EB008CD46C /* Day122020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50BE7B31258408D9008CD46C /* Day122020.txt */; };
 		50BE7B33258408EB008CD46C /* Day122020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50BE7B30258408D9008CD46C /* Day122020_Example1.txt */; };
+		50BE7B3625849395008CD46C /* Day122020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BE7B2C258407FC008CD46C /* Day122020.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1377,6 +1378,7 @@
 				50086D9B23ACB89F002613B7 /* Input+Day19.swift in Sources */,
 				50978A73239E10D60036AFA8 /* Day9.swift in Sources */,
 				50936C9423978DB2001F58F3 /* Day4.swift in Sources */,
+				50BE7B3625849395008CD46C /* Day122020.swift in Sources */,
 				50086D8F23AA9BCB002613B7 /* Day18.swift in Sources */,
 				50BE7B1C2583413E008CD46C /* Day112020.swift in Sources */,
 				5032D735257DFC9E00A0191D /* Day7_2020.swift in Sources */,
