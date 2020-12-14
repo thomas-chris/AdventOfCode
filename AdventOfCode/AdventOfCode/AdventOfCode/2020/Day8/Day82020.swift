@@ -27,7 +27,7 @@ extension TwentyTwenty.Day8  {
     public func solve1(input: [String]) -> Int {
         let instructions = formatInput(input: input)
         var result = 0
-        runGame(with: instructions, accumalator: &result)
+        _ = runGame(with: instructions, accumalator: &result)
         return result
     }
     

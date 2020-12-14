@@ -132,7 +132,7 @@ extension TwentyTwenty.Day14 {
         
         instructions.forEach { instruction in
             
-            if case .mask(let _, let ones, let exes) = instruction {
+            if case .mask(_, let ones, let exes) = instruction {
                 onesMask = ones
                 xMask = exes
             }

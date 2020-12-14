@@ -53,7 +53,7 @@ extension TwentyTwenty.Day11 {
                     newChanges += 1
                 }
                 
-                if ferry[key] == .full && adjacentSeats.filter { $0 == .full }.count > 3 {
+                if ferry[key] == .full && adjacentSeats.filter({ $0 == .full }).count > 3 {
                     newFerry[key] = .empty
                     newChanges += 1
                 }
