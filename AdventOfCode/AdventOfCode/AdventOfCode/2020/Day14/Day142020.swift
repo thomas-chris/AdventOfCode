@@ -94,7 +94,7 @@ extension TwentyTwenty.Day14 {
             
             if case .memory(let allocation, value: let value) = instruction {
                 let valueAsBinary = String(value, radix: 2)
-                let paddedValue = pad(string: valueAsBinary, toSize: 36)
+                let paddedValue = String(repeating: "0", count: 36 - valueAsBinary.count) + valueAsBinary
                 
                 let zerosSwapped = paddedValue.enumerated().map { index, character -> String in
                     if zerosMask.contains(index) {
@@ -121,10 +121,6 @@ extension TwentyTwenty.Day14 {
         return memory.values.reduce(0, +)
     }
     
-    func pad(string : String, toSize: Int) -> String {
-        String(repeating: "0", count: toSize) + string
-    }
-    
     public func solvePart2(input: [String]) -> Int {
         let instructions = input.map { line in
             return Instruction2(string: line)
@@ -132,14 +128,12 @@ extension TwentyTwenty.Day14 {
         
         var memory: [Int: Int] = [:]
         
-        var zerosMask: [Int] = []
         var onesMask: [Int] = []
         var xMask: [Int] = []
         
         instructions.forEach { instruction in
             
-            if case .mask(let zeros, let ones, let exes) = instruction {
-                zerosMask = zeros
+            if case .mask(let _, let ones, let exes) = instruction {
                 onesMask = ones
                 xMask = exes
             }
@@ -184,7 +178,7 @@ extension TwentyTwenty.Day14 {
         
         for i in 0..<iterations {
             let number = String(i, radix: 2)
-            let binary = pad(string: String(i, radix: 2), toSize: exes.count - number.count) + number
+            let binary = String(repeating: "0", count: exes.count - number.count) + number
             
             var result = Array(repeating: "0", count: 36)
             
