@@ -1046,8 +1046,8 @@
             filePath = "AdventOfCode/2020/Day14/Day142020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "solvePart1(input:)"
             landmarkType = "7">
             <Locations>

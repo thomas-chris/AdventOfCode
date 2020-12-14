@@ -6,7 +6,6 @@ extension TwentyTwenty {
         public init() {
         }
         
-        
         enum Instruction {
             case mask(zeros: [Int], ones: [Int])
             case memory(allocation: Int, value: Int)
