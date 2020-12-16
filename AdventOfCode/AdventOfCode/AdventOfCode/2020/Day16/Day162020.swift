@@ -33,8 +33,7 @@ extension TwentyTwenty.Day16 {
                 }
             }
         }
-        
-        
+
         otherTickets.components(separatedBy: ":").last!.components(separatedBy: "\n").forEach { line in
             line.components(separatedBy: ",")
                 .compactMap {
@@ -159,7 +158,6 @@ extension TwentyTwenty.Day16 {
             if list.count == 1 {
                 value = list.first!
                 columns[value] = key
-                print("Column \(value) is rule \(key)")
             }
         }
         
