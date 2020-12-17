@@ -31,37 +31,30 @@ enum State: String {
 extension TwentyTwenty.Day17 {
     public func solvePart1(input: [String]) -> Int {
         
-        let initialSpace = parse(input: input)
+        var space = parse(input: input)
         
-        var space = increaseSpace(space: initialSpace)
         var loops = 1
 
         while loops < 7 {
+            space = increaseSpace(space: space)
             var newSpace = space
             for key in newSpace.keys {
                 let neighbours = key.neighbours
                 
-                var countActive = 0
-                neighbours.forEach { (position) in
-                    if space[position] == .active {
-                        countActive += 1
-                    }
+                let countActive = neighbours.reduce(0) { (result, position) -> Int in
+                    result + (space[position] == .active ? 1 : 0)
                 }
                 
-                if space[key] == .inactive {
-                    if countActive == 3 {
-                        newSpace[key] = .active
-                    }
-                }
-                
-                if space[key] == .active {
-                    if countActive < 2 || countActive > 3 {
-                        newSpace[key] = .inactive
-                    }
+                switch space[key] {
+                case .inactive:
+                    if countActive == 3 { newSpace[key] = .active }
+                case .active:
+                    if ![2,3].contains(countActive) { newSpace[key] = .inactive }
+                default: break
                 }
             }
             
-            space = increaseSpace(space: newSpace)
+            space = newSpace
             loops += 1
         }
         

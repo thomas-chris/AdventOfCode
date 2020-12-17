@@ -12,12 +12,12 @@ class Advent2020TestsDay17: XCTestCase {
     }
     
     func test_day14_part1() {
-        measure {
+//        measure {
         let input = Input.getInputString(name: "Day172020").components(separatedBy: "\n")
         let day17 = TwentyTwenty.Day17()
         let value = day17.solvePart1(input: input)
         XCTAssertEqual(value, 263)
-        }
+//        }
 
     }
     
@@ -27,7 +27,7 @@ class Advent2020TestsDay17: XCTestCase {
         let input = Input.getInputString(name: "Day172020").components(separatedBy: "\n")
         let day17 = TwentyTwenty.Day17()
         let value = day17.solvePart2(input: input)
-        XCTAssertEqual(value, 4197941339968)
+        XCTAssertEqual(value, 1680)
         }
     }
 
