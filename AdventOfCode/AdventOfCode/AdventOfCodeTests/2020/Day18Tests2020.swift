@@ -81,7 +81,7 @@ class Advent2020TestsDay18: XCTestCase {
         ]
         let day18 = TwentyTwenty.Day18()
         let value = day18.solvePart2(input: input)
-        XCTAssertEqual(value, 13632)
+        XCTAssertEqual(value, 23340)
 
     }
     
@@ -91,7 +91,7 @@ class Advent2020TestsDay18: XCTestCase {
         ]
         let day18 = TwentyTwenty.Day18()
         let value = day18.solvePart2(input: input)
-        XCTAssertEqual(value, 12240)
+        XCTAssertEqual(value, 669090)
 
     }
     
@@ -102,7 +102,7 @@ class Advent2020TestsDay18: XCTestCase {
         let input = Input.getInputString(name: "Day182020").components(separatedBy: "\n")
         let day18 = TwentyTwenty.Day18()
         let value = day18.solvePart2(input: input)
-        XCTAssertEqual(value, 275183)
+        XCTAssertEqual(value, 60807587180737)
         }
     }
 
