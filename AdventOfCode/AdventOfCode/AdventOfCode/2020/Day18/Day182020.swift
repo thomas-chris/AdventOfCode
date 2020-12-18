@@ -8,8 +8,8 @@ extension TwentyTwenty {
         
         let operators: [String:(Int,Int)->Int] = [
             "+": (+),
-            "-": (-),
-            "/": (/),
+//            "-": (-),
+//            "/": (/),
             "*": (*),
         ]
     }

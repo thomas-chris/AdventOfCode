@@ -1036,8 +1036,8 @@
             filePath = "AdventOfCodeTests/2020/Day18Tests2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "test_day18_part1()"
             landmarkType = "7">
          </BreakpointContent>
