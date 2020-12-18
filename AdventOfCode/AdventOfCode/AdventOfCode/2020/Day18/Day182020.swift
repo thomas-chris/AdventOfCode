@@ -6,15 +6,8 @@ extension TwentyTwenty {
         public init() {
         }
         
-        let operators: [String:(Int,Int)->Int] = [
-            "+": (+),
-//            "-": (-),
-//            "/": (/),
-            "*": (*),
-        ]
+        let operators: [String:(Int,Int)->Int] = ["+": (+), "*": (*)]
     }
-    
-    
 }
 
 extension TwentyTwenty.Day18 {
@@ -72,12 +65,8 @@ extension TwentyTwenty.Day18 {
         
         for character in characters {
             if let int = Int(character) {
-                if useOperator == nil {
-                    lastInt = int
-                } else {
-                    lastInt = useOperator!(lastInt, int)
-                    useOperator = nil
-                }
+                lastInt = useOperator?(lastInt, int) ?? int
+                useOperator = nil
             } else if ["*", "+", "/", "-"].contains(character) {
                 useOperator = operators[character]
             }
@@ -87,28 +76,8 @@ extension TwentyTwenty.Day18 {
     }
     
     private func solveBlock2(string: String) -> Int {
-        let sums = string.components(separatedBy: " * ")
-        var thingsToMultiply = [Int]()
-        for list in sums {
-            let chunks = list.components(separatedBy: " ")
-            var lastInt = 0
-            var useOperator: ((Int, Int) -> Int)? = nil
-            
-            for character in chunks {
-                if let int = Int(String(character)) {
-                    if useOperator == nil {
-                        lastInt = int
-                    } else {
-                        lastInt = useOperator!(lastInt, int)
-                        useOperator = nil
-                    }
-                } else if ["*", "+", "/", "-"].contains(character) {
-                    useOperator = operators[String(character)]
-                }
-            }
-            thingsToMultiply.append(lastInt)
-        }
-        
-        return thingsToMultiply.reduce(1, *)
+        return string.components(separatedBy: " * ")
+            .map( { solveBlock(string: $0)})
+            .reduce(1, *)
     }
 }

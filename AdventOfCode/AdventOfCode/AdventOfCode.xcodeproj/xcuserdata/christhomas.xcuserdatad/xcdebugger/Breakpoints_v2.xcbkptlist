@@ -1052,8 +1052,8 @@
             filePath = "AdventOfCode/2020/Day18/Day182020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "solvePart1(input:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1077,54 +1077,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "596FB45C-FCA7-4BFE-AC45-EA1AF73C6AD3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2020/Day18/Day182020.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "solveBlock2(string:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "596FB45C-FCA7-4BFE-AC45-EA1AF73C6AD3 - 32268b2152dd8559"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "AdventOfCode.TwentyTwenty.Day18.(solveBlock2 in _42DADF00E9BF7FD0A3B530063F570EBA)(string: Swift.String) -&gt; Swift.Int"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2020/Day18/Day182020.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "3201">
-               </Location>
-               <Location
-                  uuid = "596FB45C-FCA7-4BFE-AC45-EA1AF73C6AD3 - e782487663552732"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 (Swift.Int, Swift.Int) -&gt; Swift.Int in implicit closure #1 (Swift.Int.Type) -&gt; (Swift.Int, Swift.Int) -&gt; Swift.Int in AdventOfCode.TwentyTwenty.Day18.(solveBlock2 in _42DADF00E9BF7FD0A3B530063F570EBA)(string: Swift.String) -&gt; Swift.Int"
-                  moduleName = "AdventOfCode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2020/Day18/Day182020.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "82">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "56E0A37F-1412-48AF-BDA8-FF4206D3E78B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1132,8 +1084,8 @@
             filePath = "AdventOfCode/2020/Day18/Day182020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "breakUpLine(string:solve:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1148,8 +1100,8 @@
             filePath = "AdventOfCode/2020/Day18/Day182020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "breakUpLine(string:solve:)"
             landmarkType = "7">
          </BreakpointContent>
