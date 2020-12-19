@@ -75,6 +75,7 @@
 		501596A9258D53F600060FCA /* Day192020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 501596A8258D53F600060FCA /* Day192020.txt */; };
 		501596AD258D540300060FCA /* Day192020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 501596AC258D540300060FCA /* Day192020_Example1.txt */; };
 		501596B1258D541400060FCA /* Day19Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501596B0258D541400060FCA /* Day19Tests2020.swift */; };
+		501596B6258DD38500060FCA /* Regex in Frameworks */ = {isa = PBXBuildFile; productRef = 501596B5258DD38500060FCA /* Regex */; };
 		50254010257CABBD00208CC2 /* Day6_2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025400F257CABA800208CC2 /* Day6_2020.swift */; };
 		50254015257CABE300208CC2 /* Day62020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50254014257CABE300208CC2 /* Day62020.txt */; };
 		5025401D257CABF500208CC2 /* Day62020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5025401A257CABEA00208CC2 /* Day62020_Example1.txt */; };
@@ -427,6 +428,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501596B6258DD38500060FCA /* Regex in Frameworks */,
 				50424EDA25761FC300D77F8F /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1376,6 +1378,7 @@
 			name = AdventOfCode;
 			packageProductDependencies = (
 				50424ED925761FC300D77F8F /* Algorithms */,
+				501596B5258DD38500060FCA /* Regex */,
 			);
 			productName = AdventOfCode;
 			productReference = 500DAF74239545A30081CC21 /* AdventOfCode.framework */;
@@ -1429,6 +1432,7 @@
 			mainGroup = 500DAF6A239545A30081CC21;
 			packageReferences = (
 				50424ED825761FC300D77F8F /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				501596B4258DD38500060FCA /* XCRemoteSwiftPackageReference "Regex" */,
 			);
 			productRefGroup = 500DAF75239545A30081CC21 /* Products */;
 			projectDirPath = "";
@@ -1920,6 +1924,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		501596B4258DD38500060FCA /* XCRemoteSwiftPackageReference "Regex" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:sharplet/Regex.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.1;
+			};
+		};
 		50424ED825761FC300D77F8F /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-algorithms";
@@ -1931,6 +1943,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		501596B5258DD38500060FCA /* Regex */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 501596B4258DD38500060FCA /* XCRemoteSwiftPackageReference "Regex" */;
+			productName = Regex;
+		};
 		50424ED925761FC300D77F8F /* Algorithms */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 50424ED825761FC300D77F8F /* XCRemoteSwiftPackageReference "swift-algorithms" */;
