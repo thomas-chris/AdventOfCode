@@ -71,7 +71,7 @@ extension TwentyTwenty {
         func buildRegexPatternPart2(_ rule: Int, rawRules: [Int: Rule]) -> String {
    
             if rule == 8 {
-                let rule42 = "(\(buildRegexPatternPart2(42, rawRules: rawRules)))"
+                let rule42 = buildRegexPatternPart2(42, rawRules: rawRules)
                 var rules: [String] = []
                 
                 // The regex expression can be 42 | 42 42 | 42 42 42 - so at some point it gets too big to ever match
@@ -91,7 +91,7 @@ extension TwentyTwenty {
                 var rules: [String] = []
                 
                 // The regex expression can be 42 31 | 42 42 31 31 | 42 42 42 31 31 31 - so at some point it gets too big to ever match
-                for i in 1...7 {
+                for i in 1...5 {
                     let lhs = Array(repeating: rule42, count: i).joined()
                     let rhs = Array(repeating: rule31, count: i).joined()
                     rules.append(lhs + rhs)
@@ -139,11 +139,7 @@ extension TwentyTwenty.Day19 {
         raw[8] = .either([42], [42, 8])
         raw[11] = .either([42, 31], [42, 11, 31])
         
-        var maxLength = 0
         let strings = input[1].components(separatedBy: "\n")
-        for string in strings {
-            if string.count > maxLength { maxLength = string.count }
-        }
         
         let regexExpression = "^" + self.buildRegexPatternPart2(0, rawRules: raw) + "$"
         let regex = try Regex(string: regexExpression)
