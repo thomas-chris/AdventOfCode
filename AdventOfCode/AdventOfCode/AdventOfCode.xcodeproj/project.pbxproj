@@ -112,6 +112,7 @@
 		50664E812589498D00C7654B /* Day162020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50664E802589498D00C7654B /* Day162020_Example1.txt */; };
 		506688BF259076B100C448C1 /* Day212020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688BE259076B100C448C1 /* Day212020.swift */; };
 		506688C4259076D300C448C1 /* Day21Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688C3259076D300C448C1 /* Day21Tests2020.swift */; };
+		506688CA25907AF300C448C1 /* Day212020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 506688C925907AF300C448C1 /* Day212020.txt */; };
 		5069EC12258B1BA3004BDAF4 /* Day172020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC11258B1BA3004BDAF4 /* Day172020.swift */; };
 		5069EC17258B1BF2004BDAF4 /* Day17Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */; };
 		5069EC1D258B1C4E004BDAF4 /* Day172020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5069EC1C258B1C4E004BDAF4 /* Day172020.txt */; };
@@ -335,6 +336,7 @@
 		50664E802589498D00C7654B /* Day162020_Example1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day162020_Example1.txt; sourceTree = "<group>"; };
 		506688BE259076B100C448C1 /* Day212020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day212020.swift; sourceTree = "<group>"; };
 		506688C3259076D300C448C1 /* Day21Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21Tests2020.swift; sourceTree = "<group>"; };
+		506688C925907AF300C448C1 /* Day212020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day212020.txt; sourceTree = "<group>"; };
 		5069EC11258B1BA3004BDAF4 /* Day172020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day172020.swift; sourceTree = "<group>"; };
 		5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Tests2020.swift; sourceTree = "<group>"; };
 		5069EC1C258B1C4E004BDAF4 /* Day172020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day172020.txt; sourceTree = "<group>"; };
@@ -981,6 +983,7 @@
 		506688C2259076BD00C448C1 /* Day21 */ = {
 			isa = PBXGroup;
 			children = (
+				506688C925907AF300C448C1 /* Day212020.txt */,
 			);
 			path = Day21;
 			sourceTree = "<group>";
@@ -1519,6 +1522,7 @@
 				500DAFA22395528A0081CC21 /* Day2.txt in Resources */,
 				50978A7C239E18860036AFA8 /* Day9Test2.txt in Resources */,
 				50424EE42576200C00D77F8F /* Day1_2020.txt in Resources */,
+				506688CA25907AF300C448C1 /* Day212020.txt in Resources */,
 				50254015257CABE300208CC2 /* Day62020.txt in Resources */,
 				50936C9F23979CF5001F58F3 /* Day4Test3.txt in Resources */,
 				501596A9258D53F600060FCA /* Day192020.txt in Resources */,
