@@ -294,61 +294,10 @@ extension TwentyTwenty.Day20 {
             }
         }
         
-        var matchingTop = matchingTile
         for i in 0...11 {
-            matchingTop = grid[Position(x: i, y: 0)]!
-            for j in 1...15 {
-                for tile in tiles {
-                    if matchingTop.number == tile.number { continue }
-                    else if tile.edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile
-                        matchingTile = tile
-                        break
-                        
-                    }
-                    
-                    else if tile.rotateRight().edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.rotateRight()
-                        matchingTile = tile.rotateRight()
-                        break
-                    }
-                    
-                    else if tile.rotateRight(rotations: 2).edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.rotateRight(rotations: 2)
-                        matchingTile = tile.rotateRight(rotations: 2)
-                        break
-                    }
-                    
-                    else if tile.rotateRight(rotations: 3).edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.rotateRight(rotations: 3)
-                        matchingTile = tile.rotateRight(rotations: 3)
-                        break
-                    }
-                    
-                    else if tile.flipX().edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.flipX()
-                        matchingTile = tile.flipX()
-                        break
-                    }
-                    
-                    else if tile.flipX().rotateRight(rotations: 1).edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.flipX().rotateRight(rotations: 1)
-                        matchingTile = tile.flipX().rotateRight(rotations: 1)
-                        break
-                    }
-                    
-                    else if tile.flipX().rotateRight(rotations: 2).edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.flipX().rotateRight(rotations: 2)
-                        matchingTile = tile.flipX().rotateRight(rotations: 2)
-                        break
-                    }
-                    
-                    else if tile.flipX().rotateRight(rotations: 3).edge(.top) == matchingTop.edge(.bottom) {
-                        grid[Position(x: i, y: j)] = tile.flipX().rotateRight(rotations: 3)
-                        matchingTile = tile.flipX().rotateRight(rotations: 3)
-                        break
-                    }
-                }
+            for j in 1...12 {
+                let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i-0, y: j)], tiles: tiles)
+                grid[Position(x: i, y: j)] = matching
             }
         }
         
@@ -364,6 +313,51 @@ extension TwentyTwenty.Day20 {
         return tiles.filter { (value) -> Bool in
             value.number != tile.number
         }
+    }
+    
+    private func matchTile(above: Tile, left: Tile?, tiles: [Tile]) -> Tile {
+        let aboveBottom = above.edge(.bottom)
+        for tile in tiles {
+            if let left = left {
+                let leftRight = left.edge(.right)
+                if aboveBottom == tile.edge(.top) && leftRight == tile.edge(.left) {
+                    return tile
+                } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) && leftRight == tile.rotateRight(rotations: 1).edge(.left) {
+                    return tile.rotateRight(rotations: 1)
+                } else if aboveBottom == tile.rotateRight(rotations: 2).edge(.top) && leftRight == tile.rotateRight(rotations: 2).edge(.left) {
+                    return tile.rotateRight(rotations: 2)
+                } else if aboveBottom == tile.rotateRight(rotations: 3).edge(.top) && leftRight == tile.rotateRight(rotations: 3).edge(.left) {
+                    return tile.rotateRight(rotations: 3)
+                } else if aboveBottom == tile.flipX().edge(.top) && leftRight == tile.flipX().edge(.left) {
+                    return tile.flipX()
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 1).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 1).edge(.left) {
+                    return tile.flipX().rotateRight(rotations: 1)
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 2).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 2).edge(.left) {
+                    return tile.flipX().rotateRight(rotations: 2)
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 3).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 3).edge(.left) {
+                    return tile.flipX().rotateRight(rotations: 3)
+                }
+            } else {
+                if aboveBottom == tile.edge(.top) {
+                    return tile
+                } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) {
+                    return tile.rotateRight(rotations: 1)
+                } else if aboveBottom == tile.rotateRight(rotations: 2).edge(.top) {
+                    return tile.rotateRight(rotations: 2)
+                } else if aboveBottom == tile.rotateRight(rotations: 3).edge(.top) {
+                    return tile.rotateRight(rotations: 3)
+                } else if aboveBottom == tile.flipX().edge(.top) {
+                    return tile.flipX()
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 1).edge(.top) {
+                    return tile.flipX().rotateRight(rotations: 1)
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 2).edge(.top) {
+                    return tile.flipX().rotateRight(rotations: 2)
+                } else if aboveBottom == tile.flipX().rotateRight(rotations: 3).edge(.top) {
+                    return tile.flipX().rotateRight(rotations: 3)
+                }
+            }
+        }
+        fatalError()
     }
     
     func indexOf(_ tile: Tile, items: [Tile]) -> Int {
