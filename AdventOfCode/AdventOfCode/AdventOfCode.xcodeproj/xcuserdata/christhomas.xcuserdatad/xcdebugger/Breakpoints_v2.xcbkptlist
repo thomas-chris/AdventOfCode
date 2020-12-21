@@ -1164,8 +1164,8 @@
             filePath = "AdventOfCode/2020/Day20/Day2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "343"
+            endingLineNumber = "343"
             landmarkName = "solvePart2(input:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1173,15 +1173,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1F528DEC-3EDF-46DC-BCBD-79483E4EC951"
+            uuid = "A3CDFE48-74AE-48BA-B525-6E00AD1CD89E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdventOfCode/2020/Day20/Day2020.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "solvePart2(input:)"
             landmarkType = "7">
          </BreakpointContent>
