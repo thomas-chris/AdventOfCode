@@ -203,13 +203,54 @@ extension TwentyTwenty.Day20 {
         }
         
         var topLeft = corners.first!
-        var grid: [Position: Tile] = [:]
+        var grid: [Position: Tile] = [Position(x: 0, y: 0): topLeft]
         while !Set([topLeft.edge(.top), topLeft.edge(.left)]).isSubset(of: edgesWithNoMatches) {
             topLeft = topLeft.rotateRight()
         }
         
-        corners.remove(at: indexOf(topLeft, items: corners))
+        //get top row...
+        var matchingTile = topLeft
+        for i in 1...15 {
+            for tile in edges {
+                if tile.edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile
+                }
+                
+                if tile.rotateRight().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.rotateRight()
+                }
+                
+                if tile.rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.rotateRight(rotations: 3)
+                }
+                
+                if tile.flipX().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.flipX()
+                }
+                
+                if tile.flipX().rotateRight().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.flipX().rotateRight()
+                }
+                
+                if tile.flipY().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.flipY()
+                }
+                
+                if tile.flipY().rotateRight().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.flipY().rotateRight()
+                }
+                
+                if tile.flipX().flipY().edge(.left) == matchingTile.edge(.right) {
+                    grid[Position(x: 0, y: i)] = tile.flipY().flipX()
+                }
+            }
+        }
         
+        for corner in corners {
+            if corner.edgesForAllFlippages().intersection(matchingTile.allEdges()).count == 1 {
+                print(corner)
+            }
+        }
         
         return 0
     }
