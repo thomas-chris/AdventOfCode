@@ -1,8 +1,48 @@
 import Foundation
+import Regex
 
 extension TwentyTwenty {
     public class Day20 {
         public init() {
+        }
+        
+        struct SeaMonster {
+            public let above  = "                  #"
+            public let search = "#    ##    ##    ###"
+            public let below  = " #  #  #  #  #  #"
+            public let regex = Regex("(#....##....##....###)+")
+            
+            public init() {}
+            
+            public func abovePoints(tailStart: Position) -> [Position] {
+                return [Position(x: tailStart.x + 18, y: tailStart.y - 1)]
+            }
+            
+            public func belowPoints(tailStart: Position) -> [Position] {
+                return [
+                    Position(x: tailStart.x + 1, y: tailStart.y + 1),
+                    Position(x: tailStart.x + 4, y: tailStart.y + 1),
+                    Position(x: tailStart.x + 7, y: tailStart.y + 1),
+                    Position(x: tailStart.x + 10, y: tailStart.y + 1),
+                    Position(x: tailStart.x + 13, y: tailStart.y + 1),
+                    Position(x: tailStart.x + 16, y: tailStart.y + 1),
+                ]
+            }
+            
+            public func allPoints(tailStart: Position) -> [Position] {
+                return [
+                    tailStart,
+                    Position(x: tailStart.x + 5, y: tailStart.y),
+                    Position(x: tailStart.x + 6, y: tailStart.y),
+                    Position(x: tailStart.x + 11, y: tailStart.y),
+                    Position(x: tailStart.x + 12, y: tailStart.y),
+                    Position(x: tailStart.x + 17, y: tailStart.y),
+                    Position(x: tailStart.x + 18, y: tailStart.y),
+                    Position(x: tailStart.x + 19, y: tailStart.y),
+                ]
+                + abovePoints(tailStart: tailStart)
+                + belowPoints(tailStart: tailStart)
+            }
         }
         
         public enum Edge: CaseIterable {
@@ -19,10 +59,10 @@ extension TwentyTwenty {
             public var edgelessRows: [String] {
                 var lines = [String]()
                 let size = rows.count
-                for y in 1 ... size - 1 {
+                for y in 1 ..< size - 1 {
                     let oldLine = rows[y]
                     var line = ""
-                    for x in 1 ... size - 1 {
+                    for x in 1 ..< size - 1 {
                         line.append(oldLine[x])
                     }
                     lines.append(line)
@@ -130,11 +170,6 @@ extension TwentyTwenty.Day20 {
             Tile(tileLines: tile.components(separatedBy: "\n"))
         }
         
-        // dont need flipped in x and y as that is the same result as not flipped!
-        let allPossibleTilesFlipped = tiles.flatMap { tile in
-            return [tile, tile.flipX(), tile.flipY()]
-        }
-        
         let allEdges = tiles.flatMap { $0.allEdges() } + tiles.flatMap { $0.allEdges().map { String($0.reversed()) }}
         var allEdgesWithCounts = [String: Int]()
         
@@ -160,9 +195,7 @@ extension TwentyTwenty.Day20 {
     
     public func solvePart2(input: [String]) -> Int {
         
-        let size = Int(sqrt(Double(input.count)))
-        
-        var tiles = input.map { tile -> Tile in
+        let tiles = input.map { tile -> Tile in
             Tile(tileLines: tile.components(separatedBy: "\n"))
         }
         
@@ -198,11 +231,12 @@ extension TwentyTwenty.Day20 {
         
         var topLeft = corners[0]
         corners = Array(corners.dropFirst())
-        var grid: [Position: Tile] = [Position(x: 0, y: 0): topLeft]
+        
         while !Set([topLeft.edge(.top), topLeft.edge(.left)]).isSubset(of: edgesWithNoMatches) {
             topLeft = topLeft.rotateRight()
         }
         
+        var grid: [Position: Tile] = [Position(x: 0, y: 0): topLeft]
         //get top row...
         var matchingTile = topLeft
         var edgeNumbers = [Int]()
@@ -436,34 +470,95 @@ extension TwentyTwenty.Day20 {
             }
         }
         
+        // match the rest...
+        
         for i in 1...11 {
             for j in 1...11 {
-                let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i - 1, y: j)], tiles: tiles)
+                let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i - 1, y: j)]!, tiles: tiles)
                 grid[Position(x: i, y: j)] = matching
             }
         }
         
-        let sea = constructGrid(grid, size: 12)
-        draw(sea)
-        let sea1 = rotate(sea)
+        print(grid[Position(x: 0, y: 0)]!.edge(.top))
+        var sea = constructGrid(grid, size: 12)
+//        draw(sea)
+        let monster = SeaMonster()
         
-        draw(sea1)
-        let sea2 = rotate(sea1)
-        
-        draw(sea2)
-        let sea3 = rotate(sea2)
-        
-        draw(sea3)
+        var monsterCount = 0
+        for _ in 0..<4 {
+            for y in 0..<sea.count {
+                let line = sea[y].joined()
+                let match = monster.regex.allMatches(in: line)
+                for match in match {
+                    let x = match.range.lowerBound.utf16Offset(in: line)
+                    let tail = Position(x: x, y: y)
+                    var points = monster.abovePoints(tailStart: tail)
+                    points += monster.belowPoints(tailStart: tail)
+                    var count = 0
+                    for point in points {
+                        if sea[point.y][point.x] == "#" {
+                            count += 1
+                        } else {
+                            break
+                        }
+                    }
+                    if points.count == count {
+                        monsterCount += 1
+                    }
+                }
+            }
+            if monsterCount > 0 {
+                break
+            }
+            
+            sea = rotate(sea)
+        }
+        if monsterCount == 0 {
+            for y in 0..<sea.count {
+                sea[y] = sea[y].reversed()
+            }
 
-        var count = 0
-        for i in sea {
-            for j in i {
-                if j == "#" {
-                    count += 1
+            for _ in 0..<4 {
+                for y in 0..<sea.count {
+                    let line = sea[y].joined()
+                    let matches = monster.regex.allMatches(in: line)
+                        for match in matches {
+                            let x = match.range.lowerBound.utf16Offset(in: line)
+                            let tail = Position(x: x, y: y)
+                            var points = monster.abovePoints(tailStart: tail)
+                            points += monster.belowPoints(tailStart: tail)
+                            var count = 0
+                            for point in points {
+                                if sea[point.y][point.x] == "#" {
+                                    count += 1
+                                } else {
+                                    break
+                                }
+                            }
+                            if points.count == count {
+                                monsterCount += 1
+                            }
+                        }
+                }
+                if monsterCount > 0 {
+                    break
+                }
+                
+                sea = rotate(sea)
+            }
+        }
+
+        var hashes = 0
+        for block in sea {
+            for line in block {
+                for character in line {
+                    if character == "#" {
+                        hashes += 1
+                    }
                 }
             }
         }
-        return 0
+        return hashes - (monsterCount * 15)
     }
     
     func removeTile(tile: Tile, from tiles: [Tile]) -> [Tile] {
@@ -472,47 +567,27 @@ extension TwentyTwenty.Day20 {
         }
     }
     
-    private func matchTile(above: Tile, left: Tile?, tiles: [Tile]) -> Tile {
+    private func matchTile(above: Tile, left: Tile, tiles: [Tile]) -> Tile {
         let aboveBottom = above.edge(.bottom)
+        let leftRight = left.edge(.right)
         for tile in tiles {
-            if let left = left {
-                let leftRight = left.edge(.right)
-                if tile.number == above.number || tile.number == left.number { continue }
-                else if aboveBottom == tile.edge(.top) && leftRight == tile.edge(.left) {
-                    return tile
-                } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) && leftRight == tile.rotateRight(rotations: 1).edge(.left) {
-                    return tile.rotateRight(rotations: 1)
-                } else if aboveBottom == tile.rotateRight(rotations: 2).edge(.top) && leftRight == tile.rotateRight(rotations: 2).edge(.left) {
-                    return tile.rotateRight(rotations: 2)
-                } else if aboveBottom == tile.rotateRight(rotations: 3).edge(.top) && leftRight == tile.rotateRight(rotations: 3).edge(.left) {
-                    return tile.rotateRight(rotations: 3)
-                } else if aboveBottom == tile.flipX().edge(.top) && leftRight == tile.flipX().edge(.left) {
-                    return tile.flipX()
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 1).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 1).edge(.left) {
-                    return tile.flipX().rotateRight(rotations: 1)
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 2).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 2).edge(.left) {
-                    return tile.flipX().rotateRight(rotations: 2)
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 3).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 3).edge(.left) {
-                    return tile.flipX().rotateRight(rotations: 3)
-                }
-            } else {
-                if aboveBottom == tile.edge(.top) {
-                    return tile
-                } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) {
-                    return tile.rotateRight(rotations: 1)
-                } else if aboveBottom == tile.rotateRight(rotations: 2).edge(.top) {
-                    return tile.rotateRight(rotations: 2)
-                } else if aboveBottom == tile.rotateRight(rotations: 3).edge(.top) {
-                    return tile.rotateRight(rotations: 3)
-                } else if aboveBottom == tile.flipX().edge(.top) {
-                    return tile.flipX()
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 1).edge(.top) {
-                    return tile.flipX().rotateRight(rotations: 1)
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 2).edge(.top) {
-                    return tile.flipX().rotateRight(rotations: 2)
-                } else if aboveBottom == tile.flipX().rotateRight(rotations: 3).edge(.top) {
-                    return tile.flipX().rotateRight(rotations: 3)
-                }
+            if tile.number == above.number || tile.number == left.number { continue }
+            else if aboveBottom == tile.edge(.top) && leftRight == tile.edge(.left) {
+                return tile
+            } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) && leftRight == tile.rotateRight(rotations: 1).edge(.left) {
+                return tile.rotateRight(rotations: 1)
+            } else if aboveBottom == tile.rotateRight(rotations: 2).edge(.top) && leftRight == tile.rotateRight(rotations: 2).edge(.left) {
+                return tile.rotateRight(rotations: 2)
+            } else if aboveBottom == tile.rotateRight(rotations: 3).edge(.top) && leftRight == tile.rotateRight(rotations: 3).edge(.left) {
+                return tile.rotateRight(rotations: 3)
+            } else if aboveBottom == tile.flipX().edge(.top) && leftRight == tile.flipX().edge(.left) {
+                return tile.flipX()
+            } else if aboveBottom == tile.flipX().rotateRight(rotations: 1).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 1).edge(.left) {
+                return tile.flipX().rotateRight(rotations: 1)
+            } else if aboveBottom == tile.flipX().rotateRight(rotations: 2).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 2).edge(.left) {
+                return tile.flipX().rotateRight(rotations: 2)
+            } else if aboveBottom == tile.flipX().rotateRight(rotations: 3).edge(.top) && leftRight == tile.flipX().rotateRight(rotations: 3).edge(.left) {
+                return tile.flipX().rotateRight(rotations: 3)
             }
         }
         fatalError()
@@ -531,7 +606,7 @@ extension TwentyTwenty.Day20 {
         let smallerSize = tiles.first!.value.edgelessRows.count
         let gridSize = size*smallerSize
         var grid: [[String]] = Array(repeating: Array(repeating: ".", count: gridSize), count: gridSize)
-
+        
         for y in 0..<size {
             for x in 0..<size {
                 let point = Position(x: x, y: y)
