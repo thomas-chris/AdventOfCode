@@ -10,7 +10,7 @@ extension TwentyTwenty {
             public let above  = "                  #"
             public let search = "#    ##    ##    ###"
             public let below  = " #  #  #  #  #  #"
-            public let regex = Regex("(#....##....##....###)+")
+            public let regex = Regex("(#....##....##....###)")
             
             public init() {}
             
