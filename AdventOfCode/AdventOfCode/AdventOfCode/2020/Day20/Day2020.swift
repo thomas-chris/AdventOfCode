@@ -5,162 +5,7 @@ extension TwentyTwenty {
     public class Day20 {
         public init() {
         }
-        
-        struct SeaMonster {
-            public let above  = "                  #"
-            public let search = "#    ##    ##    ###"
-            public let below  = " #  #  #  #  #  #"
-            public let regex = Regex("(#....##....##....###)")
-            
-            public init() {}
-            
-            public func abovePoints(tailStart: Position) -> [Position] {
-                return [Position(x: tailStart.x + 18, y: tailStart.y - 1)]
-            }
-            
-            public func belowPoints(tailStart: Position) -> [Position] {
-                return [
-                    Position(x: tailStart.x + 1, y: tailStart.y + 1),
-                    Position(x: tailStart.x + 4, y: tailStart.y + 1),
-                    Position(x: tailStart.x + 7, y: tailStart.y + 1),
-                    Position(x: tailStart.x + 10, y: tailStart.y + 1),
-                    Position(x: tailStart.x + 13, y: tailStart.y + 1),
-                    Position(x: tailStart.x + 16, y: tailStart.y + 1),
-                ]
-            }
-            
-            public func allPoints(tailStart: Position) -> [Position] {
-                return [
-                    tailStart,
-                    Position(x: tailStart.x + 5, y: tailStart.y),
-                    Position(x: tailStart.x + 6, y: tailStart.y),
-                    Position(x: tailStart.x + 11, y: tailStart.y),
-                    Position(x: tailStart.x + 12, y: tailStart.y),
-                    Position(x: tailStart.x + 17, y: tailStart.y),
-                    Position(x: tailStart.x + 18, y: tailStart.y),
-                    Position(x: tailStart.x + 19, y: tailStart.y),
-                ]
-                + abovePoints(tailStart: tailStart)
-                + belowPoints(tailStart: tailStart)
-            }
-        }
-        
-        public enum Edge: CaseIterable {
-            case top, right, bottom, left
-        }
-        
-        public struct Tile: Hashable {
-            public let number: Int
-            public let rows: [String]
-            public var rotations: Int
-            public var flippedInX: Bool
-            public var flippedInY: Bool
-            
-            public var edgelessRows: [String] {
-                var lines = [String]()
-                let size = rows.count
-                for y in 1 ..< size - 1 {
-                    let oldLine = rows[y]
-                    var line = ""
-                    for x in 1 ..< size - 1 {
-                        line.append(oldLine[x])
-                    }
-                    lines.append(line)
-                }
-                
-                return lines
-            }
-            
-            public init(number: Int, rows: [String], rotations: Int, flippedInX: Bool, flippedInY: Bool) {
-                self.number = number
-                self.rows = rows
-                self.rotations = rotations
-                self.flippedInX = flippedInX
-                self.flippedInY = flippedInY
-            }
-            
-            public init(tileLines: [String]) {
-                let number = Int(tileLines.first!.replacingOccurrences(of: "Tile ", with: "").replacingOccurrences(of: ":", with: ""))!
-                
-                self.number = number
-                self.rows = Array(tileLines.dropFirst())
-                self.rotations = 0
-                self.flippedInX = false
-                self.flippedInY = false
-            }
-            
-            public func edge(_ edge: Edge) -> String {
-                switch edge {
-                case .top:
-                    return rows.first!
-                case .bottom:
-                    return rows.last!
-                case .left:
-                    return String(rows.map { String($0.first!) }.joined())
-                case .right:
-                    return rows.map { String($0.last!) }.joined()
-                }
-            }
-            
-            public func allEdges() -> [String] {
-                Edge.allCases.map { self.edge($0) }
-            }
-            
-            public func flipX() -> Tile {
-                return Tile(number: self.number, rows: self.rows.map { String($0.reversed()) }, rotations: rotations, flippedInX: !self.flippedInX, flippedInY: self.flippedInY)
-            }
-            
-            public func flipY() -> Tile {
-                return Tile(number: self.number, rows: self.rows.reversed(), rotations: rotations, flippedInX: self.flippedInX, flippedInY: !self.flippedInY)
-            }
-            
-            public func edgesForAllFlippages() -> Set<String> {
-                return Set(allEdges() + flipX().allEdges() + flipY().allEdges())
-            }
-            
-            public func allTiles() -> Set<Tile> {
-                var set = Set<Tile>()
-                set.insert(self)
-                set.insert(flipX())
-                set.insert(flipY())
-                for i in 1...3 {
-                    set.insert(rotateRight(rotations: i))
-                    set.insert(flipX().rotateRight(rotations: i))
-                    set.insert(flipY().rotateRight(rotations: i))
-                }
-                
-                return set
-            }
-            
-            public func rotateRight() -> Tile {
-                let count = rows.count - 1
-                var newRows: [String] = []
-                
-                for _ in 0 ... (count) {
-                    newRows.append("")
-                }
-                
-                rows.forEach { row in
-                    row.enumerated().forEach { (index, character) in
-                        newRows[count - index] = String(character) + (newRows[count - index])
-                    }
-                }
-                
-                return Tile(number: self.number, rows: newRows.reversed(), rotations: (self.rotations + 1) % 4, flippedInX: self.flippedInX, flippedInY: self.flippedInY)
-            }
-            
-            func rotateRight(rotations: Int) -> Tile {
-                var tile = self
-                for _ in 1 ... rotations {
-                    tile = tile.rotateRight()
-                }
-                
-                return tile
-            }
-        }
-        
     }
-    
 }
 
 extension TwentyTwenty.Day20 {
@@ -301,6 +146,8 @@ extension TwentyTwenty.Day20 {
             }
         }
         
+        // GET THE TOP RIGHT CORNER
+        
         for tile in corners {
             if tile.edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.edge(.top)) && edgesWithNoMatches.contains(tile.edge(.right)) {
                 grid[Position(x: 11, y: 0)] = tile
@@ -355,7 +202,7 @@ extension TwentyTwenty.Day20 {
             !edgeNumbers.contains(tile.number)
         }
         
-        // left edge
+        // GET THE LEFT EDGE
         
         matchingTile = topLeft
         edgeNumbers = [Int]()
@@ -420,6 +267,8 @@ extension TwentyTwenty.Day20 {
             }
         }
         
+        // GET BOTTOM LEFT CORNER
+        
         for tile in corners {
             if tile.edge(.top) == matchingTile.edge(.bottom) && edgesWithNoMatches.contains(tile.edge(.left)) && edgesWithNoMatches.contains(tile.edge(.bottom)) {
                 grid[Position(x: 0, y: 11)] = tile
@@ -479,9 +328,8 @@ extension TwentyTwenty.Day20 {
             }
         }
         
-        print(grid[Position(x: 0, y: 0)]!.edge(.top))
         var sea = constructGrid(grid, size: 12)
-//        draw(sea)
+        var seaCopy = sea
         let monster = SeaMonster()
         
         var monsterCount = 0
@@ -537,6 +385,9 @@ extension TwentyTwenty.Day20 {
                             }
                             if points.count == count {
                                 monsterCount += 1
+                                for point in monster.allPoints(tailStart: tail) {
+                                    seaCopy[point.y][point.x] = "O"
+                                }
                             }
                         }
                 }
@@ -548,6 +399,8 @@ extension TwentyTwenty.Day20 {
             }
         }
 
+        draw(seaCopy)
+        
         var hashes = 0
         for block in sea {
             for line in block {

@@ -117,6 +117,9 @@
 		506688D32591C76600C448C1 /* Day22Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688D22591C76600C448C1 /* Day22Tests2020.swift */; };
 		506688D82591C7DB00C448C1 /* Day222020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 506688D72591C7DB00C448C1 /* Day222020.txt */; };
 		506688DC2591CC7A00C448C1 /* Day222020_Example1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 506688DB2591CC7A00C448C1 /* Day222020_Example1.txt */; };
+		506688E325923BD000C448C1 /* SeaMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688E225923BD000C448C1 /* SeaMonster.swift */; };
+		506688E925923C4F00C448C1 /* SeaMonsterTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688E825923C4F00C448C1 /* SeaMonsterTile.swift */; };
+		506688ED25923C9300C448C1 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506688EC25923C9300C448C1 /* Edge.swift */; };
 		5069EC12258B1BA3004BDAF4 /* Day172020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC11258B1BA3004BDAF4 /* Day172020.swift */; };
 		5069EC17258B1BF2004BDAF4 /* Day17Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */; };
 		5069EC1D258B1C4E004BDAF4 /* Day172020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5069EC1C258B1C4E004BDAF4 /* Day172020.txt */; };
@@ -345,6 +348,9 @@
 		506688D22591C76600C448C1 /* Day22Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22Tests2020.swift; sourceTree = "<group>"; };
 		506688D72591C7DB00C448C1 /* Day222020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day222020.txt; sourceTree = "<group>"; };
 		506688DB2591CC7A00C448C1 /* Day222020_Example1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day222020_Example1.txt; sourceTree = "<group>"; };
+		506688E225923BD000C448C1 /* SeaMonster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaMonster.swift; sourceTree = "<group>"; };
+		506688E825923C4F00C448C1 /* SeaMonsterTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeaMonsterTile.swift; sourceTree = "<group>"; };
+		506688EC25923C9300C448C1 /* Edge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Edge.swift; sourceTree = "<group>"; };
 		5069EC11258B1BA3004BDAF4 /* Day172020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day172020.swift; sourceTree = "<group>"; };
 		5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Tests2020.swift; sourceTree = "<group>"; };
 		5069EC1C258B1C4E004BDAF4 /* Day172020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day172020.txt; sourceTree = "<group>"; };
@@ -762,7 +768,10 @@
 		501596C1258F310300060FCA /* Day20 */ = {
 			isa = PBXGroup;
 			children = (
+				506688E225923BD000C448C1 /* SeaMonster.swift */,
 				501596C2258F311500060FCA /* Day2020.swift */,
+				506688E825923C4F00C448C1 /* SeaMonsterTile.swift */,
+				506688EC25923C9300C448C1 /* Edge.swift */,
 			);
 			path = Day20;
 			sourceTree = "<group>";
@@ -1658,6 +1667,7 @@
 				50086D3423A60A34002613B7 /* Day15.swift in Sources */,
 				5069EC12258B1BA3004BDAF4 /* Day172020.swift in Sources */,
 				50086CCF23A36B69002613B7 /* Input+Day13.swift in Sources */,
+				506688ED25923C9300C448C1 /* Edge.swift in Sources */,
 				50086D6823A8A781002613B7 /* Day17.swift in Sources */,
 				504045B0257F4E4B00F756BE /* Day82020.swift in Sources */,
 				500DAF9D2395510C0081CC21 /* Day2.swift in Sources */,
@@ -1698,12 +1708,14 @@
 				50936CEE239A291D001F58F3 /* Day6.swift in Sources */,
 				506688BF259076B100C448C1 /* Day212020.swift in Sources */,
 				50086D8D23AA9BC0002613B7 /* Input+Day18.swift in Sources */,
+				506688E325923BD000C448C1 /* SeaMonster.swift in Sources */,
 				50BE7BFB2587F345008CD46C /* Day152020.swift in Sources */,
 				50978A71239E10B60036AFA8 /* Input+Day9.swift in Sources */,
 				50936CA92398DFFE001F58F3 /* Input+Day5.swift in Sources */,
 				50978A63239CCF9C0036AFA8 /* Input+Day8.swift in Sources */,
 				506FF72C25775B440006055D /* Input+Day22020.swift in Sources */,
 				50086D9B23ACB89F002613B7 /* Input+Day19.swift in Sources */,
+				506688E925923C4F00C448C1 /* SeaMonsterTile.swift in Sources */,
 				50664E70258948E300C7654B /* Day162020.swift in Sources */,
 				50978A73239E10D60036AFA8 /* Day9.swift in Sources */,
 				50BE7B5725867AB1008CD46C /* Day142020.swift in Sources */,
