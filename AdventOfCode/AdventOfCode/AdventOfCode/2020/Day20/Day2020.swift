@@ -135,7 +135,7 @@ extension TwentyTwenty.Day20 {
             return [tile, tile.flipX(), tile.flipY()]
         }
         
-        let allEdges = allPossibleTilesFlipped.flatMap { $0.allEdges() }
+        let allEdges = tiles.flatMap { $0.allEdges() } + tiles.flatMap { $0.allEdges().map { String($0.reversed()) }}
         var allEdgesWithCounts = [String: Int]()
         
         allEdges.forEach { edge in
@@ -150,7 +150,7 @@ extension TwentyTwenty.Day20 {
             return nil
         }
         
-        let cornerTiles = tiles.filter { $0.edgesForAllFlippages().intersection(Set(edgesWithNoMatches)).count == 2
+        let cornerTiles = tiles.filter { $0.edgesForAllFlippages().intersection(Set(edgesWithNoMatches)).count == 4
         }
         
         return cornerTiles.reduce(1) { (result, tile) -> Int in
@@ -166,12 +166,7 @@ extension TwentyTwenty.Day20 {
             Tile(tileLines: tile.components(separatedBy: "\n"))
         }
         
-        // dont need flipped in x and y as that is the same result as not flipped!
-        let allPossibleTilesFlipped = tiles.flatMap { tile in
-            return [tile, tile.flipX(), tile.flipY()]
-        }
-        
-        let allEdges = allPossibleTilesFlipped.flatMap { $0.allEdges() }
+        let allEdges = tiles.flatMap { $0.allEdges() } + tiles.flatMap { $0.allEdges().map { String($0.reversed()) }}
         var allEdgesWithCounts = [String: Int]()
         
         allEdges.forEach { edge in
@@ -188,52 +183,20 @@ extension TwentyTwenty.Day20 {
         
         var corners = [Tile]()
         var edges = [Tile]()
-        tiles.forEach { tile in
-            if tile.edgesForAllFlippages().intersection(edgesWithNoMatches).count == 2 {
-                if Set(tile.allEdges()).intersection(edgesWithNoMatches).count == 2 {
-                    corners.append(tile)
-                }
-                if Set(tile.flipX().allEdges()).intersection(edgesWithNoMatches).count == 2 {
-                    corners.append(tile.flipX())
-                }
-                if Set(tile.flipY().allEdges()).intersection(edgesWithNoMatches).count == 2 {
-                    corners.append(tile.flipY())
-                }
-                if Set(tile.rotateRight(rotations: 2).allEdges()).intersection(edgesWithNoMatches).count == 2 {
-                    corners.append(tile.rotateRight(rotations: 2))
-                }
-            }
-            
-            if tile.edgesForAllFlippages().intersection(edgesWithNoMatches).count == 1 {
-                if Set([tile.edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.rotateRight(rotations: 1).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.rotateRight(rotations: 2).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.rotateRight(rotations: 3).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.flipX().edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.flipX().rotateRight(rotations: 1).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.flipX().rotateRight(rotations: 2).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                if Set([tile.flipX().rotateRight(rotations: 3).edge(.top)]).intersection(edgesWithNoMatches).count == 1 {
-                    edges.append(tile)
-                }
-                
-            }
+        
+        corners = tiles.filter {
+            $0.edgesForAllFlippages().intersection(Set(edgesWithNoMatches)).count == 4
+        }
+        let cornerNumbers = corners.map { $0.number }
+        let tiles_noCorners = tiles.filter {
+            !cornerNumbers.contains($0.number)
         }
         
-        var topLeft = corners[2]
+        edges = tiles_noCorners.filter {
+            $0.edgesForAllFlippages().intersection(Set(edgesWithNoMatches)).count == 2
+        }
+        
+        var topLeft = corners[0]
         var grid: [Position: Tile] = [Position(x: 0, y: 0): topLeft]
         while !Set([topLeft.edge(.top), topLeft.edge(.left)]).isSubset(of: edgesWithNoMatches) {
             topLeft = topLeft.rotateRight()
@@ -242,51 +205,51 @@ extension TwentyTwenty.Day20 {
         //get top row...
         var matchingTile = topLeft
         for i in 1...15 {
-            for tile in tiles {
+            for tile in edges {
                 if matchingTile.number == tile.number { continue }
-                else if tile.edge(.left) == matchingTile.edge(.right) {
+                else if tile.edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile
                     matchingTile = tile
                     break
                 }
                 
-                else if tile.rotateRight().edge(.left) == matchingTile.edge(.right) {
+                else if tile.rotateRight().edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 1).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.rotateRight()
                     matchingTile = tile.rotateRight()
                     break
                 }
                 
-                else if tile.rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) {
+                else if tile.rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 2).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.rotateRight(rotations: 2)
                     matchingTile = tile.rotateRight(rotations: 2)
                     break
                 }
                 
-                else if tile.rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) {
+                else if tile.rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 3).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.rotateRight(rotations: 3)
                     matchingTile = tile.rotateRight(rotations: 3)
                     break
                 }
                 
-                else if tile.flipX().edge(.left) == matchingTile.edge(.right) {
+                else if tile.flipX().edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.flipX()
                     matchingTile = tile.flipX()
                     break
                 }
                 
-                else if tile.flipX().rotateRight(rotations: 1).edge(.left) == matchingTile.edge(.right) {
+                else if tile.flipX().rotateRight(rotations: 1).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 1).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.flipX().rotateRight(rotations: 1)
                     matchingTile = tile.flipX().rotateRight(rotations: 1)
                     break
                 }
                 
-                else if tile.flipX().rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) {
+                else if tile.flipX().rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 2).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.flipX().rotateRight(rotations: 2)
                     matchingTile = tile.flipX().rotateRight(rotations: 2)
                     break
                 }
                 
-                else if tile.flipX().rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) {
+                else if tile.flipX().rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 3).edge(.top)) {
                     grid[Position(x: i, y: 0)] = tile.flipX().rotateRight(rotations: 3)
                     matchingTile = tile.flipX().rotateRight(rotations: 3)
                     break
@@ -294,8 +257,58 @@ extension TwentyTwenty.Day20 {
             }
         }
         
+        for tile in corners {
+            if tile.edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.edge(.top)) && edgesWithNoMatches.contains(tile.edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile
+                matchingTile = tile
+                break
+            }
+            
+            else if tile.rotateRight().edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 1).edge(.top)) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 1).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.rotateRight()
+                matchingTile = tile.rotateRight()
+                break
+            }
+            
+            else if tile.rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 2).edge(.top)) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 2).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.rotateRight(rotations: 2)
+                matchingTile = tile.rotateRight(rotations: 2)
+                break
+            }
+            
+            else if tile.rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 3).edge(.top)) && edgesWithNoMatches.contains(tile.rotateRight(rotations: 3).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.rotateRight(rotations: 3)
+                matchingTile = tile.rotateRight(rotations: 3)
+                break
+            }
+            
+            else if tile.flipX().edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().edge(.top)) && edgesWithNoMatches.contains(tile.flipX().edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.flipX()
+                matchingTile = tile.flipX()
+                break
+            }
+            
+            else if tile.flipX().rotateRight(rotations: 1).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 1).edge(.top)) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 1).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.flipX().rotateRight(rotations: 1)
+                matchingTile = tile.flipX().rotateRight(rotations: 1)
+                break
+            }
+            
+            else if tile.flipX().rotateRight(rotations: 2).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 2).edge(.top)) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 2).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.flipX().rotateRight(rotations: 2)
+                matchingTile = tile.flipX().rotateRight(rotations: 2)
+                break
+            }
+            
+            else if tile.flipX().rotateRight(rotations: 3).edge(.left) == matchingTile.edge(.right) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 3).edge(.top)) && edgesWithNoMatches.contains(tile.flipX().rotateRight(rotations: 3).edge(.right)) {
+                grid[Position(x: 11, y: 0)] = tile.flipX().rotateRight(rotations: 3)
+                matchingTile = tile.flipX().rotateRight(rotations: 3)
+                break
+            }
+        }
+        
         for i in 0...11 {
-            for j in 1...12 {
+            for j in 1...11 {
                 let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i-0, y: j)], tiles: tiles)
                 grid[Position(x: i, y: j)] = matching
             }
@@ -303,8 +316,23 @@ extension TwentyTwenty.Day20 {
         
         let sea = constructGrid(grid, size: 12)
         draw(sea)
-        for line in sea {
-            print(line)
+        let sea1 = rotate(sea)
+        
+        draw(sea1)
+        let sea2 = rotate(sea1)
+        
+        draw(sea2)
+        let sea3 = rotate(sea2)
+        
+        draw(sea3)
+
+        var count = 0
+        for i in sea {
+            for j in i {
+                if j == "#" {
+                    count += 1
+                }
+            }
         }
         return 0
     }
@@ -391,21 +419,19 @@ extension TwentyTwenty.Day20 {
         return grid
     }
     
-    func rotateSea(sea: [String]) -> [String] {
-        let count = sea.count - 1
-        var newRows: [String] = []
+    func rotate(_ grid: [[String]]) -> [[String]] {
+        var output = [[String]]()
+        let size = grid.count
         
-        for _ in 0 ... (count) {
-            newRows.append("")
-        }
-        
-        sea.forEach { row in
-            row.enumerated().forEach { (index, character) in
-                newRows[count - index] = String(character) + (newRows[count - index])
+        for x in 0..<size {
+            var line = [String]()
+            for y in 0..<size {
+                line.append((grid[size - 1 - y][x]))
             }
+            output.append(line)
         }
         
-        return newRows
+        return output
     }
     
     func draw(_ grid: [[String]]) {
