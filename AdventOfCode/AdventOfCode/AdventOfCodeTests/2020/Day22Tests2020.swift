@@ -31,7 +31,7 @@ class Advent2020TestsDay22: XCTestCase {
             let input = Input.getInputString(name: "Day222020").components(separatedBy: "\n\n")
             let day22 = TwentyTwenty.Day22()
             let value = day22.solvePart2(input: input)
-            XCTAssertEqual(value, 0)
+            XCTAssertEqual(value, 32789)
         }
     }
 }
