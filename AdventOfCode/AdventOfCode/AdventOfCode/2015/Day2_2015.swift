@@ -24,9 +24,12 @@ extension TwentyFifteen.Day2 {
         var total = 0
         for box in input {
             let sides = box.components(separatedBy: "x").compactMap { Int($0) }
-            let volume = sides.reduce(1, *)
-            let ribbon = sides.sorted().dropLast().map { 2 * $0}.reduce(0,+)
-            total += (volume + ribbon)
+            
+            total += sides.reduce(1, *)
+                        + sides.sorted()
+                            .dropLast()
+                            .map { 2 * $0 }
+                            .reduce(0,+)
         }
  
         return total
