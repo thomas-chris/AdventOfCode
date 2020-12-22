@@ -34,4 +34,13 @@ class Advent2020TestsDay22: XCTestCase {
             XCTAssertEqual(value, 32789)
         }
     }
+    
+    func test_day22_part2_PJ() {
+        measure {
+            let input = Input.getInputString(name: "Day222020_PJ").components(separatedBy: "\n\n")
+            let day22 = TwentyTwenty.Day22()
+            let value = day22.solvePart2(input: input)
+            XCTAssertEqual(value, 32665)
+        }
+    }
 }
