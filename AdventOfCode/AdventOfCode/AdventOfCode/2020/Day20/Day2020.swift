@@ -438,7 +438,7 @@ extension TwentyTwenty.Day20 {
         
         for i in 1...11 {
             for j in 1...11 {
-                let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i-1, y: j)], tiles: tiles)
+                let matching = matchTile(above: grid[Position(x: i, y: j - 1)]!, left: grid[Position(x: i - 1, y: j)], tiles: tiles)
                 grid[Position(x: i, y: j)] = matching
             }
         }
@@ -477,7 +477,8 @@ extension TwentyTwenty.Day20 {
         for tile in tiles {
             if let left = left {
                 let leftRight = left.edge(.right)
-                if aboveBottom == tile.edge(.top) && leftRight == tile.edge(.left) {
+                if tile.number == above.number || tile.number == left.number { continue }
+                else if aboveBottom == tile.edge(.top) && leftRight == tile.edge(.left) {
                     return tile
                 } else if aboveBottom == tile.rotateRight(rotations: 1).edge(.top) && leftRight == tile.rotateRight(rotations: 1).edge(.left) {
                     return tile.rotateRight(rotations: 1)
