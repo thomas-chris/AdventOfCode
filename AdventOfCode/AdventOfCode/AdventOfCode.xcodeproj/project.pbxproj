@@ -139,6 +139,9 @@
 		50668A5F259289C400C448C1 /* Day2_2015.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50668A5E259289C400C448C1 /* Day2_2015.swift */; };
 		50668A64259289E000C448C1 /* Day2_2015.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50668A63259289E000C448C1 /* Day2_2015.txt */; };
 		50668A6A259289FF00C448C1 /* Day2Tests_2015.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50668A69259289FF00C448C1 /* Day2Tests_2015.swift */; };
+		50668A6E25928F6500C448C1 /* Day3_2015.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50668A6D25928F6500C448C1 /* Day3_2015.swift */; };
+		50668A7325928F8A00C448C1 /* Day3_2015.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50668A7225928F8A00C448C1 /* Day3_2015.txt */; };
+		50668A7725928F9800C448C1 /* Day3Tests_2015.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50668A7625928F9800C448C1 /* Day3Tests_2015.swift */; };
 		5069EC12258B1BA3004BDAF4 /* Day172020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC11258B1BA3004BDAF4 /* Day172020.swift */; };
 		5069EC17258B1BF2004BDAF4 /* Day17Tests2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */; };
 		5069EC1D258B1C4E004BDAF4 /* Day172020.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5069EC1C258B1C4E004BDAF4 /* Day172020.txt */; };
@@ -389,6 +392,9 @@
 		50668A5E259289C400C448C1 /* Day2_2015.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2_2015.swift; sourceTree = "<group>"; };
 		50668A63259289E000C448C1 /* Day2_2015.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day2_2015.txt; sourceTree = "<group>"; };
 		50668A69259289FF00C448C1 /* Day2Tests_2015.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2Tests_2015.swift; sourceTree = "<group>"; };
+		50668A6D25928F6500C448C1 /* Day3_2015.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3_2015.swift; sourceTree = "<group>"; };
+		50668A7225928F8A00C448C1 /* Day3_2015.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day3_2015.txt; sourceTree = "<group>"; };
+		50668A7625928F9800C448C1 /* Day3Tests_2015.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3Tests_2015.swift; sourceTree = "<group>"; };
 		5069EC11258B1BA3004BDAF4 /* Day172020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day172020.swift; sourceTree = "<group>"; };
 		5069EC16258B1BF2004BDAF4 /* Day17Tests2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Tests2020.swift; sourceTree = "<group>"; };
 		5069EC1C258B1C4E004BDAF4 /* Day172020.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day172020.txt; sourceTree = "<group>"; };
@@ -1130,6 +1136,7 @@
 			children = (
 				5066892F2592631900C448C1 /* Day1 */,
 				50668A62259289C800C448C1 /* Day2 */,
+				50668A7125928F7100C448C1 /* Day3 */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -1147,6 +1154,7 @@
 			children = (
 				5066893D259280DE00C448C1 /* Day1Tests_2015.swift */,
 				50668A69259289FF00C448C1 /* Day2Tests_2015.swift */,
+				50668A7625928F9800C448C1 /* Day3Tests_2015.swift */,
 			);
 			path = 2015;
 			sourceTree = "<group>";
@@ -1157,6 +1165,14 @@
 				50668A63259289E000C448C1 /* Day2_2015.txt */,
 			);
 			path = Day2;
+			sourceTree = "<group>";
+		};
+		50668A7125928F7100C448C1 /* Day3 */ = {
+			isa = PBXGroup;
+			children = (
+				50668A7225928F8A00C448C1 /* Day3_2015.txt */,
+			);
+			path = Day3;
 			sourceTree = "<group>";
 		};
 		5069EC0E258B1B8F004BDAF4 /* Day17 */ = {
@@ -1543,6 +1559,7 @@
 				5066892E2592631300C448C1 /* Inputs */,
 				5066892A2592626300C448C1 /* Day1_2015.swift */,
 				50668A5E259289C400C448C1 /* Day2_2015.swift */,
+				50668A6D25928F6500C448C1 /* Day3_2015.swift */,
 			);
 			path = 2015;
 			sourceTree = "<group>";
@@ -1688,6 +1705,7 @@
 				50086D4323A762D0002613B7 /* Day16Example1.txt in Resources */,
 				504CA7C9257AC6F300F088B2 /* Day52020_Example2.txt in Resources */,
 				5025401D257CABF500208CC2 /* Day62020_Example1.txt in Resources */,
+				50668A7325928F8A00C448C1 /* Day3_2015.txt in Resources */,
 				5069EC1D258B1C4E004BDAF4 /* Day172020.txt in Resources */,
 				50BE7A3C25809CDE008CD46C /* Day92020_Example1.txt in Resources */,
 				5069EC21258B1C62004BDAF4 /* Day172020_Example1.txt in Resources */,
@@ -1825,6 +1843,7 @@
 				50F5A715258BF1AC00E855B3 /* Day182020.swift in Sources */,
 				50086DA423B11818002613B7 /* Input+Day20.swift in Sources */,
 				501596BA258E36CC00060FCA /* Day192020_NoRegex.swift in Sources */,
+				50668A6E25928F6500C448C1 /* Day3_2015.swift in Sources */,
 				506688CF2591C72600C448C1 /* Day222020.swift in Sources */,
 				506688FC25925FCE00C448C1 /* Day242020.swift in Sources */,
 				50BE7AD72581E693008CD46C /* Day102020.swift in Sources */,
@@ -1923,6 +1942,7 @@
 				50BE7A3525809CA9008CD46C /* Day9Tests2020.swift in Sources */,
 				50086D2B23A4BCC1002613B7 /* Day14Tests.swift in Sources */,
 				506FF7C2257A0D7A0006055D /* Day4Tests2020.swift in Sources */,
+				50668A7725928F9800C448C1 /* Day3Tests_2015.swift in Sources */,
 				50254021257CAC2100208CC2 /* Day6Tests2020.swift in Sources */,
 				50BE7B4C2585D77E008CD46C /* Day13Tests2020.swift in Sources */,
 				50BE7B23258407BE008CD46C /* Day11Tests2020.swift in Sources */,
