@@ -233,7 +233,7 @@ extension TwentyTwenty.Day20 {
             }
         }
         
-        var topLeft = corners[0]
+        var topLeft = corners[2]
         var grid: [Position: Tile] = [Position(x: 0, y: 0): topLeft]
         while !Set([topLeft.edge(.top), topLeft.edge(.left)]).isSubset(of: edgesWithNoMatches) {
             topLeft = topLeft.rotateRight()
