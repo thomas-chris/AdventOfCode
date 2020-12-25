@@ -12,26 +12,18 @@ extension TwentyTwenty.Day25 {
 
         let subject = 7
         var value = 1
-        var carLoops = 0
         var notSolved = true
+        var cryptoValue = 1
         
         while notSolved {
-            if value != cardKey {
-                carLoops += 1
-                value = subject * value
-                value = value % 20201227
+            if value != doorKey {
+                value = (subject * value) % 20201227
+                cryptoValue = (cardKey * cryptoValue) % 20201227
             } else {
                 notSolved = false
             }
         }
         
-        var cryptoValue = 1
-        
-        for _ in 0..<carLoops {
-            cryptoValue = (doorKey * cryptoValue) % 20201227
-        }
-        
-
         return cryptoValue
     }
 }
