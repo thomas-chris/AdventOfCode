@@ -3,35 +3,23 @@ import AdventOfCode
 
 class Advent2020TestsDay25: XCTestCase {
     
-    func test_day25_part1_example() {
-            let input = Input.getInputString(name: "Day252020_Example1").components(separatedBy: "\n\n")
+        func test_day25_part1_example() {
+            let cardKey = 5764801
+            let doorKey = 17807724
+            
             let day25 = TwentyTwenty.Day25()
-            let value = day25.solvePart1(input: input)
-            XCTAssertEqual(value, 306)
-    }
+            let value = day25.solvePart1(cardKey: cardKey, doorKey: doorKey)
+            XCTAssertEqual(value, 14897079)
+        }
     
     func test_day25_part1() {
-        measure {
-            let input = Input.getInputString(name: "Day252020").components(separatedBy: "\n\n")
-            let day25 = TwentyTwenty.Day25()
-            let value = day25.solvePart1(input: input)
-            XCTAssertEqual(value, 33559)
-        }
-    }
-    
-    func test_day25_part2_example() {
-            let input = Input.getInputString(name: "Day252020_Example1").components(separatedBy: "\n\n")
-            let day25 = TwentyTwenty.Day25()
-            let value = day25.solvePart2(input: input)
-            XCTAssertEqual(value, 291)
-    }
-    
-    func test_day25_part2() {
-        measure {
-            let input = Input.getInputString(name: "Day252020").components(separatedBy: "\n\n")
-            let day25 = TwentyTwenty.Day25()
-            let value = day25.solvePart2(input: input)
-            XCTAssertEqual(value, 32789)
-        }
+        //        measure {
+        let cardKey = 1327981
+        let doorKey = 2822615
+        
+        let day25 = TwentyTwenty.Day25()
+        let value = day25.solvePart1(cardKey: cardKey, doorKey: doorKey)
+        XCTAssertEqual(value, 10187657)
+        //        }
     }
 }
