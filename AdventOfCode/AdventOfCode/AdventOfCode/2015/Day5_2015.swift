@@ -1,3 +1,5 @@
+import Regex
+
 extension TwentyFifteen {
     public struct Day5 {
         public init() {}
@@ -8,22 +10,25 @@ extension TwentyFifteen.Day5 {
     public func solvePart1(input: [String]) -> Int {
         
         let rows = input.map { line in
-            Array(String(line))
+            Array(line.map { String($0) })
         }
         
-//        return rows.filter { row -> Bool in
-//
-//            passesDoubleLetter(row: row) && passesRuleAEIOU(row: row) && passesBannedPhraseRule(row: row)
-//        }.count
-        return 0
+        return rows.filter { row -> Bool in
+
+            passesDoubleLetter(row: row) && passesRuleAEIOU(row: row) && passesBannedPhraseRule(row: row)
+        }.count
     }
     
     public func solvePart2(input: [String]) -> Int {
         
+        let rule1 = Regex(#"(..).*\1"#) // a pair of characters repeated in the string
+        let rule2 = Regex(#"(.).\1"#) // a character repeated w/ a single character in between
         
- 
-        return 0
+        return input.filter { line -> Bool in
+            return rule1.matches(line) && rule2.matches(line)
+        }.count
     }
+    
     
     func passesRuleAEIOU(row: [String]) -> Bool {
         return row.compactMap { value -> String? in
