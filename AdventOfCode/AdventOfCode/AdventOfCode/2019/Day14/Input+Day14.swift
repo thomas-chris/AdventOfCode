@@ -1,17 +1,4 @@
-//
-//  Input+Day14.swift
-//  AdventOfCode
-//
-//  Created by Chris Thomas on 14/12/2019.
-//  Copyright © 2019 Chris Thomas. All rights reserved.
-//
-
 import Foundation
-//
-//public struct Recipe {
-//    let result: (chemical: String, quantity: Int)
-//    let ingridients: [String: Int]
-//}
 
 public struct Chemical {
     let id: String

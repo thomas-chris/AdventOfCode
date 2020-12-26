@@ -650,7 +650,6 @@
 			children = (
 				50086D8C23AA9BC0002613B7 /* Input+Day18.swift */,
 				50086D8E23AA9BCB002613B7 /* Day18.swift */,
-				50086D9223AA9C1D002613B7 /* MazeTile.swift */,
 			);
 			path = Day18;
 			sourceTree = "<group>";
@@ -933,6 +932,7 @@
 		50424EE025761FD500D77F8F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50086D9223AA9C1D002613B7 /* MazeTile.swift */,
 				50978B6623A0B3270036AFA8 /* Position.swift */,
 				50978B6823A0B44E0036AFA8 /* Direction.swift */,
 				50086CD723A36CC3002613B7 /* Tile.swift */,
