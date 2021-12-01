@@ -23,8 +23,8 @@ public struct Day1 {
          
         return input
             .windows(ofCount: 3)
-            .map { slice -> Double in
-                return Double(slice.reduce(0, +))
+            .map { slice in
+                return slice.reduce(0, +)
             }
             .windows(ofCount: 2)
             .map { slice -> Double in
