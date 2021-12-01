@@ -1,5 +1,5 @@
 import XCTest
-import AdventOfCode
+import TwentyTwentyOne
 
 class Advent2020TestsDay25: XCTestCase {
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1120"
+   LastUpgradeVersion = "1310"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "500DAF73239545A30081CC21"
-               BuildableName = "AdventOfCode.framework"
-               BlueprintName = "AdventOfCode"
+               BlueprintIdentifier = "506AD53F2756AD91009E5E2B"
+               BuildableName = "TwentyTwentyOne.framework"
+               BlueprintName = "TwentyTwentyOne"
                ReferencedContainer = "container:AdventOfCode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -32,16 +32,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "500DAF7C239545A30081CC21"
-               BuildableName = "AdventOfCodeTests.xctest"
-               BlueprintName = "AdventOfCodeTests"
+               BlueprintIdentifier = "506AD5552756ADCF009E5E2B"
+               BuildableName = "TwentyTwentyOneTests.xctest"
+               BlueprintName = "TwentyTwentyOneTests"
                ReferencedContainer = "container:AdventOfCode.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "500DAF73239545A30081CC21"
-            BuildableName = "AdventOfCode.framework"
-            BlueprintName = "AdventOfCode"
+            BlueprintIdentifier = "506AD53F2756AD91009E5E2B"
+            BuildableName = "TwentyTwentyOne.framework"
+            BlueprintName = "TwentyTwentyOne"
             ReferencedContainer = "container:AdventOfCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
