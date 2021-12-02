@@ -5,48 +5,12 @@ public struct Day2 {
     typealias Position = (depth: Int, horizontal: Int)
     typealias PositionAndAim = (depth: Int, horizontal: Int, aim: Int)
     
-    public static func getAnswerPart1() -> Int {
-        
-        let compactmap: (String) -> String = { string in string }
-        let input = Input.array(seperator: "\n", file: "Day2", compactmap: compactmap)
-            .dropLast()
-            .compactMap { string -> (String, Int)? in
-                let substrings = string.split(separator: " ")
-                
-                guard let instruction = substrings.first,
-                      let valueString = substrings.last,
-                      let value = Int(valueString)
-                else {
-                    return nil
-                }
-                
-                return (String(instruction), value)
-            }
-        
+    public static func getAnswerPart1(input: [(String, Int)]) -> Int {
         let finalPosition = move(input, position: (0, 0))
         return finalPosition.0 * finalPosition.1
     }
     
-    public static func getAnswerPart2Example() -> Int {
-        let compactmap: (String) -> String = { string in string }
-        let input = Input.array(seperator: "\n", file: "Day2Example", compactmap: compactmap).dropLast()
-        
-        return part2(Array(input))
-    }
-    
-    public static func getAnswerPart2() -> Int {
-        let compactmap: (String) -> String = { string in string }
-        let input = Input.array(seperator: "\n", file: "Day2", compactmap: compactmap).dropLast()
-        
-        return part2(Array(input))
-    }
-    
-    private static func part2(_ array: [String]) -> Int {
-        let input = array.map { string -> (String, Int) in
-            let substrings = string.split(separator: " ")
-            return (String(substrings[0]), Int(substrings[1]) ?? 0)
-        }
-    
+    public static func part2(_ input: [(String, Int)]) -> Int {
         let finalPosition = moveAndAim(input, position: (0, 0, 0))
         return finalPosition.0 * finalPosition.1
     }

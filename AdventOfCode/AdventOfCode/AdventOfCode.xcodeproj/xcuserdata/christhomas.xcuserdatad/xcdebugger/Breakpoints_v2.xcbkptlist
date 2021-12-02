@@ -1412,7 +1412,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "66B9EF0F-D086-4301-B6D3-53895E096C4F"
+            uuid = "F5D3E0C5-7F00-4636-863F-409D86C60872"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1421,22 +1421,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "getAnswerPart1()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F5D3E0C5-7F00-4636-863F-409D86C60872"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdventOfCode/2021/Day 2/Day2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
             landmarkName = "part2(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1451,8 +1435,8 @@
             filePath = "AdventOfCode/2021/Day 2/Day2.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "moveAndAim(_:position:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1467,8 +1451,8 @@
             filePath = "AdventOfCode/2021/Day 2/Day2.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "moveAndAim(_:position:)"
             landmarkType = "7">
          </BreakpointContent>
