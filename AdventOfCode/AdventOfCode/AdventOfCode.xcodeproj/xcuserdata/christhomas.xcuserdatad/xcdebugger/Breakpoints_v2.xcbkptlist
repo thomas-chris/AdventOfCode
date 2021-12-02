@@ -1435,8 +1435,8 @@
             filePath = "AdventOfCode/2021/Day 2/Day2.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "part2(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1451,8 +1451,8 @@
             filePath = "AdventOfCode/2021/Day 2/Day2.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "moveAndAim(_:position:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1467,8 +1467,8 @@
             filePath = "AdventOfCode/2021/Day 2/Day2.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "moveAndAim(_:position:)"
             landmarkType = "7">
          </BreakpointContent>

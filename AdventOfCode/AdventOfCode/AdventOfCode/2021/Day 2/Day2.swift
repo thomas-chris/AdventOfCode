@@ -10,9 +10,17 @@ public struct Day2 {
         let compactmap: (String) -> String = { string in string }
         let input = Input.array(seperator: "\n", file: "Day2", compactmap: compactmap)
             .dropLast()
-            .map { string -> (String, Int) in
+            .compactMap { string -> (String, Int)? in
                 let substrings = string.split(separator: " ")
-                return (String(substrings[0]), Int(substrings[1]) ?? 0)
+                
+                guard let instruction = substrings.first,
+                      let valueString = substrings.last,
+                      let value = Int(valueString)
+                else {
+                    return nil
+                }
+                
+                return (String(instruction), value)
             }
         
         let finalPosition = move(input, position: (0, 0))
