@@ -1,0 +1,95 @@
+import Algorithms
+
+public struct Day2 {
+    
+    typealias Position = (depth: Int, horizontal: Int)
+    typealias PositionAndAim = (depth: Int, horizontal: Int, aim: Int)
+    
+    public static func getAnswerPart1() -> Int {
+        
+        let compactmap: (String) -> String = { string in string }
+        let input = Input.array(seperator: "\n", file: "Day2", compactmap: compactmap)
+            .dropLast()
+            .map { string -> (String, Int) in
+                let substrings = string.split(separator: " ")
+                return (String(substrings[0]), Int(substrings[1]) ?? 0)
+            }
+        
+        let finalPosition = move(input, position: (0, 0))
+        return finalPosition.0 * finalPosition.1
+    }
+    
+    public static func getAnswerPart2Example() -> Int {
+        let compactmap: (String) -> String = { string in string }
+        let input = Input.array(seperator: "\n", file: "Day2Example", compactmap: compactmap).dropLast()
+        
+        return part2(Array(input))
+    }
+    
+    public static func getAnswerPart2() -> Int {
+        let compactmap: (String) -> String = { string in string }
+        let input = Input.array(seperator: "\n", file: "Day2", compactmap: compactmap).dropLast()
+        
+        return part2(Array(input))
+    }
+    
+    private static func part2(_ array: [String]) -> Int {
+        let input = array.map { string -> (String, Int) in
+            let substrings = string.split(separator: " ")
+            return (String(substrings[0]), Int(substrings[1]) ?? 0)
+        }
+    
+        let finalPosition = moveAndAim(input, position: (0, 0, 0))
+        return finalPosition.0 * finalPosition.1
+    }
+    
+    private static func move(_ directions: [(String, Int)], position: Position) -> Position {
+        
+        if directions.count == 0 {
+            return position
+        }
+        
+        var depth: Int = position.depth
+        var horizontal: Int = position.horizontal
+        
+        switch directions.first!.0 {
+        case "forward":
+            horizontal += directions.first!.1
+        case "down":
+            depth += directions.first!.1
+        case "up":
+            depth -= directions.first!.1
+        default:
+            break
+        }
+        
+        return move(Array(directions.dropFirst()), position: (depth, horizontal))
+    }
+    
+    private static func moveAndAim(_ directions: [(String, Int)], position: PositionAndAim) -> PositionAndAim {
+        
+        if directions.count == 0 {
+            return position
+        }
+        
+        var depth: Int = position.depth
+        var horizontal: Int = position.horizontal
+        var aim: Int = position.aim
+        
+        switch directions.first!.0 {
+        case "forward":
+            horizontal += directions.first!.1
+            depth = depth + (directions.first!.1 * aim)
+        case "down":
+            aim += directions.first!.1
+        case "up":
+            aim -= directions.first!.1
+        default:
+            break
+        }
+        
+        return moveAndAim(Array(directions.dropFirst()), position: (depth, horizontal, aim))
+    }
+    
+    
+}
