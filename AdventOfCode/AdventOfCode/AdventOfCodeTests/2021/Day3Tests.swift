@@ -15,12 +15,12 @@ class TestsDay3: XCTestCase {
         XCTAssertEqual(Day3.part1(input), 1131506)
     }
     
-    func test_day3_example() {
-        XCTAssertEqual(Day3.part2(example), 900)
+    func test_day3_example() throws {
+        XCTAssertEqual(try Day3.part2(example), 230)
     }
     
-    func test_day3_part2() {
-        XCTAssertEqual(Day3.part2(input), 1620141160)
+    func test_day3_part2() throws {
+        XCTAssertEqual(try Day3.part2(input), 1620141160)
     }
 }
 

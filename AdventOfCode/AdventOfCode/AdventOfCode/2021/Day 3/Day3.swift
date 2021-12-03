@@ -8,7 +8,6 @@ public struct Day3 {
         var gammaRate = ""
         var epsilonRate = ""
         for column in 0..<input.first!.count {
-            var listOfColumnValues: [String.Element] = []
             var ones = 0
             var zeros = 0
             for row in input {
@@ -27,14 +26,65 @@ public struct Day3 {
                 epsilonRate.append("1")
             }
         }
-        let gammaNumber = Int(gammaRate, radix: 2) ?? 0
-        let epsilonNumber = Int(epsilonRate, radix: 2) ?? 0
+        let gammaNumber = Int(gammaRate, radix: 2)!
+        let epsilonNumber = Int(epsilonRate, radix: 2)!
         
         return gammaNumber * epsilonNumber
     }
     
-    public static func part2(_ input: [[String.Element]]) -> Int {
-        
-        return 1
+    public static func part2(_ input: [[String.Element]]) throws -> Int {
+        let o2 = try calcOxygen(input)
+        let co2 = try calcCo2(input)
+
+        return o2 * co2
     }
+    
+    private static func calcOxygen(_ input: [[String.Element]]) throws -> Int {
+        var changingOxygenInput = input
+        
+        for column in 0..<changingOxygenInput.first!.count {
+            var ones = 0
+            var zeros = 0
+            for row in changingOxygenInput {
+                if row[column] == "1" {
+                    ones += 1
+                } else {
+                    zeros += 1
+                }
+            }
+            
+            changingOxygenInput = changingOxygenInput.filter({ value in String(value[column]) == (ones >= zeros ? "1" : "0") })
+            if changingOxygenInput.count == 1 {
+                let string = changingOxygenInput[0].map { String($0) }.joined()
+                return Int(string, radix: 2)!
+            }
+        }
+        
+        throw fatalError()
+    }
+    
+    private static func calcCo2(_ input: [[String.Element]]) throws -> Int {
+        var changingOxygenInput = input
+    
+        for column in 0..<changingOxygenInput.first!.count {
+            var ones = 0
+            var zeros = 0
+            for row in changingOxygenInput {
+                if row[column] == "1" {
+                    ones += 1
+                } else {
+                    zeros += 1
+                }
+            }
+            
+            changingOxygenInput = changingOxygenInput.filter({ value in String(value[column]) == (ones < zeros ? "1" : "0") })
+            if changingOxygenInput.count == 1 {
+                let string = changingOxygenInput[0].map { String($0) }.joined()
+                return Int(string, radix: 2)!
+            }
+        }
+        
+        throw fatalError()
+    }
+    
 }
