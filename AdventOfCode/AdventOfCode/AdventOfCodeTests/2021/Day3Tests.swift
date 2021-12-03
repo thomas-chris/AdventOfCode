@@ -20,7 +20,7 @@ class TestsDay3: XCTestCase {
     }
     
     func test_day3_part2() throws {
-        XCTAssertEqual(try Day3.part2(input), 1620141160)
+        XCTAssertEqual(try Day3.part2(input), 7863147)
     }
 }
 
