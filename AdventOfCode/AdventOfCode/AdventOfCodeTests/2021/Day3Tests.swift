@@ -20,7 +20,13 @@ class TestsDay3: XCTestCase {
     }
     
     func test_day3_part2() throws {
-        XCTAssertEqual(try Day3.part2(input), 7863147)
+        measure {
+            XCTAssertEqual(try? Day3.part2(input), 7863147)
+        }
+    }
+    
+    func test_day3_part1_transpose() {
+        Day3.part1_transpose(example)
     }
 }
 

@@ -32,6 +32,12 @@ public struct Day3 {
         return gammaNumber * epsilonNumber
     }
     
+    public static func part1_transpose(_ input: [[String.Element]]) -> Int {
+        let transpose = input.transposed()
+        print(transpose)
+        return 1
+    }
+    
     public static func part2(_ input: [[String.Element]]) throws -> Int {
         let o2 = try calcOxygen(input)
         let co2 = try calcCo2(input)
@@ -86,5 +92,5 @@ public struct Day3 {
         
         throw fatalError()
     }
-    
 }
+
