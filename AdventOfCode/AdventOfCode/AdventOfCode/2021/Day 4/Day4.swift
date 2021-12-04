@@ -3,50 +3,16 @@ import Foundation
 import UIKit
 
 public struct Day4 {
-    
+
+    typealias Board = [[Int]]
     public static func part1(_ input: [String]) -> Int {
         
-        let numbers = input.first!.split(separator: ",").map { String($0) }.compactMap { Int($0) }
-        var boards = input.dropFirst().chunks(ofCount: 6).map { lines -> [[Int]] in
-            let boardLines = Array(lines.dropFirst().map { String($0) })
-            let rows = boardLines.map { line -> [Int] in
-                return Array(line.split(separator: " ")).map { String($0) }.compactMap { Int($0) }
-            }
-            
-            var columns: [[Int]] = []
-            for i in 0..<5 {
-                var column: [Int?] = []
-                for j in 0..<5 {
-                    column.append(Int(rows[j][i]))
-                }
-                columns.append(column.compactMap {$0 })
-            }
-            return rows + columns
-            
-        }
-        
+        let (numbers, boards) = formatData(input)
         return solve(numbers: numbers, boards: boards)
     }
     
     public static func part2(_ input: [String]) throws -> Int {
-        let numbers = input.first!.split(separator: ",").map { String($0) }.compactMap { Int($0) }
-        var boards = input.dropFirst().chunks(ofCount: 6).map { lines -> [[Int]] in
-            let boardLines = Array(lines.dropFirst().map { String($0) })
-            let rows = boardLines.map { line -> [Int] in
-                return Array(line.split(separator: " ")).map { String($0) }.compactMap { Int($0) }
-            }
-            
-            var columns: [[Int]] = []
-            for i in 0..<5 {
-                var column: [Int?] = []
-                for j in 0..<5 {
-                    column.append(Int(rows[j][i]))
-                }
-                columns.append(column.compactMap {$0 })
-            }
-            return rows + columns
-            
-        }
+        var (numbers, boards) = formatData(input)
         
         for i in numbers {
             var newBoards = [[[Int]]]()
@@ -76,6 +42,29 @@ public struct Day4 {
             boards = newBoards
         }
        return 1
+    }
+    
+    private static func formatData(_ input: [String]) -> ([Int], [Board]) {
+        let numbers = input.first!.split(separator: ",").map { String($0) }.compactMap { Int($0) }
+        let boards = input.dropFirst().chunks(ofCount: 6).map { lines -> Board in
+            let boardLines = Array(lines.dropFirst().map { String($0) })
+            let rows = boardLines.map { line -> [Int] in
+                return Array(line.split(separator: " ")).map { String($0) }.compactMap { Int($0) }
+            }
+            
+            var columns: [[Int]] = []
+            for i in 0..<5 {
+                var column: [Int?] = []
+                for j in 0..<5 {
+                    column.append(Int(rows[j][i]))
+                }
+                columns.append(column.compactMap {$0 })
+            }
+            return rows + columns
+            
+        }
+        
+        return (numbers, boards)
     }
     
     private static func solve(numbers: [Int], boards: [[[Int]]]) -> Int {
