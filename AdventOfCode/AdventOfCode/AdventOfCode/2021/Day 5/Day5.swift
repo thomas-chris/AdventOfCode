@@ -38,8 +38,11 @@ public struct Day5 {
     private static func solve(_ input: [String], filter: Bool) -> Int {
         var dic = [Position: Int]()
         getVents(input, filterDiagonals: filter)
+        // get all positions
             .map { $0.start.vector($0.end) }
+        // create a single array
             .flatMap { $0 }
+        // count up number of times hit that position
             .forEach { position in
                 if let count = dic[position] {
                     dic[position] = count + 1
@@ -48,6 +51,7 @@ public struct Day5 {
                 }
             }
     
+        // count the positions where you hit it more than once
         return dic.values.filter { $0 > 1 }.count
     }
 }
