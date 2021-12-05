@@ -20,16 +20,18 @@ public struct Day5 {
     
     private static func getVents(_ input: [String], filterDiagonals: Bool) -> [Vent] {
         let regex: Regex = Regex(#"(\d+),(\d+) -> (\d+),(\d+)"#)
-        let vents = input.map { line -> Vent in
-            let match = regex.firstMatch(in: line)!.captures.compactMap { $0 }
-            return Vent(start: Position(x: Int(match[0])!, y: Int(match[1])!),
-                                end: Position(x: Int(match[2])!, y: Int(match[3])!))
-                }
+        let vents = input
+            .map { line -> Vent in
+                let match = regex.firstMatch(in: line)!.captures.compactMap { $0 }
+                return Vent(start: Position(x: Int(match[0])!,
+                                            y: Int(match[1])!),
+                            end: Position(x: Int(match[2])!,
+                                          y: Int(match[3])!))
+            }
         
         if filterDiagonals {
             return vents.filter { $0.start.x == $0.end.x || $0.start.y == $0.end.y }
         }
-        
         return vents
     }
     

@@ -34,54 +34,18 @@ public struct Position: Equatable, Hashable {
         }
     }
     
+    /// currently only does +1,-1 in any direction...
     func vector(_ newPostion: Position) -> [Position] {
         var positions = [Position]()
-        let dx = (newPostion.x - self.x)
-        let dy = (newPostion.y - self.y)
+        let dx = (newPostion.x - self.x) / abs(gcd(newPostion.y - self.y, newPostion.x - self.x))
+        let dy = (newPostion.y - self.y) / abs(gcd(newPostion.y - self.y, newPostion.x - self.x))
         
         var currentPostion = self
-        
-        if dx > 0 && dy > 0 {
-            while currentPostion != newPostion {
+        while currentPostion != newPostion {
             positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y + 1)
-            }
-        } else if dx > 0 && dy < 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y - 1)
-            }
-        } else if dx < 0 && dy > 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y + 1)
-            }
-        } else if dx < 0 && dy < 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y - 1)
-            }
-        } else if dx > 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y)
-            }
-        } else if dx < 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y)
-            }
-        } else if dy > 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x, y: currentPostion.y + 1)
-            }
-        } else if dy < 0 {
-            while currentPostion != newPostion {
-            positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x, y: currentPostion.y - 1)
-            }
+            currentPostion = Position(x: currentPostion.x + dx, y: currentPostion.y +   dy)
         }
+        
         positions.append(newPostion)
         return positions
     }
