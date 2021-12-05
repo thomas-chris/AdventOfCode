@@ -40,14 +40,10 @@ public struct Day5 {
         getVents(input, filterDiagonals: filter)
         // get all positions
             .map { $0.start.vector($0.end) }
-        // create a single array
-            .flatMap { $0 }
         // count up number of times hit that position
-            .forEach { position in
-                if let count = dic[position] {
-                    dic[position] = count + 1
-                } else {
-                    dic[position] = 1
+            .forEach { positions in
+                for position in positions {
+                    dic[position, default: 0] += 1
                 }
             }
     
