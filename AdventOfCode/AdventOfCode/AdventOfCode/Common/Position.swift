@@ -33,6 +33,58 @@ public struct Position: Equatable, Hashable {
             return Position(x: self.x - 1, y: self.y)
         }
     }
+    
+    func vector(_ newPostion: Position) -> [Position] {
+        var positions = [Position]()
+        let dx = (newPostion.x - self.x)
+        let dy = (newPostion.y - self.y)
+        
+        var currentPostion = self
+        
+        if dx > 0 && dy > 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y + 1)
+            }
+        } else if dx > 0 && dy < 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y - 1)
+            }
+        } else if dx < 0 && dy > 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y + 1)
+            }
+        } else if dx < 0 && dy < 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y - 1)
+            }
+        } else if dx > 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x + 1, y: currentPostion.y)
+            }
+        } else if dx < 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x - 1, y: currentPostion.y)
+            }
+        } else if dy > 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x, y: currentPostion.y + 1)
+            }
+        } else if dy < 0 {
+            while currentPostion != newPostion {
+            positions.append(currentPostion)
+            currentPostion = Position(x: currentPostion.x, y: currentPostion.y - 1)
+            }
+        }
+        positions.append(newPostion)
+        return positions
+    }
 }
 
 extension Position {
