@@ -1613,6 +1613,21 @@
                   endingLineNumber = "21"
                   offsetFromSymbolStart = "1361">
                </Location>
+               <Location
+                  uuid = "40282DC0-B4B3-4699-99F7-30EE6A26E5E1 - 3e9176370d08b0bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day3.part1(Swift.Array&lt;Swift.Array&lt;Swift.Character&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%203/Day3.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "112">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1630,6 +1645,38 @@
             endingLineNumber = "65"
             landmarkName = "calcOxygen(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0142EE7B-2333-41EA-96C5-30650A61DD2D - f078899db177feaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day3.calcOxygen(Swift.Array&lt;Swift.Array&lt;Swift.Character&gt;&gt;) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%203/Day3.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "2178">
+               </Location>
+               <Location
+                  uuid = "0142EE7B-2333-41EA-96C5-30650A61DD2D - d6fd5caebd94c4a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[1] = Dead&gt; of static TwentyTwentyOne.Day3.calcOxygen(Swift.Array&lt;Swift.Array&lt;Swift.Character&gt;&gt;) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%203/Day3.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1107">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1691,6 +1738,21 @@
                   startingLineNumber = "40"
                   endingLineNumber = "40"
                   offsetFromSymbolStart = "1706">
+               </Location>
+               <Location
+                  uuid = "1083EA28-80B0-40C8-BA3C-C6A492CEC55A - 621f1da4d9d64b23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day4.part2(Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%204/Day4.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1153">
                </Location>
             </Locations>
          </BreakpointContent>

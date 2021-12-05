@@ -43,7 +43,7 @@ public struct Position: Equatable, Hashable {
         var currentPostion = self
         while currentPostion != newPostion {
             positions.append(currentPostion)
-            currentPostion = Position(x: currentPostion.x + dx, y: currentPostion.y +   dy)
+            currentPostion = Position(x: currentPostion.x + dx, y: currentPostion.y + dy)
         }
         
         positions.append(newPostion)
