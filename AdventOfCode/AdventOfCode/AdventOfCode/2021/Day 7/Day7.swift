@@ -19,21 +19,24 @@ public struct Day7 {
     }
     
     public static func part2(_ input: [Int]) throws -> Int {
-
+        let ceilingAve = ceil(Double(input.reduce(0, +)) / Double(input.count))
+        let floorAve = floor(Double(input.reduce(0, +)) / Double(input.count))
+        
         var dicOfPostion = [Int: Int]()
         for position in input {
             dicOfPostion[position, default: 0] += 1
         }
-
-        var allDistances =  [Int]()
-        for position in input.min()!...input.max()! {
-            let distance = dicOfPostion.keys.map { key -> Int in
-                let distance = abs(key - Int(position))
-                return (distance * (distance + 1) / 2) * dicOfPostion[key]!
-            }.reduce(0,+)
-            allDistances.append(distance)
+        
+        let results = dicOfPostion.keys.map { key -> (Int,Int) in
+            let cDistance = abs(key - Int(ceilingAve))
+            let fDistance = abs(key - Int(floorAve))
+            return ((cDistance * (cDistance + 1) / 2) * (dicOfPostion[key] ?? 0), (fDistance * (fDistance + 1) / 2) * (dicOfPostion[key] ?? 0))
+        }.reduce((0,0)) { partialResult, values in
+            let newC = partialResult.0 + values.0
+            let newF = partialResult.1 + values.1
+            return (newC, newF)
         }
         
-        return allDistances.min()!
+        return results.0 < results.1 ? results.0 : results.1
     }
 }
