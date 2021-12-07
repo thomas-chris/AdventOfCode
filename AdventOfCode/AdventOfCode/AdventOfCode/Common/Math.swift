@@ -20,3 +20,14 @@ public func gcd(_ m: Int, _ n: Int) -> Int {
   }
   return b
 }
+
+extension Array where Element == Int {
+    func median() -> Double {
+        let sortedArray = sorted()
+        if count % 2 != 0 {
+            return Double(sortedArray[count / 2])
+        } else {
+            return Double(sortedArray[count / 2] + sortedArray[count / 2 - 1]) / 2.0
+        }
+    }
+}
