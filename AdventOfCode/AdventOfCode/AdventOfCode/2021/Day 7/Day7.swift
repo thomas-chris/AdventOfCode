@@ -26,7 +26,7 @@ public struct Day7 {
         }
 
         var allDistances =  [Int]()
-        for position in 0...input.max()! {
+        for position in input.min()!...input.max()! {
             let distance = dicOfPostion.keys.map { key -> Int in
                 let distance = abs(key - Int(position))
                 return (distance * (distance + 1) / 2) * dicOfPostion[key]!
