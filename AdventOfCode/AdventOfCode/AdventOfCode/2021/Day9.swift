@@ -15,14 +15,13 @@ public struct Day9 {
     
     public static func part2(_ input: [String]) throws -> Int {
         let grid = Grid(input)
-        let lowPositions = getLowPoints(grid: grid)
         
-        var basinSizes = [Int]()
-        for position in lowPositions {
-            basinSizes.append(calcBasinSize(position, visitedPositions: Set([position]), grid: grid).count)
-        }
-        
-        return basinSizes.sorted().suffix(3).reduce(1, *)
+        return getLowPoints(grid: grid)
+                .map { calcBasinPoints($0, visitedPositions: Set([$0]), grid: grid).count }
+                .sorted()
+                .suffix(3)
+                .reduce(1, *)
+
     }
     
     private static func getLowPoints(grid: Grid) -> [Position] {
@@ -40,7 +39,7 @@ public struct Day9 {
             }
     }
     
-    private static func calcBasinSize(_ position: Position, visitedPositions: Set<Position>, grid: Grid) -> Set<Position> {
+    private static func calcBasinPoints(_ position: Position, visitedPositions: Set<Position>, grid: Grid) -> Set<Position> {
         var setOfPositions = visitedPositions
         
         let adjacent = position.getAdjacentPositions()
@@ -48,10 +47,7 @@ public struct Day9 {
         for position in adjacent {
             if (grid[position] != 9 && grid[position] != nil) && !setOfPositions.contains(position) {
                 setOfPositions.insert(position)
-                let newSet = calcBasinSize(position, visitedPositions: setOfPositions, grid: grid)
-                newSet.forEach { position in
-                    setOfPositions.insert(position)
-                }
+                setOfPositions = setOfPositions.union(calcBasinPoints(position, visitedPositions: setOfPositions, grid: grid))
             }
         }
         
