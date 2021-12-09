@@ -1503,6 +1503,38 @@
             endingLineNumber = "29"
             landmarkName = "part1(_:turns:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "500C0F9D-C96E-4BB9-9634-45A9000D017D - 54202c58cbdb8a03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day6.part1(_: Swift.Array&lt;Swift.Int&gt;, turns: Swift.Int) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%206/Day6.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "2470">
+               </Location>
+               <Location
+                  uuid = "500C0F9D-C96E-4BB9-9634-45A9000D017D - 54202c58cbdb8aac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day6.part1(_: Swift.Array&lt;Swift.Int&gt;, turns: Swift.Int) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%206/Day6.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "3833">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1519,6 +1551,38 @@
             endingLineNumber = "23"
             landmarkName = "part1(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D88387A5-2F05-4537-B994-1274B0F15BB4 - a3dce20f2eaafc9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day8.part1(Swift.Array&lt;Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "951">
+               </Location>
+               <Location
+                  uuid = "D88387A5-2F05-4537-B994-1274B0F15BB4 - a3dce20f2eaafc9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day8.part1(Swift.Array&lt;Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "285">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1535,6 +1599,38 @@
             endingLineNumber = "12"
             landmarkName = "part1(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "481D91F4-405B-4D80-9AF4-4837BDA3B01D - a3dce20f2eaaf206"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day8.part1(Swift.Array&lt;Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "326">
+               </Location>
+               <Location
+                  uuid = "481D91F4-405B-4D80-9AF4-4837BDA3B01D - a3dce20f2eaafde5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day8.part1(Swift.Array&lt;Swift.Array&lt;Swift.Array&lt;Swift.String&gt;&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1551,6 +1647,53 @@
             endingLineNumber = "101"
             landmarkName = "solve(input:output:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE55AEBD-C5B4-40FB-ADDD-405096C7DBE4 - 8f7807f3af0aae21"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.String.isSuperSet(of: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "DE55AEBD-C5B4-40FB-ADDD-405096C7DBE4 - 84a1d0fd7744bf6a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[2] = Dead&gt; of static TwentyTwentyOne.Day8.solve(input: Swift.Array&lt;Swift.String&gt;, output: Swift.Array&lt;Swift.String&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "6819">
+               </Location>
+               <Location
+                  uuid = "DE55AEBD-C5B4-40FB-ADDD-405096C7DBE4 - cdff833ddf0361e9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day8.solve(input: Swift.Array&lt;Swift.String&gt;, output: Swift.Array&lt;Swift.String&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day%208/Day8.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "6502">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1597,6 +1740,70 @@
                   startingLineNumber = "92"
                   endingLineNumber = "92"
                   offsetFromSymbolStart = "412">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F74E8B40-B28C-4F2B-ABFA-C73D3366AD2B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day9.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "calcBasinSize(_:visitedPositions:grid:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C7E8A74-6C3A-4A86-8926-28B582307E43"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day9.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "part2(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C7E8A74-6C3A-4A86-8926-28B582307E43 - 48c650e946903354"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day9.part2(Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day9.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "762">
+               </Location>
+               <Location
+                  uuid = "5C7E8A74-6C3A-4A86-8926-28B582307E43 - 48c650e946903354"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyOne.Day9.part2(Swift.Array&lt;Swift.String&gt;) throws -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyOne"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day9.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "801">
                </Location>
             </Locations>
          </BreakpointContent>

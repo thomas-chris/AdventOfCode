@@ -34,6 +34,12 @@ public struct Position: Equatable, Hashable {
         }
     }
     
+    func getAdjacentPositions() -> [Position] {
+        Direction.allCases.map { direction in
+            self.move(vector: direction)
+        }
+    }
+    
     /// currently only does +1,-1 in any direction...
     func vector(_ newPostion: Position) -> [Position] {
         var positions = [Position]()
@@ -81,5 +87,22 @@ public struct XYZ: Equatable, Hashable {
     
     public var energy: Int {
         abs(x) + abs(y) + abs(z)
+    }
+}
+
+public typealias Grid = [Position: Int]
+
+extension Grid {
+    init(_ input: [String]) {
+        var dictionary = [Position: Int]()
+        
+        for x in 0..<input.count {
+            let row = input[x]
+            for y in 0..<row.count {
+                dictionary[Position(x: x, y: y)] = Int(row[y])!
+            }
+        }
+        
+        self = dictionary
     }
 }
