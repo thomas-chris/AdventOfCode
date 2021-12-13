@@ -7,6 +7,8 @@ class TestsDay12: XCTestCase {
         
     let example = Array(Input.array(seperator: "\n", file: "Day12Example", compactmap:  { string in string } ).dropLast())
     
+    let pjInput = Array(Input.array(seperator: "\n", file: "Day12PJ", compactmap:  { string in string } ).dropLast())
+    
     func test_day12_part1_example() {
         XCTAssertEqual(Day12.part1(example), 10)
     }
@@ -21,7 +23,13 @@ class TestsDay12: XCTestCase {
     
     func test_day12_part2() throws {
         measure {
-            XCTAssertEqual(try? Day12.part2(input), 256)
+            XCTAssertEqual(try? Day12.part2(input), 118803)
+        }
+    }
+    
+    func test_day12_part2_pj() throws {
+        measure {
+            XCTAssertEqual(try? Day12.part2(pjInput), 89592)
         }
     }
 }
