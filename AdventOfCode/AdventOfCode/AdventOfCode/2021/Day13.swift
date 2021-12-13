@@ -24,67 +24,61 @@ public struct Day13 {
         return (positions, folds)
     }
     
+    private static func foldInX(_ positions: [Position: Int], fold: Int) -> [Position: Int] {
+        var newPositions = [Position: Int]()
+        positions.forEach { (key, value) in
+            if key.x - fold > 0 {
+                let x = (fold * 2) - key.x
+                newPositions[Position(x: x, y: key.y)] = 1
+            } else {
+                newPositions[Position(x: key.x, y: key.y)] = 1
+            }
+        }
+        
+        return newPositions
+    }
+    
+    private static func foldInY(_ positions: [Position: Int], fold: Int) -> [Position: Int] {
+        var newPositions = [Position: Int]()
+        positions.forEach { (key, value) in
+            if key.y - fold > 0 {
+                let y = (fold * 2) - key.y
+                newPositions[Position(x: key.x, y: y)] = 1
+            } else {
+                newPositions[Position(x: key.x, y: key.y)] = 1
+            }
+        }
+        
+        return newPositions
+    }
+    
     public static func part1(_ input: [String]) -> Int {
-        var (positions, folds) = parse(input)
+        let (positions, folds) = parse(input)
         
         let fold = folds.first!
         var newPositions = [Position: Int]()
         
         if fold.0 == "x" {
-            positions.forEach { (key, value) in
-                if key.x - fold.1 > 0 {
-                    let x = (fold.1 * 2) - key.x
-                    newPositions[Position(x: x, y: key.y)] = 1
-                } else {
-                    newPositions[Position(x: key.x, y: key.y)] = 1
-                }
-            }
+            newPositions = foldInX(positions, fold: fold.1)
         }
         
         if fold.0 == "y" {
-            positions.forEach { (key, value) in
-                if key.y - fold.1 > 0 {
-                    let y = (fold.1 * 2) - key.y
-                    newPositions[Position(x: key.x, y: y)] = 1
-                } else {
-                    newPositions[Position(x: key.x, y: key.y)] = 1
-                }
-            }
+            newPositions = foldInY(positions, fold: fold.1)
         }
         
         return newPositions.count
     }
     public static func part2(_ input: [String]) {
         var (positions, folds) = parse(input)
-        let foldInstructions = input.filter({ line in line.first == "f"}).map { string in string.replacingOccurrences(of: "fold along ", with: "") }
-        
-        for line in foldInstructions {
-            let components = line.split(separator: "=")
-            folds.append((String(components[0]), Int(components[1])!))
-        }
         
         for fold in folds {
             var newPositions = [Position: Int]()
             if fold.0 == "x" {
                 
-                positions.forEach { (key, value) in
-                    if key.x - fold.1 > 0 {
-                        let x = (fold.1 * 2) - key.x
-                        newPositions[Position(x: x, y: key.y)] = 1
-                    } else {
-                        newPositions[Position(x: key.x, y: key.y)] = 1
-                    }
-                }
+                newPositions = foldInX(positions, fold: fold.1)
             }
             if fold.0 == "y" {
-                positions.forEach { (key, value) in
-                    if key.y - fold.1 > 0 {
-                        let y = (fold.1 * 2) - key.y
-                        newPositions[Position(x: key.x, y: y)] = 1
-                    } else {
-                        newPositions[Position(x: key.x, y: key.y)] = 1
-                    }
-                }
+                newPositions = foldInY(positions, fold: fold.1)
             }
             positions = newPositions
         }
