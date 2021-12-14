@@ -27,7 +27,7 @@ class TestsDay8: XCTestCase {
                 return string.components(separatedBy: " ")
             }
     
-    func test_day8_part1_example() throws {
+    func test_day8_part1_example() {
         XCTAssertEqual(Day8.part1(example), 26)
     }
     
@@ -35,17 +35,17 @@ class TestsDay8: XCTestCase {
         XCTAssertEqual(Day8.part1(input), 303)
     }
 
-    func test_day8_part2_example() throws {
-        XCTAssertEqual(try Day8.part2(example), 61229)
+    func test_day8_part2_example() {
+        XCTAssertEqual(Day8.part2(example), 61229)
     }
     
-    func test_day8_part2_example2() throws {
-        XCTAssertEqual(try Day8.part2([example2]), 5353)
+    func test_day8_part2_example2() {
+        XCTAssertEqual(Day8.part2([example2]), 5353)
     }
 
-    func test_day8_part2() throws {
+    func test_day8_part2() {
         measure {
-            XCTAssertEqual(try? Day8.part2(input), 961734)
+            XCTAssertEqual(Day8.part2(input), 961734)
         }
     }
 }

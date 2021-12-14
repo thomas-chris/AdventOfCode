@@ -38,14 +38,14 @@ public struct Day3 {
         return 1
     }
     
-    public static func part2(_ input: [[String.Element]]) throws -> Int {
-        let o2 = try calcOxygen(input)
-        let co2 = try calcCo2(input)
+    public static func part2(_ input: [[String.Element]]) -> Int {
+        let o2 = calcOxygen(input)
+        let co2 = calcCo2(input)
 
         return o2 * co2
     }
     
-    private static func calcOxygen(_ input: [[String.Element]]) throws -> Int {
+    private static func calcOxygen(_ input: [[String.Element]]) -> Int {
         var changingOxygenInput = input
         
         for column in 0..<changingOxygenInput.first!.count {
@@ -66,10 +66,10 @@ public struct Day3 {
             }
         }
         
-        throw fatalError()
+        return Int.min
     }
     
-    private static func calcCo2(_ input: [[String.Element]]) throws -> Int {
+    private static func calcCo2(_ input: [[String.Element]]) -> Int {
         var changingOxygenInput = input
     
         for column in 0..<changingOxygenInput.first!.count {
@@ -90,7 +90,7 @@ public struct Day3 {
             }
         }
         
-        throw fatalError()
+        return Int.min
     }
 }
 

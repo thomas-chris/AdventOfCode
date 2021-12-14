@@ -26,7 +26,6 @@ public struct Day8 {
     public static func part2(_ input: [[[String]]]) -> Int {
         var outputTotals = 0
         for row in input {
-                var countForRow = 0
                 let input = row.first!
                 let output = row.last!
                 outputTotals += solve(input: input, output: output)

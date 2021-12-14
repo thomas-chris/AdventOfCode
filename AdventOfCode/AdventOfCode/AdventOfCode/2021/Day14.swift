@@ -63,8 +63,8 @@ public struct Day14 {
             let newPair1 = "\(key.first!)\(rule)"
             let newPair2 = "\(rule)\(key.last!)"
             
-            newCounts[newPair1, default: 0] += 1 * value
-            newCounts[newPair2, default: 0] += 1 * value
+            newCounts[newPair1, default: 0] += value
+            newCounts[newPair2, default: 0] += value
         }
         
         return newCounts

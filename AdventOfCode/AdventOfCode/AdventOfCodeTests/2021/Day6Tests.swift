@@ -17,7 +17,7 @@ class TestsDay6: XCTestCase {
     }
 
     func test_day6_part2_example() throws {
-        XCTAssertEqual(try Day6.part1(example, turns: 26984457539), 12)
+        XCTAssertEqual(try Day6.part1(example, turns: 256), 26984457539)
     }
 
     func test_day5_part2() throws {
