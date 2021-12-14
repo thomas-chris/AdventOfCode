@@ -16,4 +16,11 @@ extension Collection where Self.Iterator.Element: RandomAccessCollection {
             self.map{ $0[index] }
         }
     }
+
+}
+
+extension Collection {
+    func pairs() -> Array<(Element, Element)> {
+        return Array(zip(self, dropFirst()))
+    }
 }
