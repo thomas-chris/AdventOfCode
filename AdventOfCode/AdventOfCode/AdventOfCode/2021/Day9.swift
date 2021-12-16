@@ -9,7 +9,7 @@ public struct Day9 {
         let grid = Grid(input)
         
         return getLowPoints(grid: grid)
-            .map { grid[$0]! + 1}
+            .map { grid.grid[$0]! + 1}
             .reduce(0, +)
     }
     
@@ -25,14 +25,14 @@ public struct Day9 {
     }
     
     private static func getLowPoints(grid: Grid) -> [Position] {
-        grid.keys.compactMap { position -> Position? in
+        grid.grid.keys.compactMap { position -> Position? in
             let minimumSurroundingValue = position.getAdjacentPositions()
                 .compactMap { position in
-                    grid[position]
+                    grid.grid[position]
                 }
                 .min() ?? 0
             
-                if grid[position]! < minimumSurroundingValue {
+                if grid.grid[position]! < minimumSurroundingValue {
                     return position
                 }
                 return nil
@@ -45,7 +45,7 @@ public struct Day9 {
         let adjacent = position.getAdjacentPositions()
 
         for position in adjacent {
-            if (grid[position] != 9 && grid[position] != nil) && !setOfPositions.contains(position) {
+            if (grid.grid[position] != 9 && grid.grid[position] != nil) && !setOfPositions.contains(position) {
                 setOfPositions.insert(position)
                 setOfPositions = setOfPositions.union(calcBasinPoints(position, visitedPositions: setOfPositions, grid: grid))
             }

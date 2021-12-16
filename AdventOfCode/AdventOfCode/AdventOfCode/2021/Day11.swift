@@ -14,8 +14,8 @@ public struct Day11 {
             var newGrid = initialGrid
             var flashes = [Position]()
             
-            initialGrid.forEach { position, value in
-                newGrid[position] = value + 1
+            initialGrid.grid.forEach { position, value in
+                newGrid.grid[position] = value + 1
                 if value + 1 == 10 {
                     flashes.append(position)
                 }
@@ -27,17 +27,17 @@ public struct Day11 {
                 
                 let surroundingPositions = flashPosition.matrix.filter { $0.x < 10 && $0.x >= 0 && $0.y < 10 && $0.y >= 0 }
                 for position in surroundingPositions {
-                     newGrid[position, default: 0] += 1
-                    if newGrid[position]! == 10 {
+                    newGrid.grid[position, default: 0] += 1
+                    if newGrid.grid[position]! == 10 {
                         flashes.append(position)
                         
                     }
                 }
             }
             
-            newGrid.forEach { position, value in
+            newGrid.grid.forEach { position, value in
                         if value >= 10 {
-                            newGrid[position] = 0
+                            newGrid.grid[position] = 0
                             totalFlashCount += 1
                         }
                     }
@@ -53,13 +53,13 @@ public struct Day11 {
         var totalFlashCount = 0
         var count = 0
         
-        while !(initialGrid.values.filter { $0 == 0 }.count == 100) {
+        while !(initialGrid.grid.values.filter { $0 == 0 }.count == 100) {
             count += 1
             var newGrid = initialGrid
             var flashes = [Position]()
             
-            initialGrid.forEach { position, value in
-                newGrid[position] = value + 1
+            initialGrid.grid.forEach { position, value in
+                newGrid.grid[position] = value + 1
                 if value + 1 == 10 {
                     flashes.append(position)
                 }
@@ -71,17 +71,17 @@ public struct Day11 {
                 
                 let surroundingPositions = flashPosition.matrix.filter { $0.x < 10 && $0.x >= 0 && $0.y < 10 && $0.y >= 0 }
                 for position in surroundingPositions {
-                     newGrid[position, default: 0] += 1
-                    if newGrid[position]! == 10 {
+                    newGrid.grid[position, default: 0] += 1
+                    if newGrid.grid[position]! == 10 {
                         flashes.append(position)
                         
                     }
                 }
             }
             
-            newGrid.forEach { position, value in
+            newGrid.grid.forEach { position, value in
                         if value >= 10 {
-                            newGrid[position] = 0
+                            newGrid.grid[position] = 0
                             totalFlashCount += 1
                         }
                     }

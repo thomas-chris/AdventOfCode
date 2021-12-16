@@ -306,6 +306,11 @@
 		50D24CBC276933CD00821846 /* Day15Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24CBB276933CD00821846 /* Day15Tests.swift */; };
 		50D24CBF276933F700821846 /* Day15.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24CBE276933F700821846 /* Day15.txt */; };
 		50D24CC12769341100821846 /* Day15Example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24CC02769341100821846 /* Day15Example.txt */; };
+		50D24CC32769E06B00821846 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24CC22769E06B00821846 /* Vertex.swift */; };
+		50D24CC42769E06B00821846 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24CC22769E06B00821846 /* Vertex.swift */; };
+		50D24CC62769E08A00821846 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24CC52769E08A00821846 /* Dijkstra.swift */; };
+		50D24CC72769E08A00821846 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24CC52769E08A00821846 /* Dijkstra.swift */; };
+		50D24CC9276A389200821846 /* Day15PJ.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24CC8276A389200821846 /* Day15PJ.txt */; };
 		50F04E49275BBD0100F8F550 /* Day5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50F04E48275BBD0100F8F550 /* Day5.txt */; };
 		50F04E4B275BBD2600F8F550 /* Day5Example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50F04E4A275BBD2600F8F550 /* Day5Example.txt */; };
 		50F04E4D275BBD3900F8F550 /* Day5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F04E4C275BBD3900F8F550 /* Day5Tests.swift */; };
@@ -637,6 +642,9 @@
 		50D24CBB276933CD00821846 /* Day15Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day15Tests.swift; sourceTree = "<group>"; };
 		50D24CBE276933F700821846 /* Day15.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day15.txt; sourceTree = "<group>"; };
 		50D24CC02769341100821846 /* Day15Example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day15Example.txt; sourceTree = "<group>"; };
+		50D24CC22769E06B00821846 /* Vertex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		50D24CC52769E08A00821846 /* Dijkstra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dijkstra.swift; sourceTree = "<group>"; };
+		50D24CC8276A389200821846 /* Day15PJ.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day15PJ.txt; sourceTree = "<group>"; };
 		50F04E48275BBD0100F8F550 /* Day5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day5.txt; sourceTree = "<group>"; };
 		50F04E4A275BBD2600F8F550 /* Day5Example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day5Example.txt; sourceTree = "<group>"; };
 		50F04E4C275BBD3900F8F550 /* Day5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5Tests.swift; sourceTree = "<group>"; };
@@ -1154,6 +1162,8 @@
 				506FF73025776B1B0006055D /* String+Extension.swift */,
 				50623C87275A30320067086E /* Collection+Extensions.swift */,
 				50F04E51275CFACF00F8F550 /* Math.swift */,
+				50D24CC22769E06B00821846 /* Vertex.swift */,
+				50D24CC52769E08A00821846 /* Dijkstra.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1962,6 +1972,7 @@
 			children = (
 				50D24CBE276933F700821846 /* Day15.txt */,
 				50D24CC02769341100821846 /* Day15Example.txt */,
+				50D24CC8276A389200821846 /* Day15PJ.txt */,
 			);
 			path = "Day 15";
 			sourceTree = "<group>";
@@ -2294,6 +2305,7 @@
 				50F04E49275BBD0100F8F550 /* Day5.txt in Resources */,
 				5016F56C2764922A00A3FFA0 /* Day11.txt in Resources */,
 				50D24CC12769341100821846 /* Day15Example.txt in Resources */,
+				50D24CC9276A389200821846 /* Day15PJ.txt in Resources */,
 				5016F58727688B1B00A3FFA0 /* Day14.txt in Resources */,
 				50F04E4B275BBD2600F8F550 /* Day5Example.txt in Resources */,
 				50623C732758ACB70067086E /* Day2.txt in Resources */,
@@ -2339,6 +2351,7 @@
 				50BE7B3C2585D731008CD46C /* Day132020.swift in Sources */,
 				50978A58239B84010036AFA8 /* Day7.swift in Sources */,
 				50978B5D23A0B0910036AFA8 /* Input+Day11.swift in Sources */,
+				50D24CC62769E08A00821846 /* Dijkstra.swift in Sources */,
 				500DAF94239548920081CC21 /* Input+Day1.swift in Sources */,
 				50978AF5239F6DCB0036AFA8 /* Input+Day10.swift in Sources */,
 				50086D3423A60A34002613B7 /* Day15.swift in Sources */,
@@ -2417,6 +2430,7 @@
 				50978A56239B83D00036AFA8 /* Input+Day7.swift in Sources */,
 				50978B6923A0B44E0036AFA8 /* Direction.swift in Sources */,
 				50086D9923ACB893002613B7 /* Day19.swift in Sources */,
+				50D24CC32769E06B00821846 /* Vertex.swift in Sources */,
 				50424EEB2576203000D77F8F /* Day1_2020.swift in Sources */,
 				506FF719257759F10006055D /* PasswordPolicy.swift in Sources */,
 				504CA7B3257AC69000F088B2 /* Day5_2020.swift in Sources */,
@@ -2485,6 +2499,7 @@
 				506AD54D2756AD9F009E5E2B /* Input.swift in Sources */,
 				50F04E5C275D4DBF00F8F550 /* Day6.swift in Sources */,
 				50D24CBA2769336000821846 /* Day15.swift in Sources */,
+				50D24CC42769E06B00821846 /* Vertex.swift in Sources */,
 				50623C752758ACED0067086E /* Day2.swift in Sources */,
 				506AD54E2756AD9F009E5E2B /* String+Extension.swift in Sources */,
 				50F04E53275CFB2F00F8F550 /* Math.swift in Sources */,
@@ -2494,6 +2509,7 @@
 				506AD54F2756AD9F009E5E2B /* Direction.swift in Sources */,
 				5016F58B27688B8500A3FFA0 /* Day14.swift in Sources */,
 				50F04E50275BBD5F00F8F550 /* Day5.swift in Sources */,
+				50D24CC72769E08A00821846 /* Dijkstra.swift in Sources */,
 				5016F57B2767351E00A3FFA0 /* Day13.swift in Sources */,
 				508FDFAD276340AF00003603 /* Day10.swift in Sources */,
 				5016F5702765E29A00A3FFA0 /* Day12.swift in Sources */,
