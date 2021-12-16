@@ -12,15 +12,15 @@ class TestsDay16: XCTestCase {
     let example5 =  Input.getInputString(name: "Day16Example5")
     
     func test_day16_part1_example() {
-        XCTAssertEqual(Day16.part1(example), 40)
+        XCTAssertEqual(Day16.part1(example), 6)
     }
     
     func test_day16_part1_example2() {
-        XCTAssertEqual(Day16.part1(example2), 40)
+        XCTAssertEqual(Day16.part1(example2), 9)
     }
     
     func test_day16_part1_example3() {
-        XCTAssertEqual(Day16.part1(example3), 6)
+        XCTAssertEqual(Day16.part1(example3), 14)
     }
     
     func test_day16_part1_example4() {
@@ -28,11 +28,19 @@ class TestsDay16: XCTestCase {
     }
     
     func test_day16_part1_example5() {
-        XCTAssertEqual(Day16.part1(example5), 16)
+        XCTAssertEqual(Day16.part1(example5), 12)
+    }
+    
+    func test_day16_part1_example6() {
+        XCTAssertEqual(Day16.part1("C0015000016115A2E0802F182340"), 23)
+    }
+    
+    func test_day16_part1_example7() {
+        XCTAssertEqual(Day16.part1("A0016C880162017C3686B18A3D4780"), 31)
     }
 
     func test_day16_part1() {
-        XCTAssertEqual(Day16.part1(input), 537)
+        XCTAssertEqual(Day16.part1(input), 936)
     }
     
     func test_day16_example() throws {

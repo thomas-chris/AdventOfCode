@@ -26,21 +26,37 @@ public struct Day16 {
     struct Packet {
         let version: Int
         let typeId: Int
-        var value: Int = 0
-        var subPackets: Array<Packet> = []
+        var value = 0
         
-        init(version: Int, typeId: Int, value: Int) {
-            self.version = version
-            self.typeId = typeId
-            self.value = value
+        var computedValue: Int  {
+            switch typeId {
+            case 0:
+                return subPackets.map { $0.computedValue }.reduce(0,+)
+            case 1:
+                return subPackets.map { $0.computedValue }.reduce(0,*)
+            case 2:
+                return subPackets.map { $0.computedValue }.min()!
+            case 3:
+                return subPackets.map { $0.computedValue }.max()!
+            case 4:
+                return value
+            case 5:
+                return subPackets[0].computedValue > subPackets[1].computedValue ? 1 : 0
+            case 6:
+                return subPackets[0].computedValue < subPackets[1].computedValue ? 1 : 0
+            case 7:
+                return subPackets[0].computedValue == subPackets[1].computedValue ? 1 : 0
+            default:
+                fatalError()
+            }
         }
+        
+        var subPackets: Array<Packet> = []
         
         init(version: Int, typeId: Int) {
             self.version = version
             self.typeId = typeId
         }
-        
-        
     }
     
     public static func part1(_ input: String) -> Int {
@@ -54,7 +70,14 @@ public struct Day16 {
     }
     
     public static func part2(_ input: String) -> Int {
-        return 1
+        
+        let binaryString = input.map { character in
+            hexConvert[character]!
+        }.joined(separator: "")
+        
+        let packet = parse(binaryString, packet: nil).1
+        
+        return packet.computedValue
     }
     
     private static func parse(_ binaryString: String, packet: Packet?) -> (String, Packet) {
@@ -98,7 +121,7 @@ public struct Day16 {
             if I == "1" {
                 let numberSubPackets = Int(String(subString.prefix(11)), radix: 2)!
                 subString = String(subString.dropFirst(11))
-                for i in 1...numberSubPackets {
+                while subString.contains("1") {
                     let packet = parse(String(subString), packet: newPacket)
                     subString = packet.0
                     newPacket.subPackets.append(packet.1)
@@ -119,6 +142,5 @@ public struct Day16 {
         }
         
         return packets
-        
     }
 }
