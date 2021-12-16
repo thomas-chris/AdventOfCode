@@ -33,7 +33,7 @@ public struct Day16 {
             case 0:
                 return subPackets.map { $0.computedValue }.reduce(0,+)
             case 1:
-                return subPackets.map { $0.computedValue }.reduce(0,*)
+                return subPackets.map { $0.computedValue }.reduce(1,*)
             case 2:
                 return subPackets.map { $0.computedValue }.min()!
             case 3:
@@ -60,77 +60,75 @@ public struct Day16 {
     }
     
     public static func part1(_ input: String) -> Int {
-        let binaryString = input.map { character in
+        var binaryString = input.map { character in
             hexConvert[character]!
         }.joined(separator: "")
         
-        let packet = parse(binaryString, packet: nil).1
+        let packet = parse(&binaryString)
         
         return getAllPackets(packet).map { $0.version }.reduce(0, +)
     }
     
     public static func part2(_ input: String) -> Int {
         
-        let binaryString = input.map { character in
+        var binaryString = input.map { character in
             hexConvert[character]!
         }.joined(separator: "")
         
-        let packet = parse(binaryString, packet: nil).1
+        let packet = parse(&binaryString)
         
         return packet.computedValue
     }
     
-    private static func parse(_ binaryString: String, packet: Packet?) -> (String, Packet) {
+    private static func parse(_ binaryString: inout String) -> Packet {
         let version = Int(String(binaryString.prefix(3)), radix: 2)!
         let typeId = Int(String(binaryString.dropFirst(3).prefix(3)), radix: 2)!
         var newPacket = Packet(version: version, typeId: typeId)
-        var subString = String(binaryString.dropFirst(6))
+        binaryString = String(binaryString.dropFirst(6))
         switch typeId {
         case 4:
             ///
-            var sub = String(subString.prefix(5))
+            var sub = String(binaryString.prefix(5))
             var valueString = ""
             while sub.first != "0" {
-                valueString += String(subString.prefix(5).dropFirst())
-                subString = String(subString.dropFirst(5))
-                sub = String(subString.prefix(5))
+                valueString += String(binaryString.prefix(5).dropFirst())
+                binaryString = String(binaryString.dropFirst(5))
+                sub = String(binaryString.prefix(5))
             }
             
-            valueString += String(subString.prefix(5).dropFirst())
-            subString = String(subString.dropFirst(5))
-            sub = String(subString.prefix(5))
+            valueString += String(binaryString.prefix(5).dropFirst())
+            binaryString = String(binaryString.dropFirst(5))
+            sub = String(binaryString.prefix(5))
             
             newPacket.value = Int(valueString, radix: 2)!
-            return (subString, newPacket)
+            return newPacket
         default:
-            let I = subString.first!
-            subString = String(subString.dropFirst())
+            let I = binaryString.first!
+            binaryString = String(binaryString.dropFirst())
             
             if I == "0" {
-                let totalLength = Int(String(subString.prefix(15)), radix: 2)!
-                subString = String(subString.dropFirst(15))
-                while subString.contains("1") {
-                    let packet = parse(subString, packet: newPacket)
-                    newPacket.subPackets.append(packet.1)
-                    subString = packet.0
-                }
+                let totalLength = Int(String(binaryString.prefix(15)), radix: 2)!
+                binaryString = String(binaryString.dropFirst(15))
+                var parsed = 0
                 
-                return (subString, newPacket)
+                while parsed < totalLength  {
+                    let start = binaryString.count
+                    let packet = parse(&binaryString)
+                    let end = binaryString.count
+                    parsed += (start - end)
+                    newPacket.subPackets.append(packet)
+                }
             }
             
             if I == "1" {
-                let numberSubPackets = Int(String(subString.prefix(11)), radix: 2)!
-                subString = String(subString.dropFirst(11))
-                while subString.contains("1") {
-                    let packet = parse(String(subString), packet: newPacket)
-                    subString = packet.0
-                    newPacket.subPackets.append(packet.1)
+                let numberSubPackets = Int(String(binaryString.prefix(11)), radix: 2)!
+                binaryString = String(binaryString.dropFirst(11))
+                for i in 0..<numberSubPackets {
+                    newPacket.subPackets.append(parse(&binaryString))
                 }
-                
-                return (subString, newPacket)
             }
             
-            return (subString, newPacket)
+            return newPacket
         }
     }
     

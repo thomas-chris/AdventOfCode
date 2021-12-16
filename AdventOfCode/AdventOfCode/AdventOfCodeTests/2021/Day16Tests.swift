@@ -43,8 +43,28 @@ class TestsDay16: XCTestCase {
         XCTAssertEqual(Day16.part1(input), 936)
     }
     
-    func test_day16_example() throws {
-        XCTAssertEqual(Day16.part2(example), 316)
+    func test_day16_part2_example() {
+        XCTAssertEqual(Day16.part2("C200B40A82"), 3)
+    }
+    
+    func test_day16_part2_example2() {
+        XCTAssertEqual(Day16.part2("04005AC33890"), 54)
+    }
+    
+    func test_day16_part2_example3() {
+        XCTAssertEqual(Day16.part2("880086C3E88112"), 7)
+    }
+    
+    func test_day16_part2_example4() {
+        XCTAssertEqual(Day16.part2("CE00C43D881120"), 9)
+    }
+    
+    func test_day16_part2_example5() {
+        XCTAssertEqual(Day16.part2("D8005AC2A8F0"), 1)
+    }
+    
+    func test_day16_part2_example6() {
+        XCTAssertEqual(Day16.part2("9C0141080250320F1802104A08"), 1)
     }
     
     func test_day16_part2() throws {
