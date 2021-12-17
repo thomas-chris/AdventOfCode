@@ -20,17 +20,17 @@ class TestsDay15: XCTestCase {
     func test_day15_example() throws {
         XCTAssertEqual(Day15.part2(example), 315)
     }
-    
-    func test_day15_part2() throws {
-//        measure {
-        XCTAssertEqual(Day15.part2(input), 2881)
-//        }
-    }
-    
-    func test_day15_part2_pj() throws {
-//        measure {
-        XCTAssertEqual(Day15.part2(pj), 2884513602164)
-//        }
-    }
+//    
+//    func test_day15_part2() throws {
+////        measure {
+//        XCTAssertEqual(Day15.part2(input), 2881)
+////        }
+//    }
+//    
+//    func test_day15_part2_pj() throws {
+////        measure {
+//        XCTAssertEqual(Day15.part2(pj), 2884513602164)
+////        }
+//    }
 }
 

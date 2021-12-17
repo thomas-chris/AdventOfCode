@@ -68,9 +68,9 @@ class TestsDay16: XCTestCase {
     }
     
     func test_day16_part2() throws {
-//        measure {
-        XCTAssertEqual(Day16.part2(input), 2881)
-//        }
+        measure {
+            XCTAssertEqual(Day16.part2(input), 6802496672062)
+        }
     }
 }
 
