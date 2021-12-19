@@ -56,6 +56,10 @@ public struct Position: Equatable, Hashable {
         positions.append(newPostion)
         return positions
     }
+    
+    func move(x: Int, y: Int) -> Position {
+        Position(x: self.x + x, y: self.y + y)
+    }
 }
 
 extension Position {
