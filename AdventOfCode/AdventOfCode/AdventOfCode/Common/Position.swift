@@ -75,6 +75,20 @@ extension Position {
          (Position(x: self.x + 1, y: self.y + 1)),
         ]
     }
+    
+    var window: [Position] {
+        
+        [(Position(x: self.x - 1, y: self.y - 1)),
+         (Position(x: self.x, y: self.y - 1)),
+         (Position(x: self.x + 1, y: self.y - 1)),
+         (Position(x: self.x - 1, y: self.y)),
+         (Position(x: self.x, y: self.y)),
+         (Position(x: self.x + 1, y: self.y)),
+         (Position(x: self.x - 1, y: self.y + 1)),
+         (Position(x: self.x, y: self.y + 1)),
+         (Position(x: self.x + 1, y: self.y + 1))
+        ]
+    }
 }
 
 public struct XYZ: Equatable, Hashable {
@@ -101,9 +115,19 @@ public class Grid {
         grid.keys.max { $0.y < $1.y }!.y + 1
     }
     
+    var yRange: (Int, Int) {
+        (grid.keys.max { $0.y > $1.y }!.y, grid.keys.max { $0.y < $1.y }!.y)
+        
+    }
+    
     var rows: Int {
         grid.keys.max { $0.x < $1.x }!.x + 1
     }
+    
+    var xRange: (Int, Int) {
+        (grid.keys.max { $0.x > $1.x }!.x, grid.keys.max { $0.x < $1.x }!.x)
+    }
+    
     public var grid: [Position: Int]
     
     init(_ input: [String]) {
@@ -118,6 +142,19 @@ public class Grid {
         
         
         grid = dictionary
+    }
+    
+    func print() {
+        for y in yRange.0 ... yRange.1 {
+            var row = ""
+            for x in xRange.0 ... yRange.1 {
+                let char = grid[Position(x: x, y: y)] == 1 ? "#" : "."
+                row.append(char)
+            }
+            Swift.print(row)
+        }
+        
+        Swift.print("\n")
     }
 }
 
