@@ -2127,38 +2127,6 @@
             endingLineNumber = "176"
             landmarkName = "dijkstra(start:end:maxPoint:shouldDrawPath:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CB5AB435-83EE-4406-A170-61C59F413F48 - 33f558755a62f865"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwentyTwentyOne.Grid.dijkstra(start: TwentyTwentyOne.Position, end: TwentyTwentyOne.Position, maxPoint: TwentyTwentyOne.Position, shouldDrawPath: Swift.Bool) -&gt; Swift.Int"
-                  moduleName = "TwentyTwentyOne"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Common/Position.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "888">
-               </Location>
-               <Location
-                  uuid = "CB5AB435-83EE-4406-A170-61C59F413F48 - 33f558755a62f865"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TwentyTwentyOne.Grid.dijkstra(start: TwentyTwentyOne.Position, end: TwentyTwentyOne.Position, maxPoint: TwentyTwentyOne.Position, shouldDrawPath: Swift.Bool) -&gt; Swift.Int"
-                  moduleName = "TwentyTwentyOne"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/Common/Position.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "634">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2446,7 +2414,7 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "useAlgorithm(_:algorithm:infiniteValue:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2494,7 +2462,7 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "useAlgorithm(_:algorithm:infiniteValue:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2510,7 +2478,7 @@
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "useAlgorithm(_:algorithm:infiniteValue:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2525,40 +2493,72 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "part1(_:times:)"
+            landmarkName = "useAlgorithm(_:algorithm:infiniteValue:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CEDD94BB-DECB-4CE5-B881-AC7111D3A0D4 - 91873e26e4144800"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static TwentyTwentyOne.Day20.useAlgorithm(_: TwentyTwentyOne.Grid, algorithm: Swift.Array&lt;Swift.Int&gt;, infiniteValue: Swift.Bool) -&gt; TwentyTwentyOne.Grid"
-                  moduleName = "TwentyTwentyOne"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day20.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "2612">
-               </Location>
-               <Location
-                  uuid = "CEDD94BB-DECB-4CE5-B881-AC7111D3A0D4 - 91873e26e41449e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static TwentyTwentyOne.Day20.useAlgorithm(_: TwentyTwentyOne.Grid, algorithm: Swift.Array&lt;Swift.Int&gt;, infiniteValue: Swift.Bool) -&gt; TwentyTwentyOne.Grid"
-                  moduleName = "TwentyTwentyOne"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/christhomas/JLIT/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2021/Day20.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "2612">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28A0BE97-3CE3-4E4D-B990-7C73E36C68C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day21.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "part2(p1Start:p2Start:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F72EFC9-9915-4C77-8A3C-E34B7A26D422"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day21.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "playGame(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D223A7B8-3D45-475D-BE25-700FEEBB8DA3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day21.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "playGame(_:)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "214478B4-5EE0-45E5-A2F8-66304DCFB2FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdventOfCode/2021/Day21.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "playGame(_:)"
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
