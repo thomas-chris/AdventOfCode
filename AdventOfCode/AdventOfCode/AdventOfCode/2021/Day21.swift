@@ -107,24 +107,3 @@ public struct Day21 {
     }
     
 }
-
-extension Array {
-    mutating func rotate() -> Element? {
-        
-        guard let first = self.first else { return nil }
-        
-        var value = Array(self.dropFirst())
-        value.append(first)
-        self = value
-        return first
-    }
-    
-    mutating func rotate(by index: Int) -> Element? {
-        var element: Element? = nil
-        for _ in 1...index {
-            element = rotate()
-        }
-        
-        return element
-    }
-}

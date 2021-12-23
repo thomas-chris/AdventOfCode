@@ -341,6 +341,14 @@
 		50D24D092771DAB800821846 /* Day21Example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24D082771DAB800821846 /* Day21Example.txt */; };
 		50D24D0B2771DB1B00821846 /* Day21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D0A2771DB1B00821846 /* Day21.swift */; };
 		50D24D0D2771DB2C00821846 /* Day21Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D0C2771DB2C00821846 /* Day21Tests.swift */; };
+		50D24D1127730F9B00821846 /* Day22Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D1027730F9B00821846 /* Day22Tests.swift */; };
+		50D24D1327730FB200821846 /* Day22.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D1227730FB200821846 /* Day22.swift */; };
+		50D24D1627730FDD00821846 /* Day22.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24D1527730FDD00821846 /* Day22.txt */; };
+		50D24D1827730FF200821846 /* Day22Example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50D24D1727730FF200821846 /* Day22Example.txt */; };
+		50D24D1C277387A300821846 /* Cuboid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D1B277387A300821846 /* Cuboid.swift */; };
+		50D24D1D277387A300821846 /* Cuboid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D1B277387A300821846 /* Cuboid.swift */; };
+		50D24D1F277464FA00821846 /* Day23.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D1E277464FA00821846 /* Day23.swift */; };
+		50D24D212774B42F00821846 /* Day23Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D24D202774B42F00821846 /* Day23Tests.swift */; };
 		50F04E49275BBD0100F8F550 /* Day5.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50F04E48275BBD0100F8F550 /* Day5.txt */; };
 		50F04E4B275BBD2600F8F550 /* Day5Example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 50F04E4A275BBD2600F8F550 /* Day5Example.txt */; };
 		50F04E4D275BBD3900F8F550 /* Day5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F04E4C275BBD3900F8F550 /* Day5Tests.swift */; };
@@ -704,6 +712,13 @@
 		50D24D082771DAB800821846 /* Day21Example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day21Example.txt; sourceTree = "<group>"; };
 		50D24D0A2771DB1B00821846 /* Day21.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21.swift; sourceTree = "<group>"; };
 		50D24D0C2771DB2C00821846 /* Day21Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day21Tests.swift; sourceTree = "<group>"; };
+		50D24D1027730F9B00821846 /* Day22Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22Tests.swift; sourceTree = "<group>"; };
+		50D24D1227730FB200821846 /* Day22.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day22.swift; sourceTree = "<group>"; };
+		50D24D1527730FDD00821846 /* Day22.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day22.txt; sourceTree = "<group>"; };
+		50D24D1727730FF200821846 /* Day22Example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day22Example.txt; sourceTree = "<group>"; };
+		50D24D1B277387A300821846 /* Cuboid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuboid.swift; sourceTree = "<group>"; };
+		50D24D1E277464FA00821846 /* Day23.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23.swift; sourceTree = "<group>"; };
+		50D24D202774B42F00821846 /* Day23Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day23Tests.swift; sourceTree = "<group>"; };
 		50F04E48275BBD0100F8F550 /* Day5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day5.txt; sourceTree = "<group>"; };
 		50F04E4A275BBD2600F8F550 /* Day5Example.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Day5Example.txt; sourceTree = "<group>"; };
 		50F04E4C275BBD3900F8F550 /* Day5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5Tests.swift; sourceTree = "<group>"; };
@@ -1224,6 +1239,7 @@
 				50D24CC22769E06B00821846 /* Vertex.swift */,
 				50D24CC52769E08A00821846 /* Dijkstra.swift */,
 				50D24CF9276F24EF00821846 /* 3DPosition.swift */,
+				50D24D1B277387A300821846 /* Cuboid.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1350,6 +1366,7 @@
 				50D24CF2276F218A00821846 /* Day 19 */,
 				50D24CFC2770B96500821846 /* Day 20 */,
 				50D24D052771DA8C00821846 /* Day 21 */,
+				50D24D1427730FB800821846 /* Day 22 */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -1587,6 +1604,8 @@
 				50D24CF3276F21CD00821846 /* Day19Tests.swift */,
 				50D24CFF2770B9A500821846 /* Day20Tests.swift */,
 				50D24D0C2771DB2C00821846 /* Day21Tests.swift */,
+				50D24D1027730F9B00821846 /* Day22Tests.swift */,
+				50D24D202774B42F00821846 /* Day23Tests.swift */,
 			);
 			path = 2021;
 			sourceTree = "<group>";
@@ -1677,6 +1696,8 @@
 				50D24CF0276F218300821846 /* Day19.swift */,
 				50D24CFD2770B98F00821846 /* Day20.swift */,
 				50D24D0A2771DB1B00821846 /* Day21.swift */,
+				50D24D1227730FB200821846 /* Day22.swift */,
+				50D24D1E277464FA00821846 /* Day23.swift */,
 			);
 			path = 2021;
 			sourceTree = "<group>";
@@ -2113,6 +2134,15 @@
 			path = "Day 21";
 			sourceTree = "<group>";
 		};
+		50D24D1427730FB800821846 /* Day 22 */ = {
+			isa = PBXGroup;
+			children = (
+				50D24D1527730FDD00821846 /* Day22.txt */,
+				50D24D1727730FF200821846 /* Day22Example.txt */,
+			);
+			path = "Day 22";
+			sourceTree = "<group>";
+		};
 		50F04E47275BBCE400F8F550 /* Day 5 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2469,12 +2499,14 @@
 				5016F5832767358A00A3FFA0 /* Day13Example.txt in Resources */,
 				5016F56E2764923800A3FFA0 /* Day11Example.txt in Resources */,
 				50D24CD5276B380A00821846 /* Day16Example2.txt in Resources */,
+				50D24D1827730FF200821846 /* Day22Example.txt in Resources */,
 				50623C7C2758B3FD0067086E /* Day2Example.txt in Resources */,
 				508FDF9C275FE77D00003603 /* Day8Example.txt in Resources */,
 				508FDF9F2761F1A900003603 /* Day9.txt in Resources */,
 				508FDFB22763412000003603 /* Day10.txt in Resources */,
 				5016F5792765FB6500A3FFA0 /* Day12PJ.txt in Resources */,
 				50D24CD0276B267200821846 /* Day16.txt in Resources */,
+				50D24D1627730FDD00821846 /* Day22.txt in Resources */,
 				50D24CD9276B383400821846 /* Day16Example4.txt in Resources */,
 				50D24D092771DAB800821846 /* Day21Example.txt in Resources */,
 				50D24CF8276F22B800821846 /* Day19Example.txt in Resources */,
@@ -2575,6 +2607,7 @@
 				50BE7B3625849395008CD46C /* Day122020.swift in Sources */,
 				50086D8F23AA9BCB002613B7 /* Day18.swift in Sources */,
 				50BE7B1C2583413E008CD46C /* Day112020.swift in Sources */,
+				50D24D1C277387A300821846 /* Cuboid.swift in Sources */,
 				5032D735257DFC9E00A0191D /* Day7_2020.swift in Sources */,
 				50978A60239C1AD70036AFA8 /* IntCode.swift in Sources */,
 				50668B0F2594CEB000C448C1 /* Day4_2015.swift in Sources */,
@@ -2662,9 +2695,12 @@
 				506AD54B2756AD9F009E5E2B /* MazeTile.swift in Sources */,
 				506AD54F2756AD9F009E5E2B /* Direction.swift in Sources */,
 				5016F58B27688B8500A3FFA0 /* Day14.swift in Sources */,
+				50D24D1F277464FA00821846 /* Day23.swift in Sources */,
 				50F04E50275BBD5F00F8F550 /* Day5.swift in Sources */,
 				50D24D0B2771DB1B00821846 /* Day21.swift in Sources */,
 				50D24CC72769E08A00821846 /* Dijkstra.swift in Sources */,
+				50D24D1327730FB200821846 /* Day22.swift in Sources */,
+				50D24D1D277387A300821846 /* Cuboid.swift in Sources */,
 				5016F57B2767351E00A3FFA0 /* Day13.swift in Sources */,
 				508FDFAD276340AF00003603 /* Day10.swift in Sources */,
 				5016F5702765E29A00A3FFA0 /* Day12.swift in Sources */,
@@ -2689,6 +2725,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D24D1127730F9B00821846 /* Day22Tests.swift in Sources */,
 				50D24CBC276933CD00821846 /* Day15Tests.swift in Sources */,
 				50D24CEA276DDD4400821846 /* Day18Tests.swift in Sources */,
 				508FDFA52761F1E100003603 /* Day9Tests.swift in Sources */,
@@ -2699,6 +2736,7 @@
 				50623C782758B0EA0067086E /* Day2Tests.swift in Sources */,
 				508FDF97275FE6FF00003603 /* Day8Tests.swift in Sources */,
 				5016F58D276891B000A3FFA0 /* Day14Tests.swift in Sources */,
+				50D24D212774B42F00821846 /* Day23Tests.swift in Sources */,
 				50623C812758DD640067086E /* Day3Tests.swift in Sources */,
 				50D24D002770B9A500821846 /* Day20Tests.swift in Sources */,
 				50F04E5E275D4DF200F8F550 /* Day6Tests.swift in Sources */,
