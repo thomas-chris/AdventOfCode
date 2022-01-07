@@ -21,11 +21,5 @@ class TestsDay25: XCTestCase {
     func test_day1_part1() {
         XCTAssertEqual(Day25.part1(input), 360)
     }
-    
-    func test_day1_part2() {
-        measure {
-            XCTAssertEqual(Day25.part2(input), 2794240479217824)
-        }
-    }
 }
 

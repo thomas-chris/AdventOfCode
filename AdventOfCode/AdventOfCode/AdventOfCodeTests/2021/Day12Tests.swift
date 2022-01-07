@@ -26,11 +26,5 @@ class TestsDay12: XCTestCase {
             XCTAssertEqual(try? Day12.part2(input), 118803)
         }
     }
-    
-    func test_day12_part2_pj() throws {
-        measure {
-            XCTAssertEqual(try? Day12.part2(pjInput), 89592)
-        }
-    }
 }
 

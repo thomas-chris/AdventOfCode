@@ -3,14 +3,15 @@ import Algorithms
 public struct Day1 {
     public static func getAnswerPart1(input: [Int]) -> Double? {
          
-        return input.windows(ofCount: 2)
+        return input
+            .windows(ofCount: 2)
             .map { slice -> Double in
-            if slice.last ?? 0 > slice.first ?? 0 {
-                return 1
-            }
+                if slice.last ?? 0 > slice.first ?? 0 {
+                    return 1
+                }
             
-            return 0
-        }
+                return 0
+            }
             .reduce(0, +)
     }
     

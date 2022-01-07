@@ -8,7 +8,7 @@ class TestsDay18: XCTestCase {
     let example = Array(Input.array(seperator: "\n", file: "Day18Example", compactmap:  { string in string } ).dropLast())
     
     func test_day18_part1_example() {
-        XCTAssertEqual(Day18.part1(example).0, 45)
+        XCTAssertEqual(Day18.part1(example).0, 4140)
     }
     
     func test_reduceExplode_1() {
