@@ -3,94 +3,51 @@ import Foundation
 
 public struct Day3 {
     
-    public static func part1(_ input: [[String.Element]]) -> Int {
+    static let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    
+    
+    public static func part1(_ input: [String]) -> Int {
         
-        var gammaRate = ""
-        var epsilonRate = ""
-        for column in 0..<input.first!.count {
-            var ones = 0
-            var zeros = 0
-            for row in input {
-                if row[column] == "1" {
-                    ones += 1
-                } else {
-                    zeros += 1
-                }
+        input
+            .compactMap { rucksack in
+                let compartments = rucksack.split(by: (rucksack.length / 2))
+                let intersection = Set(compartments[0]).intersection(Set(compartments[1]))
+                return intersection.first
             }
-            
-            if ones >= zeros {
-                gammaRate.append("1")
-                epsilonRate.append("0")
-            } else {
-                gammaRate.append("0")
-                epsilonRate.append("1")
+            .compactMap { element in
+                let index = alphabet.firstIndex(of: String(element)) ?? 0
+                return Int(index + 1)
             }
-        }
-        let gammaNumber = Int(gammaRate, radix: 2)!
-        let epsilonNumber = Int(epsilonRate, radix: 2)!
-        
-        return gammaNumber * epsilonNumber
+            .reduce(0,+)
     }
     
-    public static func part1_transpose(_ input: [[String.Element]]) -> Int {
-        let transpose = input.transposed()
-        print(transpose)
-        return 1
-    }
-    
-    public static func part2(_ input: [[String.Element]]) -> Int {
-        let o2 = calcOxygen(input)
-        let co2 = calcCo2(input)
-
-        return o2 * co2
-    }
-    
-    private static func calcOxygen(_ input: [[String.Element]]) -> Int {
-        var changingOxygenInput = input
+    public static func part2(_ input: [String]) -> Int {
         
-        for column in 0..<changingOxygenInput.first!.count {
-            var ones = 0
-            var zeros = 0
-            for row in changingOxygenInput {
-                if row[column] == "1" {
-                    ones += 1
-                } else {
-                    zeros += 1
-                }
+        input
+            .chunks(ofCount: 3)
+            .compactMap { arrays -> Character? in
+                let lists = Array(arrays)
+                return Set(lists[0]).intersection(Set(lists[1])).intersection(Set(lists[2])).first
             }
-            
-            changingOxygenInput = changingOxygenInput.filter({ value in String(value[column]) == (ones >= zeros ? "1" : "0") })
-            if changingOxygenInput.count == 1 {
-                let string = changingOxygenInput[0].map { String($0) }.joined()
-                return Int(string, radix: 2)!
+            .compactMap { element in
+                let index = alphabet.firstIndex(of: String(element)) ?? 0
+                return Int(index + 1)
             }
-        }
-        
-        return Int.min
-    }
-    
-    private static func calcCo2(_ input: [[String.Element]]) -> Int {
-        var changingOxygenInput = input
-    
-        for column in 0..<changingOxygenInput.first!.count {
-            var ones = 0
-            var zeros = 0
-            for row in changingOxygenInput {
-                if row[column] == "1" {
-                    ones += 1
-                } else {
-                    zeros += 1
-                }
-            }
-            
-            changingOxygenInput = changingOxygenInput.filter({ value in String(value[column]) == (ones < zeros ? "1" : "0") })
-            if changingOxygenInput.count == 1 {
-                let string = changingOxygenInput[0].map { String($0) }.joined()
-                return Int(string, radix: 2)!
-            }
-        }
-        
-        return Int.min
+            .reduce(0,+)
     }
 }
 
+extension String {
+    func split(by length: Int) -> [String] {
+        var startIndex = self.startIndex
+        var results = [Substring]()
+
+        while startIndex < self.endIndex {
+            let endIndex = self.index(startIndex, offsetBy: length, limitedBy: self.endIndex) ?? self.endIndex
+            results.append(self[startIndex..<endIndex])
+            startIndex = endIndex
+        }
+
+        return results.map { String($0) }
+    }
+}

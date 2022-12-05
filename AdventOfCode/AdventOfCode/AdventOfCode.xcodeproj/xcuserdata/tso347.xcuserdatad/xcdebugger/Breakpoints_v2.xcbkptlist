@@ -18,6 +18,38 @@
             endingLineNumber = "107"
             landmarkName = "playerScore(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3212F13-2A0E-42DD-8159-E7628BB0D7DA - 5cedec185c2e2636"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyTwo.Day2.playerScore(Swift.Array&lt;Swift.Array&lt;TwentyTwentyTwo.Day2.RockPaperScissor&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyTwo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tso347/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2022/Day2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "F3212F13-2A0E-42DD-8159-E7628BB0D7DA - 5cedec185c2e2e30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static TwentyTwentyTwo.Day2.playerScore(Swift.Array&lt;Swift.Array&lt;TwentyTwentyTwo.Day2.RockPaperScissor&gt;&gt;) -&gt; Swift.Int"
+                  moduleName = "TwentyTwentyTwo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tso347/AdventOfCode/AdventOfCode/AdventOfCode/AdventOfCode/2022/Day2.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
